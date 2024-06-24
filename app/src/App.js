@@ -1,25 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import TaskPage from "./page/task";
+import ServicePage from "./page/service";
+import HelpPage from "./page/help";
+import MessagePage from "./page/message";
+import ProfilePage from "./page/profile";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route index={true} element={<Navigate to='/task'/>}/>
+      <Route path='/task' element={<TaskPage/>}/>
+      <Route path='/service' element={<ServicePage/>}/>
+      <Route path='/help' element={<HelpPage/>}/>
+      <Route path='/message' element={<MessagePage/>}/>
+      <Route path='/profile' element={<ProfilePage/>}/>
+    </Routes>
   );
 }
-
-export default App;
