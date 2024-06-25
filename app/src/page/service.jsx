@@ -1,10 +1,9 @@
-import Navigation from "../component/navigation";
+import BasicLayout from "../component/basic_layout";
 
 export default function ServicePage() {
   return (
-    <>
-      <Navigation page='service'/>
+    <BasicLayout page='service'>
       <h1>服务大厅</h1>
-    </>
+    </BasicLayout>
   )
 }

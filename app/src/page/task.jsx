@@ -1,10 +1,10 @@
-import Navigation from "../component/navigation";
+import ItemList from "../component/item_list";
+import BasicLayout from "../component/basic_layout";
 
 export default function TaskPage() {
   return (
-    <>
-      <Navigation page='task'/>
-      <h1>任务大厅</h1>
-    </>
+    <BasicLayout page='task'>
+      <ItemList/>
+    </BasicLayout>
   );
 }
