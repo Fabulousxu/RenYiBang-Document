@@ -1,55 +1,91 @@
-import {Card, Col, Row, Avatar} from "antd";
+import {Card, Col, Row, Avatar, Divider, Pagination} from "antd";
 import Meta from "antd/es/card/Meta";
+import Search from "antd/es/input/Search";
+import {Link} from "react-router-dom";
+
+export const totalEntry = 24;
 
 export default function ItemList(props) {
-  const totalColumns = 24;
-
   return (
-    <Row gutter={[16, 16]}>
-      {
-        Array.from({length: totalColumns}).map(index => (
-          <Col
-            key={index}
-            xs={{span: 24 / 2}}
-            sm={{span: 24 / 3}}
-            md={{span: 24 / 3}}
-            lg={{span: 24 / 4}}
-            xl={{span: 24 / 4}}
-          >
-            <Card
-              hoverable
-              title='任务标题'
-              cover={
-                <div style={{
-                  position: 'relative',
-                  width: '100%',
-                  paddingBottom: '100%',
-                  overflow: 'hidden'
-                }}>
-                  <img
-                    alt='example'
-                    src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover'
-                    }}
-                  />
-                </div>
-              }
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <Search
+        placeholder={props.placeholder}
+        allowClear
+        enterButton='搜索'
+        size='large'
+        style={{width: '60%'}}
+        onSearch={props.onSearch}
+      />
+      <h3 style={{margin: '0 auto 0 10px'}}>{props.title}</h3>
+      <Divider/>
+      <Row gutter={[32, 24]}>
+        {
+          Array.from({length: totalEntry}).map((_, index) => (
+            <Col
+              key={index}
+              xs={{span: 24 / 2}}
+              sm={{span: 24 / 3}}
+              md={{span: 24 / 3}}
+              lg={{span: 24 / 4}}
+              xl={{span: 24 / 4}}
             >
-              <Meta
-                avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8"/>}
-                title={'用户名'}
-              />
-            </Card>
-          </Col>
-        ))
-      }
-    </Row>
+              <Link
+                style={{visibility: index < props.list.length ? 'visible' : 'hidden'}}
+                to={`/task/${props.list[index]?.id}`}
+              >
+                <Card
+                  hoverable
+                  title={props.list[index]?.title}
+                  cover={
+                    <div
+                      style={{
+                        position: 'relative',
+                        width: '100%',
+                        paddingBottom: '100%',
+                        overflow: 'hidden'
+                      }}
+                    >
+                      <img
+                        alt='任务'
+                        src={props.list[index]?.cover}
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover'
+                        }}
+                      />
+                    </div>
+                  }
+                >
+                  <div style={{display: 'flex'}}>
+                    <Link to={`/profile/${props.list[index]?.user.userId}`}>
+                      <Meta
+                        avatar={<Avatar src={props.list[index]?.user.avatar}/>}
+                        title={props.list[index]?.user.username}
+                        description={`帮帮评分: ${(props.list[index]?.user.rating / 10).toFixed(1)}`}
+                      />
+                    </Link>
+                    <div style={{marginLeft: 'auto', color: 'red', fontSize: '1rem'}}>{
+                      `¥${(props.list[index]?.price / 100).toFixed(2)}`}
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </Col>
+          ))
+        }
+      </Row>
+      <Pagination
+        pageSize={totalEntry}
+        total={props.total}
+        current={props.currentPage}
+        showSizeChanger={false}
+        style={{marginTop: '24px'}}
+        onChange={props.onChange}
+      />
+    </div>
   )
-    ;
 }
