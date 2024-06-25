@@ -5,13 +5,7 @@ export default function ItemList(props) {
   const totalColumns = 24;
 
   return (
-    <Row
-      gutter={[16, 16]}
-      style={{
-        padding: '8px',
-        border: '1px solid black'
-      }}
-    >
+    <Row gutter={[16, 16]}>
       {
         Array.from({length: totalColumns}).map(index => (
           <Col
@@ -24,17 +18,38 @@ export default function ItemList(props) {
           >
             <Card
               hoverable
-              title={'任务标题'}
+              title='任务标题'
+              cover={
+                <div style={{
+                  position: 'relative',
+                  width: '100%',
+                  paddingBottom: '100%',
+                  overflow: 'hidden'
+                }}>
+                  <img
+                    alt='example'
+                    src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                  />
+                </div>
+              }
             >
               <Meta
-                avatar=<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8"/>
-              title={'用户名'}
+                avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8"/>}
+                title={'用户名'}
               />
-
             </Card>
           </Col>
         ))
       }
     </Row>
-  );
+  )
+    ;
 }
