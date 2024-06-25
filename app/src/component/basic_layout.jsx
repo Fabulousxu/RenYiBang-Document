@@ -9,10 +9,7 @@ export default function BasicLayout(props) {
         {key: 'service', label: <Link to='/service'>🧤服务大厅</Link>},
         {key: 'help', label: <Link to='/help'>😣求助大厅</Link>},
         {key: 'order', label: <Link to='/order'>💰订单</Link>, style: {marginLeft: 'auto'}},
-        {
-            key: 'message',
-            label: <Link to='/message'>📨消息</Link>,
-        },
+        {key: 'message', label: <Link to='/message'>📨消息</Link>},
         {key: 'profile', label: <Link to='/profile'>👨用户</Link>}
     ]
     const {token: {colorBgContainer, borderRadiusLG}} = theme.useToken();
