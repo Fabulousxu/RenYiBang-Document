@@ -21,21 +21,14 @@ export default function BasicLayout(props) {
   }, {
     key: 'help', label: <Link to='/help'>求助大厅</Link>, icon: <QuestionCircleOutlined/>
   }, {
-<<<<<<< Updated upstream
     key: 'issue',
     label: <Link to='/issue'>发布内容</Link>,
     icon: <PlusCircleOutlined/>,
-    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
   }, {
-    key: 'order', label: <Link to='/order'>订单</Link>, icon: <PayCircleOutlined/>, style: {
-      fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif', marginLeft: 'auto'
-    }
-=======
     key: 'order',
     label: <Link to='/order'>订单</Link>,
     icon: <PayCircleOutlined/>,
     style: {marginLeft: 'auto'}
->>>>>>> Stashed changes
   }, {
     key: 'message', label: <Link to='/message'>消息</Link>, icon: <MessageOutlined/>
   }, {
