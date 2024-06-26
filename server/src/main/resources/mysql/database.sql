@@ -1,3 +1,9 @@
+# 新建数据库
+create database if not exists RenYiBang
+    character set utf8mb4
+    collate utf8mb4_general_ci;
+use RenYiBang;
+
 create table if not exists user
 (
     user_id        bigint auto_increment comment '用户id，每个用户唯一对应'

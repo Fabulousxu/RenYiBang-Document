@@ -18,7 +18,7 @@ export default function ServicePage() {
   return (
     <BasicLayout page='service'>
       <ItemList
-        title={`服务 ${total}条`}
+        title={`服务总计${total}条`}
         placeholder='请输入任务关键词或用户关键词来搜索相关任务'
         value={keyword}
         onSearch={value => {

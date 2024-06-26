@@ -1,17 +1,15 @@
 // profile_page.jsx
 import React, { useEffect, useState } from 'react';
 import BasicLayout from "../component/basic_layout";
-import { Descriptions, Avatar, List, Typography, Tag } from 'antd';
+import { Descriptions, Avatar, List, Typography } from 'antd';
 import { getUserProfile, getUserTasks } from '../service/user';
 import {Link} from "react-router-dom";
-import {useParams} from "react-router-dom";
 
 const { Title } = Typography;
 
 export default function ProfilePage() {
     const [user, setUser] = useState({});
     const [tasks, setTasks] = useState([]);
-    const { id } = useParams();
 
     useEffect(() => {
         getUserProfile().then(res => {
@@ -30,21 +28,19 @@ export default function ProfilePage() {
     return (
         <BasicLayout page='profile'>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
-                <Avatar size={64} src={user.user_avatar} />
+                <Avatar size={64} src={user.avatar} />
                 <div style={{ marginLeft: 24 }}>
-                    <Title level={2}>{user.user_nickname}</Title>
-                    <Title level={4} type="secondary">{user.user_intro}</Title>
+                    <Title level={2}>{user.name}</Title>
+                    <Title level={4} type="secondary">{user.email}</Title>
                 </div>
             </div>
 
             <Descriptions title="用户信息" bordered>
-                <Descriptions.Item label="用户名">{user.user_nickname}</Descriptions.Item>
-                <Descriptions.Item label="管理员">
-                    {user.user_admin ? <Tag color="red">是</Tag> : <Tag color="blue">否</Tag>}
-                </Descriptions.Item>
-                <Descriptions.Item label="评分">{(user.user_rating / 10).toFixed(1)}</Descriptions.Item>
-                <Descriptions.Item label="余额">{(user.user_balance / 100).toFixed(2)}元</Descriptions.Item>
-                <Descriptions.Item label="关注者">{user.user_following}</Descriptions.Item>
+                <Descriptions.Item label="用户名">{user.username}</Descriptions.Item>
+                <Descriptions.Item label="角色">{user.role}</Descriptions.Item>
+                <Descriptions.Item label="创建时间">{user.createdAt}</Descriptions.Item>
+                <Descriptions.Item label="上次登录时间">{user.lastLogin}</Descriptions.Item>
+                <Descriptions.Item label="状态">{user.status}</Descriptions.Item>
             </Descriptions>
 
             <Title level={3} style={{ marginTop: 24 }}>用户任务</Title>
