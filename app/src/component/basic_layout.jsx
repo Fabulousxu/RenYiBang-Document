@@ -8,7 +8,8 @@ import {
   PayCircleOutlined,
   QuestionCircleOutlined, TeamOutlined,
   ThunderboltOutlined,
-  UserOutlined
+  UserOutlined,
+  PlusCircleOutlined
 } from "@ant-design/icons";
 
 export default function BasicLayout(props) {
@@ -26,6 +27,11 @@ export default function BasicLayout(props) {
     key: 'help',
     label: <Link to='/help'>求助大厅</Link>,
     icon: <QuestionCircleOutlined/>,
+    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
+  }, {
+    key: 'issue',
+    label: <Link to='/issue'>发布内容</Link>,
+    icon: <PlusCircleOutlined/>,
     style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
   }, {
     key: 'order', label: <Link to='/order'>订单</Link>, icon: <PayCircleOutlined/>, style: {
