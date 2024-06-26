@@ -6,7 +6,8 @@ import {
   AccountBookOutlined,
   MessageOutlined,
   PayCircleOutlined,
-  QuestionCircleOutlined, TeamOutlined,
+  QuestionCircleOutlined,
+  TeamOutlined,
   ThunderboltOutlined,
   UserOutlined,
   PlusCircleOutlined
@@ -14,21 +15,13 @@ import {
 
 export default function BasicLayout(props) {
   const items = [{
-    key: 'task',
-    label: <Link to='/task'>任务大厅</Link>,
-    icon: <AccountBookOutlined/>,
-    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
+    key: 'task', label: <Link to='/task'>任务大厅</Link>, icon: <AccountBookOutlined/>
   }, {
-    key: 'service',
-    label: <Link to='/service'>服务大厅</Link>,
-    icon: <ThunderboltOutlined/>,
-    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
+    key: 'service', label: <Link to='/service'>服务大厅</Link>, icon: <ThunderboltOutlined/>
   }, {
-    key: 'help',
-    label: <Link to='/help'>求助大厅</Link>,
-    icon: <QuestionCircleOutlined/>,
-    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
+    key: 'help', label: <Link to='/help'>求助大厅</Link>, icon: <QuestionCircleOutlined/>
   }, {
+<<<<<<< Updated upstream
     key: 'issue',
     label: <Link to='/issue'>发布内容</Link>,
     icon: <PlusCircleOutlined/>,
@@ -37,16 +30,16 @@ export default function BasicLayout(props) {
     key: 'order', label: <Link to='/order'>订单</Link>, icon: <PayCircleOutlined/>, style: {
       fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif', marginLeft: 'auto'
     }
+=======
+    key: 'order',
+    label: <Link to='/order'>订单</Link>,
+    icon: <PayCircleOutlined/>,
+    style: {marginLeft: 'auto'}
+>>>>>>> Stashed changes
   }, {
-    key: 'message',
-    label: <Link to='/message'>消息</Link>,
-    icon: <MessageOutlined/>,
-    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
+    key: 'message', label: <Link to='/message'>消息</Link>, icon: <MessageOutlined/>
   }, {
-    key: 'profile',
-    label: <Link to='/profile'>用户</Link>,
-    icon: <UserOutlined/>,
-    style: {fontSize: '1.2rem', fontWeight: 'bold', fontFamily: 'SimSun, 宋体, serif'}
+    key: 'profile', label: <Link to='/profile'>用户</Link>, icon: <UserOutlined/>
   }]
   const {token: {colorBgContainer, borderRadiusLG}} = theme.useToken();
   const [current, setCurrent] = useState(props.page)
@@ -64,13 +57,9 @@ export default function BasicLayout(props) {
         whiteSpace: 'nowrap'
       }}
     >
-      <h1 style={{
-        width: "20vw",
-        color: "black",
-        fontSize: "25px",
-        fontFamily: "SimSun, 宋体, serif",
-        fontWeight: "bold"
-      }}><TeamOutlined/><PayCircleOutlined/><TeamOutlined/> 任易帮</h1>
+      <h1 style={{marginRight: '10%', fontSize: '1.5rem'}}>
+        <TeamOutlined/><PayCircleOutlined/><TeamOutlined/> 任易帮
+      </h1>
       <Menu
         onClick={onClick}
         selectedKeys={[current]}
