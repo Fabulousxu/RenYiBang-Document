@@ -16,33 +16,31 @@ export default function TaskPage() {
     }).catch(err => {
     })
   }, [])
-  return (
-    <BasicLayout page='task'>
-      <ItemList
-        title={`任务总计${total}条`}
-        placeholder='请输入任务关键词或用户关键词来搜索相关任务'
-        value={keyword}
-        onSearch={value => {
-          setKeyword(value)
-          searchTask(value, totalEntry, 0).then(res => {
-            setTotal(res.total)
-            setTaskList(res.items)
-            setCurrentPage(1)
-          }).catch(err => {
-          })
-        }}
-        list={taskList}
-        total={total}
-        currentPage={currentPage}
-        onChange={(page, pageSize) => {
-          searchTask('', pageSize, page - 1).then(res => {
-            setTotal(res.total)
-            setTaskList(res.items)
-            setCurrentPage(page)
-          }).catch(err => {
-          })
-        }}
-      />
-    </BasicLayout>
-  )
+  return (<BasicLayout page='task'>
+    <ItemList
+      title={`任务 ${total}条`}
+      placeholder='请输入任务关键词或用户关键词来搜索相关任务'
+      value={keyword}
+      onSearch={value => {
+        setKeyword(value)
+        searchTask(value, totalEntry, 0).then(res => {
+          setTotal(res.total)
+          setTaskList(res.items)
+          setCurrentPage(1)
+        }).catch(err => {
+        })
+      }}
+      list={taskList}
+      total={total}
+      currentPage={currentPage}
+      onChange={(page, pageSize) => {
+        searchTask('', pageSize, page - 1).then(res => {
+          setTotal(res.total)
+          setTaskList(res.items)
+          setCurrentPage(page)
+        }).catch(err => {
+        })
+      }}
+    />
+  </BasicLayout>)
 }

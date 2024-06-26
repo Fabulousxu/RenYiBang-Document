@@ -6,14 +6,14 @@ export const getUserProfile = async () => {
         setTimeout(() => {
             resolve({
                 user: {
-                    avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
-                    name: 'John Doe',
-                    email: 'john.doe@example.com',
-                    username: 'johndoe',
-                    role: 'admin',
-                    createdAt: '2021-01-01',
-                    lastLogin: '2024-06-26',
-                    status: 'active',
+                    user_id: 1,
+                    user_nickname: 'John Doe',
+                    user_admin: 1,
+                    user_avatar: 'https://randomuser.me/api/portraits/men/1.jpg',
+                    user_intro: 'This is John Doe, an admin user.',
+                    user_rating: 85, // 8.5 in frontend
+                    user_balance: 10000, // 100.00元 in frontend
+                    user_following: 256,
                 },
             });
         }, 1000);
