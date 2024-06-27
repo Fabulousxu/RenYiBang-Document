@@ -49,4 +49,10 @@ public class User {
   @OneToMany(mappedBy = "accessor")
   @OrderBy("createdAt DESC")
   private List<TaskAccess> accessedTasks; // 接取任务列表
+
+  @OneToMany(mappedBy = "owner")
+  private List<TaskOrder> ownedTaskOrders; // 所有者任务订单列表
+
+  @OneToMany(mappedBy = "accessor")
+  private List<TaskOrder> accessedTaskOrders; // 接取者任务订单列表
 }

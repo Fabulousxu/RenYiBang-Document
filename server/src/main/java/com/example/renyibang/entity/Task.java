@@ -46,4 +46,7 @@ public class Task {
   @OneToMany(mappedBy = "task")
   @OrderBy("createdAt DESC")
   private List<TaskAccess> accesses; // 任务接取候选列表
+
+  @OneToMany(mappedBy = "task")
+  private List<TaskOrder> taskOrders; // 任务订单列表
 }
