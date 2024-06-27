@@ -16,7 +16,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class TaskAccess {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long accessId; // 任务接取候选id
+  private long taskAccessId; // 任务接取候选id
 
   @ManyToOne
   @JoinColumn(name = "task_id")

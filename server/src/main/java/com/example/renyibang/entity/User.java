@@ -32,7 +32,7 @@ public class User {
       inverseJoinColumns = @JoinColumn(name = "followee_id"))
   private Set<User> following; // 关注列表
 
-  @ManyToMany(mappedBy = "following", cascade = CascadeType.ALL)
+  @ManyToMany
   @JoinTable(
       name = "follow",
       joinColumns = @JoinColumn(name = "followee_id"),
