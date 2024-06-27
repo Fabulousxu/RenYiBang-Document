@@ -46,10 +46,10 @@ CREATE TABLE task
 CREATE TABLE task_collect
 (
     task_collect_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务收藏id',
-    task_id         BIGINT NOT NULL COMMENT '任务id',
-    collector_id    BIGINT NOT NULL COMMENT '收藏者id',
-    created_at
-        FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
+    task_id         BIGINT    NOT NULL COMMENT '任务id',
+    collector_id    BIGINT    NOT NULL COMMENT '收藏者id',
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '收藏时间',
+    FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (collector_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务收藏表';
 

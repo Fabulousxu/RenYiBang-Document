@@ -39,7 +39,7 @@ public class User {
   private Set<User> follower; // 粉丝列表
 
   @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-  @OrderBy("createAt DESC")
+  @OrderBy("createdAt DESC")
   private List<Task> tasks; // 发布任务列表
 
   @ManyToMany

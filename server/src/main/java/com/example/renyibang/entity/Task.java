@@ -32,5 +32,5 @@ public class Task {
   @CreationTimestamp
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-  private LocalDateTime createAt; // 任务创建时间
+  private LocalDateTime createdAt; // 任务创建时间
 }
