@@ -1,5 +1,6 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -42,11 +43,35 @@ public class User {
   @OrderBy("createdAt DESC")
   private List<Task> tasks; // 发布任务列表
 
+<<<<<<< Updated upstream
   @ManyToMany
   @JoinTable(
       name = "task_collect",
       joinColumns = @JoinColumn(name = "collector_id"),
       inverseJoinColumns = @JoinColumn(name = "task_id"))
   private List<Task> collectedTasks; // 收藏任务列表
+=======
+  @OneToMany(mappedBy = "collector")
+  @OrderBy("createdAt DESC")
+  private List<TaskCollect> collectedTasks; // 收藏任务列表
+
+  @OneToMany(mappedBy = "accessor")
+  @OrderBy("createdAt DESC")
+  private List<TaskAccess> accessedTasks; // 接取任务列表
+
+  public JSONObject toJSON()
+  {
+    JSONObject result = new JSONObject();
+    result.put("userId", userId);
+    result.put("type", getType());
+    result.put("nickname", getNickname());
+    result.put("avatar", getAvatar());
+    result.put("intro", getIntro());
+    result.put("rating", getRating());
+    result.put("balance", getBalance());
+
+    return result;
+  }
+>>>>>>> Stashed changes
 }
 

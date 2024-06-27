@@ -1,7 +1,13 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+<<<<<<< Updated upstream
+=======
+import java.util.Arrays;
+import java.util.List;
+>>>>>>> Stashed changes
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,4 +39,43 @@ public class Task {
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   private LocalDateTime createdAt; // 任务创建时间
+<<<<<<< Updated upstream
+=======
+
+  @OneToMany(mappedBy = "task")
+  @OrderBy("createdAt DESC")
+  private List<TaskComment> comments; // 任务评论列表
+
+  @OneToMany(mappedBy = "task")
+  @OrderBy("createdAt DESC")
+  private List<TaskMessage> messages; // 任务留言列表
+
+  @OneToMany(mappedBy = "task")
+  @OrderBy("createdAt DESC")
+  private List<TaskAccess> accesses; // 任务接取候选列表
+
+  public static List<String> splitImages(String images) {
+    // 使用空格分割字符串，并将结果转换为List<String>
+    return Arrays.asList(images.split("\\s+"));
+  }
+
+  public JSONObject toJSON()
+  {
+    JSONObject result = new JSONObject();
+    result.put("taskId", taskId);
+    result.put("title", title);
+    List<String> imageList = splitImages(images);
+    result.put("images", imageList);
+    result.put("cover", imageList.getFirst());
+    result.put("description", description);
+    result.put("price", price);
+    result.put("maxAccess", maxAccess);
+    result.put("rating", rating);
+    result.put("createdAt", createdAt);
+
+    result.put("owner", owner.toJSON());
+
+    return result;
+  }
+>>>>>>> Stashed changes
 }
