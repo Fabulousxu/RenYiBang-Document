@@ -37,7 +37,7 @@ CREATE TABLE task
     images      TEXT COMMENT '任务图片',
     description TEXT COMMENT '任务描述',
     price       BIGINT               DEFAULT 0 NOT NULL COMMENT '任务价格(存储100倍价格)',
-    create_at   TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务发布时间',
+    created_at  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务发布时间',
     max_access  INT         NOT NULL DEFAULT 1 COMMENT '任务最大接取数',
     rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
@@ -45,10 +45,11 @@ CREATE TABLE task
 
 CREATE TABLE task_collect
 (
-    task_id      BIGINT NOT NULL COMMENT '任务id',
-    collector_id BIGINT NOT NULL COMMENT '收藏者id',
-    PRIMARY KEY (task_id, collector_id),
-    FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
+    task_collect_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务收藏id',
+    task_id         BIGINT NOT NULL COMMENT '任务id',
+    collector_id    BIGINT NOT NULL COMMENT '收藏者id',
+    created_at
+        FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (collector_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务收藏表';
 
@@ -58,7 +59,7 @@ CREATE TABLE task_comment
     task_id         BIGINT    NOT NULL COMMENT '任务id',
     commenter_id    BIGINT    NOT NULL COMMENT '任务评论者id',
     content         TEXT      NOT NULL COMMENT '任务评论内容',
-    create_at       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务评论时间',
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务评论时间',
     rating          TINYINT            DEFAULT 50 NOT NULL COMMENT '任务评论评分(存储10倍评分,范围0~100)',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (commenter_id) REFERENCES user (user_id) ON UPDATE CASCADE
@@ -79,7 +80,7 @@ CREATE TABLE task_message
     task_id         BIGINT    NOT NULL COMMENT '任务id',
     messager_id     BIGINT    NOT NULL COMMENT '留言者id',
     content         TEXT      NOT NULL COMMENT '消息内容',
-    create_at       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送时间',
+    created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送时间',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (messager_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务留言表';
@@ -98,7 +99,7 @@ CREATE TABLE task_access
     task_access_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务接取候选id',
     task_id        BIGINT    NOT NULL COMMENT '任务id',
     accesser_id    BIGINT    NOT NULL COMMENT '接取者id',
-    create_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '接取时间',
+    created_at     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '接取时间',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (accesser_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务接取候选表';
@@ -122,16 +123,17 @@ CREATE TABLE service
     images      TEXT COMMENT '服务图片',
     description TEXT COMMENT '服务描述',
     price       BIGINT               DEFAULT 0 NOT NULL COMMENT '服务价格(存储100倍价格)',
-    create_at   TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '服务发布时间',
+    created_at  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '服务发布时间',
     max_access  INT         NOT NULL DEFAULT 1 COMMENT '服务最大购买数',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务表';
 
 CREATE TABLE service_collect
 (
-    service_id   BIGINT NOT NULL COMMENT '服务id',
-    collector_id BIGINT NOT NULL COMMENT '收藏者id',
-    PRIMARY KEY (service_id, collector_id),
+    service_collect_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务收藏id',
+    service_id         BIGINT    NOT NULL COMMENT '服务id',
+    collector_id       BIGINT    NOT NULL COMMENT '收藏者id',
+    created_at         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '收藏时间',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (collector_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务收藏表';
@@ -163,7 +165,7 @@ CREATE TABLE service_message
     service_id         BIGINT    NOT NULL COMMENT '服务id',
     messager_id        BIGINT    NOT NULL COMMENT '留言者id',
     content            TEXT      NOT NULL COMMENT '消息内容',
-    create_at          TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送时间',
+    created_at         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送时间',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (messager_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务留言表';
@@ -182,7 +184,7 @@ CREATE TABLE service_access
     service_access_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务购买候选id',
     service_id        BIGINT    NOT NULL COMMENT '服务id',
     accesser_id       BIGINT    NOT NULL COMMENT '购买者id',
-    create_at         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '购买时间',
+    created_at        TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '购买时间',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (accesser_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务购买候选表';
