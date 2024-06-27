@@ -2,6 +2,7 @@ package com.example.renyibang.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,4 +34,16 @@ public class Task {
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   private LocalDateTime createdAt; // 任务创建时间
+
+  @OneToMany(mappedBy = "task")
+  @OrderBy("createdAt DESC")
+  private List<TaskComment> comments; // 任务评论列表
+
+  @OneToMany(mappedBy = "task")
+  @OrderBy("createdAt DESC")
+  private List<TaskMessage> messages; // 任务留言列表
+
+  @OneToMany(mappedBy = "task")
+  @OrderBy("createdAt DESC")
+  private List<TaskAccess> accesses; // 任务接取候选列表
 }
