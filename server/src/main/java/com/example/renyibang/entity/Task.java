@@ -1,7 +1,9 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -46,4 +48,27 @@ public class Task {
   @OneToMany(mappedBy = "task")
   @OrderBy("createdAt DESC")
   private List<TaskAccess> accesses; // 任务接取候选列表
+
+  public static List<String> splitImages(String images) {
+    // 使用空格分割字符串，并将结果转换为List<String>
+    return Arrays.asList(images.split("\\s+"));
+  }
+
+  public JSONObject toJSON() {
+    JSONObject result = new JSONObject();
+    result.put("taskId", taskId);
+    result.put("title", title);
+    List<String> imageList = splitImages(images);
+    result.put("images", imageList);
+    result.put("cover", imageList.getFirst());
+    result.put("description", description);
+    result.put("price", price);
+    result.put("maxAccess", maxAccess);
+    result.put("rating", rating);
+    result.put("createdAt", createdAt);
+
+    result.put("owner", owner.toJSON());
+
+    return result;
+  }
 }
