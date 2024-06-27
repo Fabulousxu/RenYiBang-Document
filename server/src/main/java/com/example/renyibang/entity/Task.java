@@ -3,11 +3,8 @@ package com.example.renyibang.entity;
 import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-<<<<<<< Updated upstream
-=======
 import java.util.Arrays;
 import java.util.List;
->>>>>>> Stashed changes
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -39,8 +36,6 @@ public class Task {
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   private LocalDateTime createdAt; // 任务创建时间
-<<<<<<< Updated upstream
-=======
 
   @OneToMany(mappedBy = "task")
   @OrderBy("createdAt DESC")
@@ -77,5 +72,4 @@ public class Task {
 
     return result;
   }
->>>>>>> Stashed changes
 }

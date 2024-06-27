@@ -27,30 +27,22 @@ public class User {
 
   @ManyToMany
   @JoinTable(
-      name = "follow",
-      joinColumns = @JoinColumn(name = "follower_id"),
-      inverseJoinColumns = @JoinColumn(name = "followee_id"))
+          name = "follow",
+          joinColumns = @JoinColumn(name = "follower_id"),
+          inverseJoinColumns = @JoinColumn(name = "followee_id"))
   private Set<User> following; // 关注列表
 
   @ManyToMany(mappedBy = "following", cascade = CascadeType.ALL)
   @JoinTable(
-      name = "follow",
-      joinColumns = @JoinColumn(name = "followee_id"),
-      inverseJoinColumns = @JoinColumn(name = "follower_id"))
+          name = "follow",
+          joinColumns = @JoinColumn(name = "followee_id"),
+          inverseJoinColumns = @JoinColumn(name = "follower_id"))
   private Set<User> follower; // 粉丝列表
 
   @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
   @OrderBy("createdAt DESC")
   private List<Task> tasks; // 发布任务列表
 
-<<<<<<< Updated upstream
-  @ManyToMany
-  @JoinTable(
-      name = "task_collect",
-      joinColumns = @JoinColumn(name = "collector_id"),
-      inverseJoinColumns = @JoinColumn(name = "task_id"))
-  private List<Task> collectedTasks; // 收藏任务列表
-=======
   @OneToMany(mappedBy = "collector")
   @OrderBy("createdAt DESC")
   private List<TaskCollect> collectedTasks; // 收藏任务列表
@@ -72,6 +64,5 @@ public class User {
 
     return result;
   }
->>>>>>> Stashed changes
 }
 
