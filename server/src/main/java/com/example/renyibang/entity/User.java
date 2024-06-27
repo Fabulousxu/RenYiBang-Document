@@ -27,16 +27,16 @@ public class User {
 
   @ManyToMany
   @JoinTable(
-          name = "follow",
-          joinColumns = @JoinColumn(name = "follower_id"),
-          inverseJoinColumns = @JoinColumn(name = "followee_id"))
+      name = "follow",
+      joinColumns = @JoinColumn(name = "follower_id"),
+      inverseJoinColumns = @JoinColumn(name = "followee_id"))
   private Set<User> following; // 关注列表
 
   @ManyToMany(mappedBy = "following", cascade = CascadeType.ALL)
   @JoinTable(
-          name = "follow",
-          joinColumns = @JoinColumn(name = "followee_id"),
-          inverseJoinColumns = @JoinColumn(name = "follower_id"))
+      name = "follow",
+      joinColumns = @JoinColumn(name = "followee_id"),
+      inverseJoinColumns = @JoinColumn(name = "follower_id"))
   private Set<User> follower; // 粉丝列表
 
   @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
@@ -51,8 +51,7 @@ public class User {
   @OrderBy("createdAt DESC")
   private List<TaskAccess> accessedTasks; // 接取任务列表
 
-  public JSONObject toJSON()
-  {
+  public JSONObject toJSON() {
     JSONObject result = new JSONObject();
     result.put("userId", userId);
     result.put("type", getType());
@@ -65,4 +64,3 @@ public class User {
     return result;
   }
 }
-

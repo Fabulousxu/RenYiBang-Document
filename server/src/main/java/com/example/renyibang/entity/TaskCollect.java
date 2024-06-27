@@ -9,25 +9,25 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "task_access")
+@Table(name = "task_collect")
 @Getter
 @Setter
 @NoArgsConstructor
-public class TaskAccess {
+public class TaskCollect {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long accessId; // 任务接取候选id
+  private long taskCollectId; // 任务收藏id
+
+  @ManyToOne
+  @JoinColumn(name = "collector_id")
+  private User collector; // 收藏者
 
   @ManyToOne
   @JoinColumn(name = "task_id")
-  private Task task; // 任务
-
-  @ManyToOne
-  @JoinColumn(name = "accessor_id")
-  private User accessor; // 任务接取者
+  private Task task; // 收藏任务
 
   @CreationTimestamp
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-  private LocalDateTime createdAt; // 任务接取时间
+  private LocalDateTime createdAt; // 收藏时间
 }

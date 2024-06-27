@@ -54,8 +54,7 @@ public class Task {
     return Arrays.asList(images.split("\\s+"));
   }
 
-  public JSONObject toJSON()
-  {
+  public JSONObject toJSON() {
     JSONObject result = new JSONObject();
     result.put("taskId", taskId);
     result.put("title", title);
