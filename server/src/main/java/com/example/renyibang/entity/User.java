@@ -1,5 +1,6 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -38,7 +39,7 @@ public class User {
       inverseJoinColumns = @JoinColumn(name = "follower_id"))
   private Set<User> follower; // 粉丝列表
 
-  @OneToMany(mappedBy = "owner")
+  @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
   @OrderBy("createdAt DESC")
   private List<Task> tasks; // 发布任务列表
 
@@ -55,4 +56,17 @@ public class User {
 
   @OneToMany(mappedBy = "accessor")
   private List<TaskOrder> accessedTaskOrders; // 接取者任务订单列表
+
+  public JSONObject toJSON() {
+    JSONObject result = new JSONObject();
+    result.put("userId", userId);
+    result.put("type", getType());
+    result.put("nickname", getNickname());
+    result.put("avatar", getAvatar());
+    result.put("intro", getIntro());
+    result.put("rating", getRating());
+    result.put("balance", getBalance());
+
+    return result;
+  }
 }
