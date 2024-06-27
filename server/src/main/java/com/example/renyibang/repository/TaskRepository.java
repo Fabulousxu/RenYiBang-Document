@@ -22,4 +22,20 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
             "LOWER(t.owner.nickname) LIKE LOWER(CONCAT('%', :searchText, '%'))")
     List<Task> findByTitleOrDescriptionOrOwnerNicknameContainingIgnoreCase(@Param("searchText") String searchText, Pageable pageable);
 
+    List<Task> findByOwnerId(long ownerId);
+
+    List<Task> findByStatus(TaskStatus status);
+
+    Task findTaskById(long taskId);
+
+    List<Task> findAllTasks();
+
+    long createTask(long ownerId, String title, String description, long reward);
+
+    boolean markTaskStatus(long taskId, TaskStatus status);
+
+    boolean checkTaskExist(long taskId);
+
+    boolean checkTaskStatus(long taskId, TaskStatus status);
+
 }

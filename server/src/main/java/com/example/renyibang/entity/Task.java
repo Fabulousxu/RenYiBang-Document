@@ -49,6 +49,9 @@ public class Task {
   @OrderBy("createdAt DESC")
   private List<TaskAccess> accesses; // 任务接取候选列表
 
+  @OneToMany(mappedBy = "task")
+  private List<TaskOrder> taskOrders; // 任务订单列表
+
   public static List<String> splitImages(String images) {
     // 使用空格分割字符串，并将结果转换为List<String>
     return Arrays.asList(images.split("\\s+"));
