@@ -22,7 +22,7 @@ export default function App() {
       <Route path='/order' element={<OrderPage/>}/>
       <Route path='/order/:id' element={<OrderDetailPage/>}/>
       <Route path='/message' element={<MessagePage/>}/>
-      <Route path='/profile' element={<ProfilePage/>}/>
+      <Route path='/profile/:id' element={<ProfilePage/>}/>
       <Route path='/issue' element={<IssuePage/>}/>
     </Routes>
   );

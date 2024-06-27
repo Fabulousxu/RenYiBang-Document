@@ -98,10 +98,10 @@ CREATE TABLE task_access
 (
     task_access_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务接取候选id',
     task_id        BIGINT    NOT NULL COMMENT '任务id',
-    accesser_id    BIGINT    NOT NULL COMMENT '接取者id',
+    accessor_id    BIGINT    NOT NULL COMMENT '接取者id',
     created_at     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '接取时间',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
-    FOREIGN KEY (accesser_id) REFERENCES user (user_id) ON UPDATE CASCADE
+    FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务接取候选表';
 
 CREATE TABLE task_order
@@ -109,10 +109,10 @@ CREATE TABLE task_order
     task_order_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务订单id',
     task_id       BIGINT NOT NULL COMMENT '任务id',
     owner_id      BIGINT NOT NULL COMMENT '任务发布者id',
-    accesser_id   BIGINT NOT NULL COMMENT '任务接取者id',
+    accessor_id   BIGINT NOT NULL COMMENT '任务接取者id',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (accesser_id) REFERENCES user (user_id) ON UPDATE CASCADE
+    FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务订单表';
 
 CREATE TABLE service
@@ -183,10 +183,10 @@ CREATE TABLE service_access
 (
     service_access_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务购买候选id',
     service_id        BIGINT    NOT NULL COMMENT '服务id',
-    accesser_id       BIGINT    NOT NULL COMMENT '购买者id',
+    accessor_id       BIGINT    NOT NULL COMMENT '购买者id',
     created_at        TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '购买时间',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
-    FOREIGN KEY (accesser_id) REFERENCES user (user_id) ON UPDATE CASCADE
+    FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务购买候选表';
 
 CREATE TABLE service_order
@@ -194,8 +194,8 @@ CREATE TABLE service_order
     service_order_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务订单id',
     service_id       BIGINT NOT NULL COMMENT '服务id',
     owner_id         BIGINT NOT NULL COMMENT '服务发布者id',
-    accesser_id      BIGINT NOT NULL COMMENT '服务购买者id',
+    accessor_id      BIGINT NOT NULL COMMENT '服务购买者id',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (accesser_id) REFERENCES user (user_id) ON UPDATE CASCADE
+    FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务订单表';
