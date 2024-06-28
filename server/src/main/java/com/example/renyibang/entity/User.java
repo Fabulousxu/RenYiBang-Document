@@ -1,6 +1,7 @@
 package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
 import java.util.Set;
@@ -37,6 +38,7 @@ public class User {
       name = "follow",
       joinColumns = @JoinColumn(name = "follower_id"),
       inverseJoinColumns = @JoinColumn(name = "followee_id"))
+  @JsonIgnore
   private Set<User> following; // 关注列表
 
   @ManyToMany
@@ -44,24 +46,30 @@ public class User {
       name = "follow",
       joinColumns = @JoinColumn(name = "followee_id"),
       inverseJoinColumns = @JoinColumn(name = "follower_id"))
+  @JsonIgnore
   private Set<User> follower; // 粉丝列表
 
   @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
   @OrderBy("createdAt DESC")
+  @JsonIgnore
   private List<Task> tasks; // 发布任务列表
 
   @OneToMany(mappedBy = "collector")
   @OrderBy("createdAt DESC")
+  @JsonIgnore
   private List<TaskCollect> collectedTasks; // 收藏任务列表
 
   @OneToMany(mappedBy = "accessor")
   @OrderBy("createdAt DESC")
+  @JsonIgnore
   private List<TaskAccess> accessedTasks; // 接取任务列表
 
   @OneToMany(mappedBy = "owner")
+  @JsonIgnore
   private List<TaskOrder> ownedTaskOrders; // 所有者任务订单列表
 
   @OneToMany(mappedBy = "accessor")
+  @JsonIgnore
   private List<TaskOrder> accessedTaskOrders; // 接取者任务订单列表
 
   public JSONObject toJSON() {

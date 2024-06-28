@@ -110,7 +110,7 @@ CREATE TABLE task_order
     task_id       BIGINT NOT NULL COMMENT '任务id',
     owner_id      BIGINT NOT NULL COMMENT '任务发布者id',
     accessor_id   BIGINT NOT NULL COMMENT '任务接取者id',
-    status        TINYINT DEFAULT 0 NOT NULL COMMENT '任务状态(0:未付款,1:已付款,任务进行中,2:接收者已完成，等待发布者确认,3:发布者已确认完成,4:订单已取消)',
+    status        TINYINT UNSIGNED DEFAULT 0 NOT NULL COMMENT '任务状态(0:未付款,1:已付款,任务进行中,2:接收者已完成，等待发布者确认,3:发布者已确认完成,4:订单已取消)',
     cost          BIGINT  DEFAULT 0 NOT NULL COMMENT '任务价格(存储100倍价格)',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE,

@@ -1,5 +1,7 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
+import com.example.renyibang.converter.TaskStatusConverter;
 import com.example.renyibang.enums.TaskStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -32,7 +34,7 @@ public class TaskOrder {
   @JoinColumn(name = "accessor_id", referencedColumnName = "user_id", foreignKey = @ForeignKey(name = "FK_ACCESSOR"))
   private User accessor;
 
-  @Enumerated(EnumType.STRING)
+  @Convert(converter = TaskStatusConverter.class)
   @Column(name = "status")
   private TaskStatus status;
 
