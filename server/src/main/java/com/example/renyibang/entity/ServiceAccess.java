@@ -7,38 +7,28 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Set;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "service_message")
+@Table(name = "service_access")
 @Getter
 @Setter
 @NoArgsConstructor
-public class ServiceMessage
-{
+public class ServiceAccess {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long serviceMessageId;
+    private long serviceAccessId;
 
     @ManyToOne
     @JoinColumn(name = "service_id")
     private Service service;
 
     @ManyToOne
-    @JoinColumn(name = "messager_id")
-    private User messager;
-
-    private String content; // 留言内容
+    @JoinColumn(name = "accessor_id")
+    private User accessor;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private java.util.Date createdAt;
-
-    @ManyToMany
-    @JoinTable(
-            name = "service_message_like",
-            joinColumns = @JoinColumn(name = "service_message_id"),
-            inverseJoinColumns = @JoinColumn(name = "liker_id"))
-    private Set<User> likers;
+    private LocalDateTime createdAt;
 }

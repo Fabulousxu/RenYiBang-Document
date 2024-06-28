@@ -2,29 +2,29 @@ package com.example.renyibang.service.serviceImpl;
 
 import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
-import com.example.renyibang.dao.TaskDao;
-import com.example.renyibang.entity.Task;
-import com.example.renyibang.service.TaskService;
+import com.example.renyibang.dao.ServiceDao;
+import com.example.renyibang.service.ServiceService;
 import com.example.renyibang.util.DateTimeUtil;
 import com.example.renyibang.util.PriceUtil;
 import com.example.renyibang.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
+import com.example.renyibang.entity.Service;
 
-@Service
-public class TaskServiceImpl implements TaskService {
+
+@org.springframework.stereotype.Service
+public class ServiceServiceImpl implements ServiceService {
     @Autowired
-    TaskDao taskDao;
+    ServiceDao serviceDao;
 
     @Override
-    public JSONObject searchTaskByPaging(String keyword, Pageable pageable, String timeBegin, String timeEnd, long priceLow, long priceHigh)
+    public JSONObject searchServiceByPaging(String keyword, Pageable pageable, String timeBegin, String timeEnd, long priceLow, long priceHigh)
     {
         try{
             JSONArray result = new JSONArray();
-            for(Task task : taskDao.searchTaskByPaging(keyword, pageable, DateTimeUtil.getBeginDateTime(timeBegin), DateTimeUtil.getEndDateTime(timeEnd), priceLow, PriceUtil.priceConvert(priceHigh)))
+            for(Service service : serviceDao.searchServiceByPaging(keyword, pageable, DateTimeUtil.getBeginDateTime(timeBegin), DateTimeUtil.getEndDateTime(timeEnd), priceLow, PriceUtil.priceConvert(priceHigh)))
             {
-                result.add(task.toJSON());
+                result.add(service.toJSON());
             }
 
             return ResponseUtil.success(result);

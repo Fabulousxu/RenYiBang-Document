@@ -2,6 +2,7 @@ package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.renyibang.util.DateTimeUtil;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -80,7 +81,7 @@ public class Task {
     result.put("price", price);
     result.put("maxAccess", maxAccess);
     result.put("rating", rating);
-    result.put("createdAt", createdAt);
+    result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
 
     result.put("owner", owner.toJSON());
 
