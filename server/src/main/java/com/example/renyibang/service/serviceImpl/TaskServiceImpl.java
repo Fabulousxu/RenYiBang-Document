@@ -5,6 +5,8 @@ import com.alibaba.fastjson2.JSONObject;
 import com.example.renyibang.dao.TaskDao;
 import com.example.renyibang.entity.Task;
 import com.example.renyibang.service.TaskService;
+import com.example.renyibang.util.DateTimeUtil;
+import com.example.renyibang.util.PriceUtil;
 import com.example.renyibang.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -16,11 +18,11 @@ public class TaskServiceImpl implements TaskService {
     TaskDao taskDao;
 
     @Override
-    public JSONObject searchTaskByPaging(String keyword, Pageable pageable)
+    public JSONObject searchTaskByPaging(String keyword, Pageable pageable, String timeBegin, String timeEnd, long priceLow, long priceHigh)
     {
         try{
             JSONArray result = new JSONArray();
-            for(Task task : taskDao.searchTaskByPaging(keyword, pageable))
+            for(Task task : taskDao.searchTaskByPaging(keyword, pageable, DateTimeUtil.getBeginDateTime(timeBegin), DateTimeUtil.getEndDateTime(timeEnd), priceLow, PriceUtil.priceConvert(priceHigh)))
             {
                 result.add(task.toJSON());
             }

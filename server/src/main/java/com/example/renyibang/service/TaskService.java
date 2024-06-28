@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public interface TaskService {
 
-    JSONObject searchTaskByPaging(String keyword, Pageable pageable);
+
+    JSONObject searchTaskByPaging(String keyword, Pageable pageable, String timeBegin, String timeEnd, long priceLow, long priceHigh);
 
 }

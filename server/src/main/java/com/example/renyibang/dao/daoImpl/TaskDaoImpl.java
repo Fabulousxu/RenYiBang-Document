@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -15,16 +16,10 @@ public class TaskDaoImpl implements TaskDao{
     TaskRepository taskRepository;
 
     @Override
-    public List<Task> searchTaskByPaging(String keyword, Pageable pageable)
+    public List<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh)
     {
-        if(!keyword.isEmpty())
-        {
-            return taskRepository.findByTitleOrDescriptionOrOwnerNicknameContainingIgnoreCase(keyword, pageable);
-        }
+        System.out.println(keyword + " ," + beginDateTime + " ," + endDateTime + " ," + priceLow + " ," + priceHigh);
 
-        else
-        {
-            return taskRepository.findAll(pageable).getContent();
-        }
+        return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
     }
 }
