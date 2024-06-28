@@ -22,23 +22,25 @@ public class OrderController {
   // /task/owner/:ownerId
   @GetMapping("/task/initiator/{ownerId}")
   public JSONObject getTaskOrderByOwner(@PathVariable Long ownerId) {
+    // TODO：取消路径参数，使用token获取用户id
     List<TaskOrder> taskOrders = taskOrderService.findByOwnerId(ownerId);
     return ResponseUtil.success(taskOrders);
   }
 
   @GetMapping("/task/recipient/{accessorId}")
   public JSONObject getTaskOrderByAccessor(@PathVariable Long accessorId) {
+    // TODO：取消路径参数，使用token获取用户id
     List<TaskOrder> taskOrders = taskOrderService.findByAccessorId(accessorId);
     return ResponseUtil.success(taskOrders);
   }
   @GetMapping("/service/initiator")
   public JSONObject getServiceOrderByOwner() {
-
+    // TODO：取消路径参数，使用token获取用户id
     return ResponseUtil.success("");
   }
   @GetMapping("/service/recipient")
   public JSONObject getServiceOrderByAccessor() {
-
+    // TODO：取消路径参数，使用token获取用户id
     return ResponseUtil.success("");
   }
 
@@ -47,6 +49,12 @@ public class OrderController {
   // 设计模式？
   @PostMapping("/task/pay/{orderId}")
   public JSONObject payTaskOrder(@PathVariable Long orderId) {
+    // TODO: token, 获取当前用户id
+    // TODO：支付api
+
+    // 设置订单状态为已支付
+    TaskOrder taskOrder = taskOrderService.findById(orderId);
+    taskOrder.setStatus(TaskStatus.IN_PROGRESS);
     return ResponseUtil.success("");
   }
 
