@@ -11,25 +11,21 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class TaskDaoImpl implements TaskDao{
-    @Autowired
-    TaskRepository taskRepository;
+public class TaskDaoImpl implements TaskDao {
+  @Autowired TaskRepository taskRepository;
 
-    @Override
-    public List<Task> searchTaskByPaging(String keyword, Pageable pageable)
-    {
-        if(!keyword.isEmpty())
-        {
-            return taskRepository.findByTitleOrDescriptionOrOwnerNicknameContainingIgnoreCase(keyword, pageable);
-        }
-
-        else
-        {
-            return taskRepository.findAll(pageable).getContent();
-        }
+  @Override
+  public List<Task> searchTaskByPaging(String keyword, Pageable pageable) {
+    if (!keyword.isEmpty()) {
+      return taskRepository.findByTitleOrDescriptionOrOwnerNicknameContainingIgnoreCase(
+          keyword, pageable);
+    } else {
+      return taskRepository.findAll(pageable).getContent();
     }
+  }
 
-    @Override
-    public Task findById(long taskId) {
-        return taskRepository.findById(taskId).orElse(null);
+  @Override
+  public Task findById(long taskId) {
+    return taskRepository.findById(taskId).orElse(null);
+  }
 }

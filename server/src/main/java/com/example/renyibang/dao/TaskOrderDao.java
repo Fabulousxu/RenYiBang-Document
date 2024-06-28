@@ -1,17 +1,19 @@
 package com.example.renyibang.dao;
 
+import com.example.renyibang.entity.Task;
 import com.example.renyibang.entity.TaskOrder;
+import com.example.renyibang.entity.User;
 import com.example.renyibang.enums.TaskStatus;
 
 import javax.net.ssl.SSLSession;
 import java.util.List;
 
 public interface TaskOrderDao {
-  List<TaskOrder> findByOwnerId(long ownerId);
+  List<TaskOrder> findByOwner(User owner);
 
-  List<TaskOrder> findByAccessorId(long accessorId);
+  List<TaskOrder> findByAccessor(User accessor);
 
-  List<TaskOrder> findByTaskId(long taskId);
+  List<TaskOrder> findByTask(Task task);
 
   List<TaskOrder> findByStatus(TaskStatus status);
 

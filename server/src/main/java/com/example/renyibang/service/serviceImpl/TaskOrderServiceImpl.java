@@ -22,17 +22,29 @@ public class TaskOrderServiceImpl implements TaskOrderService {
 
   @Override
   public List<TaskOrder> findByOwnerId(long ownerId) {
-    return taskOrderDao.findByOwnerId(ownerId);
+    User owner = userDao.findById(ownerId);
+    if(owner == null) {
+      throw new EntityNotFoundException("User not found with id " + ownerId);
+    }
+    return taskOrderDao.findByOwner(owner);
   }
 
   @Override
   public List<TaskOrder> findByAccessorId(long accessorId) {
-    return taskOrderDao.findByAccessorId(accessorId);
+    User accessor = userDao.findById(accessorId);
+    if(accessor == null) {
+      throw new EntityNotFoundException("User not found with id " + accessorId);
+    }
+    return taskOrderDao.findByAccessor(accessor);
   }
 
   @Override
   public List<TaskOrder> findByTaskId(long taskId) {
-    return taskOrderDao.findByTaskId(taskId);
+    Task task = taskDao.findById(taskId);
+    if(task == null) {
+      throw new EntityNotFoundException("Task not found with id " + taskId);
+    }
+    return taskOrderDao.findByTask(task);
   }
 
   @Override

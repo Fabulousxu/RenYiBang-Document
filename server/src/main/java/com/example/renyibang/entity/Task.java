@@ -19,17 +19,24 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Task {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "task_id")
   private long taskId; // 任务id
 
   @ManyToOne
   @JoinColumn(name = "owner_id")
   private User owner; // 任务发布者
 
+  @Column(name = "title")
   private String title; // 任务标题
+  @Column(name = "images")
   private String images; // 任务图片
+  @Column(name = "description")
   private String description; // 任务描述
+  @Column(name = "price")
   private long price = 0; // 任务价格(存储100倍价格)
+  @Column(name = "max_access")
   private int maxAccess = 0; // 任务最大接取数
+  @Column(name = "rating")
   private byte rating = 50; // 任务评分(存储10倍评分,范围0~100)
 
   @CreationTimestamp
