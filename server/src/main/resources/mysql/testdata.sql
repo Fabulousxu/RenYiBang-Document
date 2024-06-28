@@ -50,7 +50,7 @@ INSERT INTO task_access (task_id, accessor_id) VALUES
 
 INSERT INTO task_order (task_id, owner_id, accessor_id, status, cost) VALUES
 (1, 1, 3, 0, 1000), -- UNPAID
-(2, 2, 1, 1, 2000), -- PAID
+(2, 2, 1, 1, 2000), -- IN_PROGRESS
 (3, 3, 2, 2, 3000); -- COMPLETED
 
 

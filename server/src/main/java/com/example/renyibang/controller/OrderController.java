@@ -59,13 +59,21 @@ public class OrderController {
   @PostMapping("/task/complete/{orderId}")
   public JSONObject completeTaskOrder(@PathVariable Long orderId) {
     // TODO: token, 获取当前用户id
+    // 测试用: userId = 1
+    int userId = 1;
 
     // 已知orderId, 获取order
     TaskOrder taskOrder = taskOrderService.findById(orderId);
     // 校验用户是否为任务接收者
-    if (taskOrder.getAccessor().getUserId() != 1) {
+    if(taskOrder.getAccessor().getUserId() != userId) {
       return ResponseUtil.error("该用户不是任务接收者");
     }
+    // 校验任务状态是否为进行中
+    if (taskOrder.getStatus() != TaskStatus.IN_PROGRESS) {
+      return ResponseUtil.error("任务状态错误：未进行中");
+    }
+    // 修改订单状态
+    taskOrder.setStatus(TaskStatus.COMPLETED);
     return ResponseUtil.success("");
   }
 
@@ -77,6 +85,22 @@ public class OrderController {
   // 确认订单完成
   @PostMapping("/task/confirm/{orderId}")
   public JSONObject confirmTaskOrder(@PathVariable Long orderId) {
+    // TODO: token, 获取当前用户id
+    // 测试用: userId = 1
+    int userId = 3;
+
+    // 已知orderId, 获取order
+    TaskOrder taskOrder = taskOrderService.findById(orderId);
+    // 校验用户是否为任务发起者
+    if (taskOrder.getOwner().getUserId() != userId) {
+      return ResponseUtil.error("该用户不是任务发起者");
+    }
+    // 校验任务状态是否为已完成
+    if (taskOrder.getStatus() != TaskStatus.COMPLETED) {
+      return ResponseUtil.error("任务状态错误：未已完成");
+    }
+    // 修改订单状态
+    taskOrder.setStatus(TaskStatus.CONFIRMED);
     return ResponseUtil.success("");
   }
 
