@@ -2,6 +2,8 @@ package com.example.renyibang.dao.daoImpl;
 
 import com.example.renyibang.dao.TaskOrderDao;
 import com.example.renyibang.entity.TaskOrder;
+import com.example.renyibang.entity.User;
+import com.example.renyibang.entity.Task;
 import com.example.renyibang.enums.TaskStatus;
 import com.example.renyibang.repository.TaskOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +16,18 @@ public class TaskOrderDaoImpl implements TaskOrderDao {
   @Autowired private TaskOrderRepository taskOrderRepository;
 
   @Override
-  public List<TaskOrder> findByOwnerId(long ownerId) {
-    return taskOrderRepository.findByOwnerId(ownerId);
+  public List<TaskOrder> findByOwner(User owner) {
+    return taskOrderRepository.findByOwner(owner);
   }
 
   @Override
-  public List<TaskOrder> findByAccessorId(long accessorId) {
-    return taskOrderRepository.findByAccessorId(accessorId);
+  public List<TaskOrder> findByAccessor(User accessor) {
+    return taskOrderRepository.findByAccessor(accessor);
   }
 
   @Override
-  public List<TaskOrder> findByTaskId(long taskId) {
-    return taskOrderRepository.findByTaskId(taskId);
+  public List<TaskOrder> findByTask(Task task) {
+    return taskOrderRepository.findByTask(task);
   }
 
   @Override
