@@ -18,8 +18,13 @@ public class TaskDaoImpl implements TaskDao{
     @Override
     public List<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh)
     {
-        System.out.println(keyword + " ," + beginDateTime + " ," + endDateTime + " ," + priceLow + " ," + priceHigh);
-
-        return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
+        if(!keyword.isEmpty())
+        {
+            return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
+        }
+        else
+        {
+            return taskRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
+        }
     }
 }
