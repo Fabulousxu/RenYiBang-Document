@@ -2,6 +2,7 @@ package com.example.renyibang.controller;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.example.renyibang.entity.TaskOrder;
+import com.example.renyibang.enums.TaskStatus;
 import com.example.renyibang.service.TaskOrderService;
 import com.example.renyibang.util.ResponseUtil;
 import java.util.List;
@@ -44,35 +45,43 @@ public class OrderController {
   // 支付订单
   // ？怎么实现？不同的支付api?
   // 设计模式？
-  @PostMapping("/task/pay")
-  public JSONObject payTaskOrder() {
+  @PostMapping("/task/pay/{orderId}")
+  public JSONObject payTaskOrder(@PathVariable Long orderId) {
     return ResponseUtil.success("");
   }
 
-  @PostMapping("/service/pay")
-  public JSONObject payServiceOrder() {
+  @PostMapping("/service/pay/{orderId}")
+  public JSONObject payServiceOrder(@PathVariable Long orderId) {
     return ResponseUtil.success("");
   }
 
   // 任务完成
-  @PostMapping("/task/complete")
-  public JSONObject completeTaskOrder() {
+  @PostMapping("/task/complete/{orderId}")
+  public JSONObject completeTaskOrder(@PathVariable Long orderId) {
+    // TODO: token, 获取当前用户id
+
+    // 已知orderId, 获取order
+    TaskOrder taskOrder = taskOrderService.findById(orderId);
+    // 校验用户是否为任务接收者
+    if (taskOrder.getAccessor().getUserId() != 1) {
+      return ResponseUtil.error("该用户不是任务接收者");
+    }
     return ResponseUtil.success("");
   }
 
-  @PostMapping("/service/complete")
-  public JSONObject completeServiceOrder() {
+  @PostMapping("/service/complete/{orderId}")
+  public JSONObject completeServiceOrder(@PathVariable Long orderId) {
     return ResponseUtil.success("");
   }
 
   // 确认订单完成
-  @PostMapping("/task/confirm")
-  public JSONObject confirmTaskOrder() {
+  @PostMapping("/task/confirm/{orderId}")
+  public JSONObject confirmTaskOrder(@PathVariable Long orderId) {
     return ResponseUtil.success("");
   }
 
-  @PostMapping("/service/confirm")
-  public JSONObject confirmServiceOrder() {
+  @PostMapping("/service/confirm/{orderId}")
+  public JSONObject confirmServiceOrder(@PathVariable Long orderId) {
     return ResponseUtil.success("");
   }
 }
