@@ -8,7 +8,7 @@ import data from "../util/order_data";
 const { Title, Paragraph } = Typography;
 const { Step } = Steps;
 
-export default function OrderDetailPage() {
+export default function OrderRecipientPage() {
     const { id } = useParams();
     const order = data.find(order => order.id === id);
     const getStatusStep = (status) => {
