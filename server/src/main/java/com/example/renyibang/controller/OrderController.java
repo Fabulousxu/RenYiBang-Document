@@ -1,5 +1,6 @@
 package com.example.renyibang.controller;
 
+import com.alibaba.fastjson2.JSONObject;
 import com.example.renyibang.entity.TaskOrder;
 import com.example.renyibang.service.TaskOrderService;
 import com.example.renyibang.util.ResponseUtil;
@@ -18,24 +19,24 @@ public class OrderController {
 
   // /task/owner/:ownerId
   @GetMapping("/task/owner/{ownerId}")
-  public String getTaskOrderByOwner(@PathVariable Long ownerId) {
+  public JSONObject getTaskOrderByOwner(@PathVariable Long ownerId) {
     List<TaskOrder> taskOrders = taskOrderService.findByOwnerId(ownerId);
-    return ResponseUtil.success(taskOrders).toJSONString();
+    return ResponseUtil.success(taskOrders);
   }
 
   @GetMapping("/task/accessor/{accessorId}")
-  public String getTaskOrderByAccessor(@PathVariable Long accessorId) {
+  public JSONObject getTaskOrderByAccessor(@PathVariable Long accessorId) {
     List<TaskOrder> taskOrders = taskOrderService.findByAccessorId(accessorId);
-    return ResponseUtil.success(taskOrders).toJSONString();
+    return ResponseUtil.success(taskOrders);
   }
   @GetMapping("/service/owner")
-  public String getServiceOrderByOwner() {
+  public JSONObject getServiceOrderByOwner() {
 
-    return "getServiceOrderByOwner";
+    return ResponseUtil.success("");
   }
   @GetMapping("/service/accessor")
-  public String getServiceOrderByAccessor() {
+  public JSONObject getServiceOrderByAccessor() {
 
-    return "getServiceOrderByAccessor";
+    return ResponseUtil.success("");
   }
 }

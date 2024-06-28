@@ -1,6 +1,7 @@
 package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -46,17 +47,21 @@ public class Task {
 
   @OneToMany(mappedBy = "task")
   @OrderBy("createdAt DESC")
+  @JsonIgnore
   private List<TaskComment> comments; // 任务评论列表
 
   @OneToMany(mappedBy = "task")
   @OrderBy("createdAt DESC")
+  @JsonIgnore
   private List<TaskMessage> messages; // 任务留言列表
 
   @OneToMany(mappedBy = "task")
   @OrderBy("createdAt DESC")
+  @JsonIgnore
   private List<TaskAccess> accesses; // 任务接取候选列表
 
   @OneToMany(mappedBy = "task")
+  @JsonIgnore
   private List<TaskOrder> taskOrders; // 任务订单列表
 
   public static List<String> splitImages(String images) {

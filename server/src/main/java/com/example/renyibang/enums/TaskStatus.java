@@ -1,19 +1,28 @@
 package com.example.renyibang.enums;
 
 public enum TaskStatus {
-  UNPAID("未付款"),
-  IN_PROGRESS("已付款，任务进行中"),
-  RECEIVER_COMPLETED("接收者已完成，等待发布者确认"),
-  PUBLISHER_CONFIRMED("发布者已确认完成"),
-  ORDER_CANCELLED("订单已取消");
+  UNPAID(0),
+  PAID(1),
+  COMPLETED(2),
+  CONFIRMED(3),
+  CANCELLED(4);
 
-  private final String description;
+  private final int code;
 
-  TaskStatus(String description) {
-    this.description = description;
+  TaskStatus(int code) {
+    this.code = code;
   }
 
-  public String getDescription() {
-    return description;
+  public int getCode() {
+    return code;
+  }
+
+  public static TaskStatus fromCode(int code) {
+    for (TaskStatus status : TaskStatus.values()) {
+      if (status.getCode() == code) {
+        return status;
+      }
+    }
+    throw new IllegalArgumentException("Unknown code: " + code);
   }
 }
