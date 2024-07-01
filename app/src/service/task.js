@@ -11,7 +11,25 @@ export async function searchTask(keyword, pageSize, pageIndex) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
   }, items = [], number = 0
   if (pageIndex === 0 || pageIndex === 1) number = 24
   else if (pageIndex === 2) number = 2
@@ -41,7 +59,25 @@ export async function getTask(taskId) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
   }
 
   let getResponse = {task}
@@ -58,7 +94,25 @@ export async function getTaskComment(taskId, pageSize, pageIndex, order) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
   }, items = [], number = 0
   if (pageIndex === 0 || pageIndex === 1) number = 10
   else if (pageIndex === 2) number = 2
@@ -78,7 +132,25 @@ export async function getTaskMessage(taskId, pageSize, pageIndex, order) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
   }, items = [], number = 0
   if (pageIndex === 0 || pageIndex === 1 || pageIndex === 2) number = 10
   else if (pageIndex === 3) number = 6
