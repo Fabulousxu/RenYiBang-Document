@@ -48,7 +48,7 @@ export default function TaskDetailPage(props) {
   }, [id])
 
   return (<BasicLayout page='task-detail'>
-    <ItemDetail detail={detail} descriptionTitle='服务描述'/>
+    <ItemDetail detail={detail} descriptionTitle='服务描述' ratingTitle='服务评分:'/>
       <Space style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }} size="large">
           <Button size="large"><MessageOutlined />聊一聊</Button>
           <Button type="primary" size="large"><PayCircleOutlined />享服务</Button>

@@ -97,14 +97,18 @@ export default function ItemList(props) {
           <Card
             hoverable
             title={<div style={{
-              display: 'flex', flexDirection: 'column', padding: '1rem 0'
+              display: 'flex', flexDirection: 'column'
             }}>
-              <div style={{
-                overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'
-              }}>{props.list[index]?.title}</div>
-              <div style={{color: 'red'}}>
+              <h1 style={{
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+                fontSize: '1rem',
+                marginBottom: '2px'
+              }}>{props.list[index]?.title}</h1>
+              <h1 style={{color: 'red', fontSize: '1rem', marginTop: '2px'}}>
                 ¥{(props.list[index]?.price / 100).toFixed(2)}
-              </div>
+              </h1>
             </div>}
             cover={<div
               style={{

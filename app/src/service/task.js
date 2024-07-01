@@ -19,7 +19,8 @@ export async function getTask(taskId) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    rating: 70,
   }
 
   let getResponse = {task}
