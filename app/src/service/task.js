@@ -20,6 +20,24 @@ export async function getTask(taskId) {
       username: '用户',
       rating: 98
     },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
     rating: 70,
   }
 
@@ -35,7 +53,25 @@ export async function getTaskComment(taskId, pageSize, pageIndex, order) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
   }, items = [], number = 0
   if (pageIndex === 0 || pageIndex === 1) number = 10; else if (pageIndex === 2) number = 2
   for (let i = 0; i < number; ++i) items.push(item)
@@ -52,7 +88,25 @@ export async function getTaskMessage(taskId, pageSize, pageIndex, order) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '用户',
       rating: 98
-    }
+    },
+    proposer: [{
+      userId: 2,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者2',
+      rating: 98
+    },
+    {
+      userId: 3,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者3',
+      rating: 98
+    },
+    {
+      userId: 4,
+      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+      username: '提出者4',
+      rating: 98
+    }],
   }, items = [], number = 0
   if (pageIndex === 0 || pageIndex === 1 || pageIndex === 2) number = 10; else if (pageIndex === 3) number = 6
   for (let i = 0; i < number; ++i) items.push(item)
