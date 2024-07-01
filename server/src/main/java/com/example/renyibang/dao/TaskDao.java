@@ -2,6 +2,7 @@ package com.example.renyibang.dao;
 
 import com.example.renyibang.entity.Task;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +13,7 @@ import java.util.List;
 public interface TaskDao {
   Task findById(long taskId);
 
-  List<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh);
+  Page<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh);
+
+  Task getTask(long taskId);
 }

@@ -5,6 +5,7 @@ import com.example.renyibang.entity.Task;
 import com.example.renyibang.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
@@ -21,16 +22,21 @@ public class TaskDaoImpl implements TaskDao {
   }
 
   @Override
-    public List<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh)
-    {
-        if(!keyword.isEmpty())
-        {
-            return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
-        }
-        else
-        {
-            return taskRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
-        }
-    }
+  public Page<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh)
+  {
+      if(!keyword.isEmpty())
+      {
+          return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable);
+      }
+      else
+      {
+          return taskRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable);
+      }
+  }
 
+  @Override
+  public Task getTask(long taskId)
+  {
+      return taskRepository.findById(taskId).orElse(null);
+  }
 }
