@@ -61,6 +61,7 @@ CREATE TABLE task_comment
     content         TEXT      NOT NULL COMMENT '任务评论内容',
     created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务评论时间',
     rating          TINYINT            DEFAULT 50 NOT NULL COMMENT '任务评论评分(存储10倍评分,范围0~100)',
+    liked_number    BIGINT    NOT NULL COMMENT '任务评论点赞数',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (commenter_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务评论表(仅有接取任务者才能评论)';
@@ -81,6 +82,7 @@ CREATE TABLE task_message
     messager_id     BIGINT    NOT NULL COMMENT '留言者id',
     content         TEXT      NOT NULL COMMENT '消息内容',
     created_at      TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送时间',
+    liked_number    BIGINT    NOT NULL COMMENT '任务留言点赞数',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (messager_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务留言表';

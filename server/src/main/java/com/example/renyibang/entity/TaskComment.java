@@ -1,6 +1,10 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
+import com.example.renyibang.util.DateTimeUtil;
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 import java.util.Set;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,7 +36,7 @@ public class TaskComment {
   @CreationTimestamp
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-  private java.util.Date createdAt; // 评论时间
+  private LocalDateTime createdAt; // 评论时间
 
   @ManyToMany
   @JoinTable(
@@ -40,4 +44,22 @@ public class TaskComment {
       joinColumns = @JoinColumn(name = "task_comment_id"),
       inverseJoinColumns = @JoinColumn(name = "liker_id"))
   private Set<User> likers; // 评论点赞表
+
+  //评论点赞数
+  @Column(name = "liked_number")
+  private long likedNumber = 0;
+
+  public JSONObject toJSON()
+  {
+    JSONObject result = new JSONObject();
+    result.put("taskCommentId", taskCommentId);
+    result.put("taskId", task.getTaskId());
+    result.put("commenterId", commenter.getUserId());
+    result.put("content", content);
+    result.put("rating", rating);
+    result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+    result.put("likedNumber", likedNumber);
+
+    return result;
+  }
 }

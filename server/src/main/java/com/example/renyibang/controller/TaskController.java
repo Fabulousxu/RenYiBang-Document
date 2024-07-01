@@ -41,4 +41,60 @@ public class TaskController {
 
         return taskService.searchTaskByPaging(keyword, pageable, timeBegin, timeEnd, priceLow, priceHigh);
     }
+
+    @GetMapping("/{taskId}")
+    public JSONObject getTaskInfo(@PathVariable long taskId)
+    {
+        return taskService.getTaskInfo(taskId);
+    }
+
+    @GetMapping("/{taskId}/comment")
+    public JSONObject getTaskComment(@PathVariable long taskId, int pageSize, int pageIndex, String order)
+    {
+        Sort sort;
+
+        if(Objects.equals(order, "likes"))
+        {
+            sort = Sort.by("likedNumber").descending();
+        }
+
+        else if (Objects.equals(order, "time"))
+        {
+            sort = Sort.by("createdAt").descending();
+        }
+
+        else
+        {
+            return ResponseUtil.error("Undefined order");
+        }
+
+        Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
+
+        return taskService.getTaskComments(taskId, pageable);
+    }
+
+    @GetMapping("/{taskId}/message")
+    public JSONObject getTaskMessage(@PathVariable long taskId, int pageSize, int pageIndex, String order)
+    {
+        Sort sort;
+
+        if(Objects.equals(order, "likes"))
+        {
+            sort = Sort.by("likedNumber").descending();
+        }
+
+        else if (Objects.equals(order, "time"))
+        {
+            sort = Sort.by("createdAt").descending();
+        }
+
+        else
+        {
+            return ResponseUtil.error("Undefined order");
+        }
+
+        Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
+
+        return taskService.getTaskMessages(taskId, pageable);
+    }
 }

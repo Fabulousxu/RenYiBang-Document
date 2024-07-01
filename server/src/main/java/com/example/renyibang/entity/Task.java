@@ -87,4 +87,24 @@ public class Task {
 
     return result;
   }
+
+  public JSONObject toJSON(User user)
+  {
+    JSONObject result = new JSONObject();
+    result.put("taskId", taskId);
+    result.put("title", title);
+    List<String> imageList = splitImages(images);
+    result.put("images", imageList);
+    result.put("cover", imageList.getFirst());
+    result.put("description", description);
+    result.put("price", price);
+    result.put("maxAccess", maxAccess);
+    result.put("rating", rating);
+    result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+    result.put("collected", user.getCollectedTasks().stream().anyMatch(taskCollect -> (taskCollect.getTaskCollectId() == this.taskId)));
+
+    result.put("owner", owner.toJSON());
+
+    return result;
+  }
 }
