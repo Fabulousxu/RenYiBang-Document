@@ -10,4 +10,9 @@ public interface TaskService {
 
     JSONObject searchTaskByPaging(String keyword, Pageable pageable, String timeBegin, String timeEnd, long priceLow, long priceHigh);
 
+    JSONObject getTaskInfo(long taskId);
+
+    JSONObject getTaskComments(long taskId, Pageable pageable);
+
+    JSONObject getTaskMessages(long taskId, Pageable pageable);
 }
