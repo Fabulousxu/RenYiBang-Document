@@ -15,7 +15,12 @@ import java.util.List;
 public class TaskDaoImpl implements TaskDao {
   @Autowired TaskRepository taskRepository;
 
-    @Override
+  @Override
+  public Task findById(long taskId) {
+    return taskRepository.findById(taskId).orElse(null);
+  }
+
+  @Override
     public List<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh)
     {
         if(!keyword.isEmpty())
@@ -27,10 +32,5 @@ public class TaskDaoImpl implements TaskDao {
             return taskRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
         }
     }
-  }
 
-  @Override
-  public Task findById(long taskId) {
-    return taskRepository.findById(taskId).orElse(null);
-  }
 }
