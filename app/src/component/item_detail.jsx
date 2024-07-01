@@ -40,11 +40,11 @@ export default function ItemDetail(props) {
         </div>}
         style={{border: 'none'}}
       >
-        <Link to={`/profile/${props.detail?.user.userId}`}>
+        <Link to={`/profile/${props.detail?.owner.userId}`}>
           <Meta
-            avatar={<Avatar src={props.detail?.user.avatar}/>}
-            title={props.detail?.user.username}
-            description={`帮帮评分: ${(props.detail?.user.rating / 10).toFixed(1)}`}
+            avatar={<Avatar src={props.detail?.owner.avatar}/>}
+            title={props.detail?.owner.nickname}
+            description={`帮帮评分: ${(props.detail?.owner.rating / 10).toFixed(1)}`}
           />
         </Link>
       </Card>

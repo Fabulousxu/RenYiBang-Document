@@ -14,7 +14,7 @@ export default function CommentList(props) {
           <Link to={`/user/${item.user.userId}`}>
             <Item.Meta
               avatar={<Avatar src={item.user.avatar}/>}
-              title={item.user.username}
+              title={item.user.nickname}
               description={`帮帮评分${(item.user.rating / 10).toFixed(1)}`}
               style={{width: '100%'}}
             />

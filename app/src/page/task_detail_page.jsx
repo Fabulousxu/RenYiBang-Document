@@ -68,7 +68,7 @@ export default function TaskDetailPage(props) {
         (key === 'comment' ? getCommentWhenCommentMode : getCommentWhenMessageMode)();
       }}
       onChange={(page, pageSize) => {
-        (mode === 'comment' ? getTaskComment : getTaskMessage)(id, pageSize, page - 1)
+        (mode === 'comment' ? getTaskComment : getTaskMessage)(id, pageSize, page - 1, 'time')
           .then(res => {
             setCommentTotal(res.total);
             setCommentList(res.items);

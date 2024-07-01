@@ -7,25 +7,13 @@ export async function searchTask(keyword, pageSize, pageIndex, order, timeRange,
 }
 
 export async function getTask(taskId) {
-  // 模拟得到的信息
-  let task = {
-    taskId: 1,
-    title: '任务',
-    description: '任务内容',
-    images: ['https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png', 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png', 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png', 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png', 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'],
-    price: 2000,
-    user: {
-      userId: 1,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '用户',
-      rating: 98
-    },
-    proposer: [{
-      userId: 2,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者2',
-      rating: 98
-    },
+  let res = await get(`${apiURL}/task/${taskId}`)
+  res.proposer = [{
+    userId: 2,
+    avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
+    username: '提出者2',
+    rating: 98
+  },
     {
       userId: 3,
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
@@ -37,80 +25,18 @@ export async function getTask(taskId) {
       avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
       username: '提出者4',
       rating: 98
-    }],
-    rating: 70,
-  }
-
-  let getResponse = {task}
-  return getResponse.task
+    }]
+  return res
 }
 
 export async function getTaskComment(taskId, pageSize, pageIndex, order) {
-  // 模拟得到的信息
-  let item = {
-    content: '评论内容', rating: 70, user: {
-      userId: 1,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '用户',
-      rating: 98
-    },
-    proposer: [{
-      userId: 2,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者2',
-      rating: 98
-    },
-    {
-      userId: 3,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者3',
-      rating: 98
-    },
-    {
-      userId: 4,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者4',
-      rating: 98
-    }],
-  }, items = [], number = 0
-  if (pageIndex === 0 || pageIndex === 1) number = 10; else if (pageIndex === 2) number = 2
-  for (let i = 0; i < number; ++i) items.push(item)
-
-  let getResponse = {total: 22, items}
-  return getResponse
+  let res = await get(`${apiURL}/task/${taskId}/comment?pageSize=${pageSize}&pageIndex=${pageIndex}&order=${order}`)
+  for (let item of res.items) item.user = item.commenter
+  return res
 }
 
 export async function getTaskMessage(taskId, pageSize, pageIndex, order) {
-  // 模拟得到的信息
-  let item = {
-    content: '留言内容', rating: 70, user: {
-      userId: 1,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '用户',
-      rating: 98
-    },
-    proposer: [{
-      userId: 2,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者2',
-      rating: 98
-    },
-    {
-      userId: 3,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者3',
-      rating: 98
-    },
-    {
-      userId: 4,
-      avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=8',
-      username: '提出者4',
-      rating: 98
-    }],
-  }, items = [], number = 0
-  if (pageIndex === 0 || pageIndex === 1 || pageIndex === 2) number = 10; else if (pageIndex === 3) number = 6
-  for (let i = 0; i < number; ++i) items.push(item)
-
-  let getResponse = {total: 36, items}
-  return getResponse
+  let res = await get(`${apiURL}/task/${taskId}/message?pageSize=${pageSize}&pageIndex=${pageIndex}&order=${order}`)
+  for (let item of res.items) item.user = item.messager
+  return res
 }
