@@ -527,5 +527,198 @@ update = new PartialUpdate<Person>("e2c7dcee", Person.class)
 template.update(update)
 ```
 
-### Object Mapping
+### Object-to-Hash Mapping
 
+<https://docs.spring.io/spring-data/redis/reference/redis/redis-repositories/mapping.html>
+
+实体类对象需要映射为byte[]等对象，以便存储到Redis中。
+
+TIp: Due to the flat representation structure, Map keys need to be simple types, such as String or Number.  
+
+```java
+@WritingConverter
+public class AddressToBytesConverter implements Converter<Address, byte[]> {
+
+  private final Jackson2JsonRedisSerializer<Address> serializer;
+
+  public AddressToBytesConverter() {
+
+    serializer = new Jackson2JsonRedisSerializer<Address>(Address.class);
+    serializer.setObjectMapper(new ObjectMapper());
+  }
+
+  @Override
+  public byte[] convert(Address value) {
+    return serializer.serialize(value);
+  }
+}
+
+@ReadingConverter
+public class BytesToAddressConverter implements Converter<byte[], Address> {
+
+  private final Jackson2JsonRedisSerializer<Address> serializer;
+
+  public BytesToAddressConverter() {
+
+    serializer = new Jackson2JsonRedisSerializer<Address>(Address.class);
+    serializer.setObjectMapper(new ObjectMapper());
+  }
+
+  @Override
+  public Address convert(byte[] value) {
+    return serializer.deserialize(value);
+  }
+}
+```
+
+serializer 和 Jackson2JsonRedisSerializer 是与Redis数据存储相关的Java类和接口。这里是它们的简要说明：
+
+serializer:
+这是一个变量名，代表了一个Jackson2JsonRedisSerializer<Address>类型的实例。
+它用于将Address类型的对象序列化和反序列化为JSON格式的字节数组。
+Jackson2JsonRedisSerializer:
+这是一个使用Jackson库的序列化工具，可以将Java对象转换为JSON格式，反之亦然。
+在这个上下文中，它被用来处理Address类型的对象。
+Example 11. Sample byte[] Converters 中的函数解释如下：
+
+AddressToBytesConverter:
+这是一个写入转换器（@WritingConverter），用于将Address对象转换为字节数组。
+它通过serializer实例调用serialize方法来执行转换。
+BytesToAddressConverter:2
+这是一个读取转换器（@ReadingConverter），用于将字节数组转换回Address对象。
+它通过serializer实例调用deserialize方法来执行转换。
+
+@WritingConverter: 用于将Java对象转换为Redis可以存储的数据类型。例如，将一个Address对象转换为字节数组（byte[]）以便存储在Redis中。
+@ReadingConverter: 用于将Redis中的数据转换回Java对象。例如，从字节数组（byte[]）转换回Address对象。  
+
+Using the preceding byte array Converter produces output similar to the following:
+
+```java
+_class = org.example.Person
+id = e2c7dcee-b8cd-4424-883e-736ce564363e
+firstname = rand
+lastname = al’thor
+address = { city : "emond's field", country : "andor" }
+```
+
+Example 2. Sample Map<String, byte[]> Converters
+
+```java
+@WritingConverter
+public class AddressToMapConverter implements Converter<Address, Map<String, byte[]>> {
+
+  @Override
+  public Map<String, byte[]> convert(Address source) {
+    return singletonMap("ciudad", source.getCity().getBytes());
+  }
+}
+
+@ReadingConverter
+public class MapToAddressConverter implements Converter<Map<String, byte[]>, Address> {
+
+  @Override
+  public Address convert(Map<String, byte[]> source) {
+    return new Address(new String(source.get("ciudad")));
+  }
+}
+```
+
+### Index
+
+Secondary indexes are used to enable lookup operations based on native Redis structures. Values are written to the according indexes on every save and are removed when objects are deleted or expire.
+
+Given the sample Person entity shown earlier, we can create an index for firstname by annotating the property with @Indexed, as shown in the following example:
+
+```java
+// 定义Person实体类
+public class Person {[^2^][2]
+
+    @Id String id; // 主键ID[^3^][3]
+
+    @Indexed String firstname; // 使用@Indexed注解的firstname属性[^4^][4]
+
+    String lastname; // 姓氏
+    Address address; // 地址类
+
+    // ... 其他属性和方法省略
+}
+
+Indexes are built up for actual property values. Saving two Persons (for example, "rand" and "aviendha") results in setting up indexes similar to the following:
+
+SADD people:firstname:rand e2c7dcee-b8cd-4424-883e-736ce564363e
+SADD people:firstname:aviendha a9d4b3a0-50d3-4538-a2fc-f7fc2581ee56
+```
+
+```java
+// 定义Address实体类
+public class Address {[^1^][1]
+
+    String city; // 城市
+    @GeoIndexed Point location; // 使用@GeoIndexed注解的地理位置属性[^5^][5]
+
+    // ... 其他属性和方法省略
+}
+
+
+
+// Person仓库接口，继承CrudRepository
+public interface PersonRepository extends CrudRepository<Person, String> {[^6^][6]
+
+    // 根据地理位置附近查找Person的方法
+    List<Person> findByAddressLocationNear(Point point, Distance distance);[^7^][7]
+
+    // 根据地理位置范围内查找Person的方法
+    List<Person> findByAddressLocationWithin(Circle circle);[^7^][7]
+}
+
+// 示例：插入Person实体到数据库
+Person rand = new Person();
+rand.firstname = "Rand";
+rand.lastname = "Al'Thor";
+rand.address = new Address();
+rand.address.city = "Two Rivers";
+rand.address.location = new Point(50.0, 30.0); // 假设的地理坐标
+
+Person aviendha = new Person();
+aviendha.firstname = "Aviendha";
+aviendha.lastname = "Aiel";
+aviendha.address = new Address();
+aviendha.address.city = "Waste";
+aviendha.address.location = new Point(45.0, 40.0); // 假设的地理坐标
+
+// 使用PersonRepository的save方法保存实体
+personRepository.save(rand);
+personRepository.save(aviendha);
+```
+
+### 生命周期
+
+```java
+public class TimeToLiveOnProperty {
+
+  @Id
+  private String id;
+
+  @TimeToLive
+  private Long expiration;
+}
+
+public class TimeToLiveOnMethod {
+
+  @Id
+  private String id;
+
+  @TimeToLive
+  public long getTimeToLive() {
+  	return new Random().nextLong();
+  }
+}
+```
+
+### Redis特有的查询操作
+
+### Query By Example
+
+### Repository使用实例
+
+### 投影（Projection）

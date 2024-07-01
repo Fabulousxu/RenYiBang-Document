@@ -36,7 +36,7 @@ public class TaskOrderDaoImpl implements TaskOrderDao {
   }
 
   @Override
-  public TaskOrder findTaskOrderById(long taskOrderId) {
+  public TaskOrder findById(long taskOrderId) {
     return taskOrderRepository.findById(taskOrderId).orElse(null);
   }
 

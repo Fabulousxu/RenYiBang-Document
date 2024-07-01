@@ -15,7 +15,7 @@ public interface TaskOrderService {
   List<TaskOrder> findByStatus(TaskStatus status);
 
   // 根据订单ID查找订单
-  TaskOrder findTaskOrderById(long taskOrderId);
+  TaskOrder findById(long taskOrderId);
 
   // 返回所有订单
   List<TaskOrder> findAllTaskOrders();

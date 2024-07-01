@@ -53,8 +53,8 @@ public class TaskOrderServiceImpl implements TaskOrderService {
   }
 
   @Override
-  public TaskOrder findTaskOrderById(long taskOrderId) {
-    return taskOrderDao.findTaskOrderById(taskOrderId);
+  public TaskOrder findById(long taskOrderId) {
+    return taskOrderDao.findById(taskOrderId);
   }
 
   @Override
@@ -97,7 +97,7 @@ public class TaskOrderServiceImpl implements TaskOrderService {
 
   @Override
   public boolean markTaskOrderStatus(long taskOrderId, TaskStatus status) {
-    TaskOrder taskOrder = taskOrderDao.findTaskOrderById(taskOrderId);
+    TaskOrder taskOrder = taskOrderDao.findById(taskOrderId);
     if (taskOrder == null) {
       return false;
     }
@@ -113,6 +113,6 @@ public class TaskOrderServiceImpl implements TaskOrderService {
 
   @Override
   public boolean checkTaskOrderStatus(long taskOrderId, TaskStatus status) {
-    return taskOrderDao.findTaskOrderById(taskOrderId).getStatus() == status;
+    return taskOrderDao.findById(taskOrderId).getStatus() == status;
   }
 }

@@ -1,9 +1,9 @@
-export const apiURL = 'http://localhost:8080/api'
+export const apiURL = 'http://localhost:8080'
 
 export async function get(url) {
   let res = await fetch(url, {method: 'GET', credentials: 'include'})
   if (!res.ok) throw res.status
-  res = res.json()
+  res = await res.json()
   if (!res.ok) throw res.message
   return res.data;
 }

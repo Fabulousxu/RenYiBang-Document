@@ -5,21 +5,21 @@ import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
 @Converter(autoApply = true)
-public class TaskStatusConverter implements AttributeConverter<TaskStatus, Integer> {
+public class TaskStatusConverter implements AttributeConverter<TaskStatus, Byte> {
 
 	@Override
-	public Integer convertToDatabaseColumn(TaskStatus attribute) {
-		if (attribute == null) {
+	public Byte convertToDatabaseColumn(TaskStatus status) {
+		if (status == null) {
 			return null;
 		}
-		return attribute.getCode();
+		return (byte) status.getCode();
 	}
 
 	@Override
-	public TaskStatus convertToEntityAttribute(Integer dbData) {
-		if (dbData == null) {
+	public TaskStatus convertToEntityAttribute(Byte code) {
+		if (code == null) {
 			return null;
 		}
-		return TaskStatus.fromCode(dbData);
+		return TaskStatus.fromCode(code);
 	}
 }

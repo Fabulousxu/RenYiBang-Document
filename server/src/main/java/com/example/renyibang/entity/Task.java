@@ -2,6 +2,7 @@ package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.renyibang.util.DateTimeUtil;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -80,7 +81,27 @@ public class Task {
     result.put("price", price);
     result.put("maxAccess", maxAccess);
     result.put("rating", rating);
-    result.put("createdAt", createdAt);
+    result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+
+    result.put("owner", owner.toJSON());
+
+    return result;
+  }
+
+  public JSONObject toJSON(User user)
+  {
+    JSONObject result = new JSONObject();
+    result.put("taskId", taskId);
+    result.put("title", title);
+    List<String> imageList = splitImages(images);
+    result.put("images", imageList);
+    result.put("cover", imageList.getFirst());
+    result.put("description", description);
+    result.put("price", price);
+    result.put("maxAccess", maxAccess);
+    result.put("rating", rating);
+    result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+    result.put("collected", user.getCollectedTasks().stream().anyMatch(taskCollect -> (taskCollect.getTaskCollectId() == this.taskId)));
 
     result.put("owner", owner.toJSON());
 

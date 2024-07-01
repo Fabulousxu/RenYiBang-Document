@@ -17,7 +17,7 @@ public interface TaskOrderDao {
 
   List<TaskOrder> findByStatus(TaskStatus status);
 
-  TaskOrder findTaskOrderById(long taskOrderId);
+  TaskOrder findById(long taskOrderId);
 
   List<TaskOrder> findAllTaskOrders();
 

@@ -1,8 +1,11 @@
 package com.example.renyibang.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum TaskStatus {
   UNPAID(0),
-  PAID(1),
+  IN_PROGRESS(1),
   COMPLETED(2),
   CONFIRMED(3),
   CANCELLED(4);
@@ -11,10 +14,6 @@ public enum TaskStatus {
 
   TaskStatus(int code) {
     this.code = code;
-  }
-
-  public int getCode() {
-    return code;
   }
 
   public static TaskStatus fromCode(int code) {
