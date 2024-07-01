@@ -980,7 +980,7 @@ IndxFKName=%REFR%_FK
 IndxThreshold=
 ColnFKName=%.3:PARENT%_%COLUMN%
 ColnFKNameUse=No</a:ModelOptionsText>
-<a:RepositoryFilename>D:\Learning\任易帮\RenYiBang\documents\用例图\Use Case Diagram_1.oom</a:RepositoryFilename>
+<a:RepositoryFilename>E:\Project\GitHub\RenYiBang\documents\用例图\Use Case Diagram_1.oom</a:RepositoryFilename>
 <c:ObjectLanguage>
 <o:Shortcut Id="o3">
 <a:ObjectID>BE3AEC7A-1662-4E79-8E7C-E8147A1B70B4</a:ObjectID>
@@ -1407,8 +1407,8 @@ Shadow=0</a:DisplayPreferences>
 <o:UseCaseAssociationSymbol Id="o5">
 <a:CreationDate>1719457789</a:CreationDate>
 <a:ModificationDate>1719457802</a:ModificationDate>
-<a:Rect>((-20701,-348), (-11109,452))</a:Rect>
-<a:ListOfPoints>((-20301,52),(-11509,52))</a:ListOfPoints>
+<a:Rect>((-18227,-472), (-11109,328))</a:Rect>
+<a:ListOfPoints>((-17827,-72),(-11509,-72))</a:ListOfPoints>
 <a:CornerStyle>1</a:CornerStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16744448</a:LineColor>
@@ -1604,7 +1604,6 @@ DISPNAME 0 新宋体,8,N</a:FontList>
 <a:BrushStyle>6</a:BrushStyle>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
-<a:KeepAspect>1</a:KeepAspect>
 <a:KeepCenter>1</a:KeepCenter>
 <c:Object>
 <o:Actor Ref="o33"/>
