@@ -137,8 +137,16 @@ public class TaskServiceImpl implements TaskService {
     {
         try
         {
-            return ResponseUtil.success(taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId));
+            String result = taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId);
+            if("点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
 
+            else
+            {
+                return ResponseUtil.error(result);
+            }
         }
         catch (Exception e)
         {
@@ -152,7 +160,16 @@ public class TaskServiceImpl implements TaskService {
     {
         try
         {
-            return ResponseUtil.success(taskCommentDao.unlikeCommentByTaskCommentId(taskCommentId, unlikerId));
+            String result = taskCommentDao.unlikeCommentByTaskCommentId(taskCommentId, unlikerId);
+            if("取消点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
         }
         catch (Exception e)
         {
@@ -166,8 +183,16 @@ public class TaskServiceImpl implements TaskService {
     {
         try
         {
-            return ResponseUtil.success(taskMessageDao.likeMessageByTaskMessageId(taskMessageId, likerId));
+            String result = taskMessageDao.likeMessageByTaskMessageId(taskMessageId, likerId);
+            if("点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
 
+            else
+            {
+                return ResponseUtil.error(result);
+            }
         }
         catch (Exception e)
         {
@@ -181,11 +206,66 @@ public class TaskServiceImpl implements TaskService {
     {
         try
         {
-            return ResponseUtil.success(taskMessageDao.unlikeMessageByTaskMessageId(taskMessageId, unlikerId));
+            String result = taskMessageDao.unlikeMessageByTaskMessageId(taskMessageId, unlikerId);
+            if("取消点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
         }
         catch (Exception e)
         {
             return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject collectTask(long taskId, long collectorId)
+    {
+        try
+        {
+            String result = taskDao.collectTaskByTaskId(taskId, collectorId);
+            if("收藏成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject uncollectTask(long taskId, long uncollectorId)
+    {
+        try
+        {
+            String result = taskDao.uncollectTaskByTaskId(taskId, uncollectorId);
+            if("取消收藏成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
         }
     }
 }

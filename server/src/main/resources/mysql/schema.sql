@@ -40,6 +40,7 @@ CREATE TABLE task
     created_at  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务发布时间',
     max_access  INT         NOT NULL DEFAULT 1 COMMENT '任务最大接取数',
     rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
+    collected   BIGINT      NOT NULL COMMENT '任务收藏数',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务表';
 
