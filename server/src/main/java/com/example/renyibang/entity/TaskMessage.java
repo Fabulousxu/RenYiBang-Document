@@ -52,6 +52,7 @@ public class TaskMessage {
     JSONObject result = new JSONObject();
     result.put("taskMessageId", taskMessageId);
     result.put("taskId", task.getTaskId());
+    result.put("messagerId", messager.getUserId());
     result.put("content", content);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
     result.put("likedNumber", likedNumber);

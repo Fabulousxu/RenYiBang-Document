@@ -1,4 +1,4 @@
-INSERT INTO renyibang.task (owner_id, title, images, description, price, created_at, max_access, rating) VALUES
+INSERT INTO RenYiBang.task (owner_id, title, images, description, price, created_at, max_access, rating) VALUES
                                                                                                              (6, 'Church thousand end professional', '', 'Benefit over method in mention wear. Attorney hundred away to event.
 Traditional free factor never body production large.
 Itself to his indeed concern reality wait. On music morning tax.
