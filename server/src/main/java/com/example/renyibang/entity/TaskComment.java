@@ -70,4 +70,7 @@ public class TaskComment {
   }
 
   public void addLiker(User liker) { likers.add(liker); }
+
+  public void removeLiker(User unliker) { likers.remove(unliker);
+  }
 }

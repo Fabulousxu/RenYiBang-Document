@@ -17,4 +17,6 @@ public interface TaskService {
     JSONObject getTaskMessages(long taskId, Pageable pageable);
 
     JSONObject likeComment(long taskCommentId, long likerId);
+
+    JSONObject unlikeComment(long taskCommentId, long unlikerId);
 }

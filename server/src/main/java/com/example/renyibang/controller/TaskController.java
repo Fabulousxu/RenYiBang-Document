@@ -106,4 +106,13 @@ public class TaskController {
 
         return taskService.likeComment(taskCommentId, likerId);
     }
+
+    @DeleteMapping("/comment/{taskCommentId}/unlike")
+    public JSONObject unlikeComment(@PathVariable long taskCommentId)
+    {
+        //userId待替换
+        long unlikerId = 1;
+
+        return taskService.unlikeComment(taskCommentId, unlikerId);
+    }
 }

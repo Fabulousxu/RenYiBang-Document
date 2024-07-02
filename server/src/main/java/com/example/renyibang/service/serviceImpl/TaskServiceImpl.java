@@ -142,7 +142,21 @@ public class TaskServiceImpl implements TaskService {
         }
         catch (Exception e)
         {
-            return ResponseUtil.error(String.valueOf(e));
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unlikeComment(long taskCommentId, long unlikerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskCommentDao.unlikeCommentByTaskCommentId(taskCommentId, unlikerId));
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
         }
     }
 }

@@ -60,4 +60,40 @@ public class TaskCommentDaoImpl implements TaskCommentDao {
             throw e;
         }
     }
+
+    @Override
+    public String unlikeCommentByTaskCommentId(long taskCommentId, long unlikerId)
+    {
+        try
+        {
+            TaskComment taskComment = taskCommentRepository.findById(taskCommentId).orElse(null);
+            if(taskComment == null)
+            {
+                return "评论不存在！";
+            }
+            User unliker = userDao.findById(unlikerId).orElse(null);
+            if(unliker == null)
+            {
+                return "用户不存在！";
+            }
+
+            if(!taskComment.isLikedByUser(unliker))
+            {
+                return "用户未点赞过该评论！";
+            }
+
+            else
+            {
+                //存在并发问题!!
+                taskComment.setLikedNumber(taskComment.getLikedNumber() - 1);
+                taskComment.removeLiker(unliker);
+                taskCommentRepository.save(taskComment);
+                return "取消点赞成功！";
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
 }
