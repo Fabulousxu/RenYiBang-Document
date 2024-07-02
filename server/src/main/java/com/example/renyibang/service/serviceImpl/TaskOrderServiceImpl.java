@@ -22,19 +22,15 @@ public class TaskOrderServiceImpl implements TaskOrderService {
 
   @Override
   public List<TaskOrder> findByOwnerId(long ownerId) {
-    User owner = userDao.findById(ownerId);
-    if(owner == null) {
-      throw new EntityNotFoundException("User not found with id " + ownerId);
-    }
+    User owner = userDao.findById(ownerId)
+            .orElseThrow(() -> new EntityNotFoundException("User not found with id " + ownerId));
     return taskOrderDao.findByOwner(owner);
   }
 
   @Override
   public List<TaskOrder> findByAccessorId(long accessorId) {
-    User accessor = userDao.findById(accessorId);
-    if(accessor == null) {
-      throw new EntityNotFoundException("User not found with id " + accessorId);
-    }
+    User accessor = userDao.findById(accessorId)
+            .orElseThrow(() -> new EntityNotFoundException("User not found with id " + accessorId));
     return taskOrderDao.findByAccessor(accessor);
   }
 
@@ -71,16 +67,13 @@ public class TaskOrderServiceImpl implements TaskOrderService {
     }
 
     // Fetch the Owner (User) entity
-    User owner = userDao.findById(ownerId);
-    if(owner == null) {
-      throw new EntityNotFoundException("User not found with id " + ownerId);
-    }
+    User owner = userDao.findById(ownerId)
+            .orElseThrow(() -> new EntityNotFoundException("User not found with id " + ownerId));
 
     // Fetch the Accessor (User) entity
-    User accessor = userDao.findById(accessorId);
-    if(accessor == null) {
-      throw new EntityNotFoundException("User not found with id " + accessorId);
-    }
+    User accessor = userDao.findById(accessorId)
+            .orElseThrow(() -> new EntityNotFoundException("User not found with id " + accessorId));
+
 
     // Create a new TaskOrder
     TaskOrder taskOrder = new TaskOrder();

@@ -1,4 +1,4 @@
-INSERT INTO renyibang.user (type, nickname, avatar, intro, rating, balance) VALUES
+INSERT INTO RenYiBang.user (type, nickname, avatar, intro, rating, balance) VALUES
                                                                                 (2, 'gary70', 'https://picsum.photos/167/242', 'Research pay future family audience house mention name rock today cold.', 34, 617400),
                                                                                 (0, 'otaylor', 'https://placekitten.com/296/113', 'Food role course imagine consider floor trial.', 0, 147400),
                                                                                 (0, 'jeremyvaldez', 'https://placekitten.com/833/275', 'Treatment security environment age in feeling worker rest.', 2, 782300),

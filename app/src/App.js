@@ -11,6 +11,7 @@ import ServiceDetailPage from "./page/service_detail_page";
 import OrderRecipientPage from "./page/order_recipient_page";
 import OrderInitiatorPage from "./page/order_initiator_page";
 import SelectPage from './page/select_page';
+import LoginPage from "./page/login_page";
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <Route path='/profile/:id' element={<ProfilePage/>}/>
       <Route path='/issue' element={<IssuePage/>}/>
       <Route path='/select/task/:id' element={<SelectPage/>}/>
+      <Route path='/login' element={<LoginPage/>}/>
     </Routes>
   );
 }
