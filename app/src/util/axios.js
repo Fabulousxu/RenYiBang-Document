@@ -14,7 +14,7 @@ api.interceptors.request.use(
 
         if (token) {
             // 如果 token 存在，则添加到请求头的 Authorization 字段
-            config.headers['jwt'] = token;
+            config.headers['jwt'] = "Bearer "+token;
         }
         return config;
     },
