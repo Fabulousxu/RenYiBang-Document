@@ -61,7 +61,7 @@ public class Task {
   @JsonIgnore
   private List<TaskAccess> accesses; // 任务接取候选列表
 
-  @OneToMany(mappedBy = "task")
+  @OneToMany(mappedBy = "item")
   @JsonIgnore
   private List<TaskOrder> taskOrders; // 任务订单列表
 

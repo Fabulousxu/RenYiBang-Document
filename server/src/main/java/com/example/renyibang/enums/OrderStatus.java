@@ -3,7 +3,7 @@ package com.example.renyibang.enums;
 import lombok.Getter;
 
 @Getter
-public enum TaskStatus {
+public enum OrderStatus {
   UNPAID(0),
   IN_PROGRESS(1),
   COMPLETED(2),
@@ -12,12 +12,12 @@ public enum TaskStatus {
 
   private final int code;
 
-  TaskStatus(int code) {
+  OrderStatus(int code) {
     this.code = code;
   }
 
-  public static TaskStatus fromCode(int code) {
-    for (TaskStatus status : TaskStatus.values()) {
+  public static OrderStatus fromCode(int code) {
+    for (OrderStatus status : OrderStatus.values()) {
       if (status.getCode() == code) {
         return status;
       }
