@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/task")
+@RequestMapping("/api/task")
 @CrossOrigin
 public class TaskController {
     @Autowired TaskService taskService;
@@ -96,5 +96,23 @@ public class TaskController {
         Pageable pageable = PageRequest.of(pageIndex, pageSize, sort);
 
         return taskService.getTaskMessages(taskId, pageable);
+    }
+
+    @PutMapping("/comment/{taskCommentId}/like")
+    public JSONObject likeComment(@PathVariable long taskCommentId)
+    {
+        //userId待替换
+        long likerId = 1;
+
+        return taskService.likeComment(taskCommentId, likerId);
+    }
+
+    @DeleteMapping("/comment/{taskCommentId}/unlike")
+    public JSONObject unlikeComment(@PathVariable long taskCommentId)
+    {
+        //userId待替换
+        long unlikerId = 1;
+
+        return taskService.unlikeComment(taskCommentId, unlikerId);
     }
 }
