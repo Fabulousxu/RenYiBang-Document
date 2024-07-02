@@ -1,5 +1,6 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 	import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,13 @@ public class ServiceOrder extends Order<Service> {
 	@Override
 	public void setItem(Service item) {
 		this.item = item;
+	}
+
+	public JSONObject toJSON() {
+		JSONObject json = super.toJSON();
+		json.put("time", item.getCreatedAt());
+		json.put("name", item.getTitle());
+		return json;
 	}
 
 	// equals and hashCode methods

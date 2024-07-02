@@ -20,7 +20,7 @@ public interface OrderRepository<T extends Order<U>, U> extends JpaRepository<T,
 
   List<T> findAll();
 
-  T save(T order);
+//  T save(T order);
 
   void deleteById(long orderId);
 
