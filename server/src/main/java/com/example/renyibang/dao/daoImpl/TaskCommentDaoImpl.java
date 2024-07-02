@@ -26,19 +26,25 @@ public class TaskCommentDaoImpl implements TaskCommentDao {
         return taskCommentRepository.findByTaskTaskId(taskId, pageable);
     }
 
-    @SuppressWarnings("AlibabaTransactionMustHaveRollback")
     @Override
-    @Transactional
-    public boolean likeCommentByTaskCommentId(long taskCommentId, long likerId)
+    public String likeCommentByTaskCommentId(long taskCommentId, long likerId)
     {
         try
         {
-            TaskComment taskComment = taskCommentRepository.findById(taskCommentId).orElseThrow(() -> new IllegalArgumentException("评论不存在！"));
-            User liker = userDao.findById(likerId).orElseThrow(() -> new IllegalArgumentException("用户不存在！"));
+            TaskComment taskComment = taskCommentRepository.findById(taskCommentId).orElse(null);
+            if(taskComment == null)
+            {
+                return "评论不存在！";
+            }
+            User liker = userDao.findById(likerId).orElse(null);
+            if(liker == null)
+            {
+                return "用户不存在！";
+            }
 
             if(taskComment.isLikedByUser(liker))
             {
-                return false;
+                return "用户已点赞过该评论！";
             }
 
             else
@@ -46,7 +52,7 @@ public class TaskCommentDaoImpl implements TaskCommentDao {
                 taskComment.setLikedNumber(taskComment.getLikedNumber() + 1);
                 taskComment.addLiker(liker);
                 taskCommentRepository.save(taskComment);
-                return true;
+                return "点赞成功！";
             }
         }
         catch (Exception e)

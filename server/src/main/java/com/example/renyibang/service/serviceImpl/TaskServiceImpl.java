@@ -13,6 +13,7 @@ import com.example.renyibang.service.TaskService;
 import com.example.renyibang.util.DateTimeUtil;
 import com.example.renyibang.util.PriceUtil;
 import com.example.renyibang.util.ResponseUtil;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -130,20 +131,13 @@ public class TaskServiceImpl implements TaskService {
         }
     }
 
+    @Transactional
     @Override
     public JSONObject likeComment(long taskCommentId, long likerId)
     {
         try
         {
-            if(taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId))
-            {
-                return ResponseUtil.success();
-            }
-
-            else
-            {
-                return ResponseUtil.error("用户已点赞过该评论！");
-            }
+            return ResponseUtil.success(taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId));
 
         }
         catch (Exception e)

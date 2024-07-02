@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface TaskCommentDao {
     Page<TaskComment> getTaskComments(long taskId, Pageable pageable);
 
-    boolean likeCommentByTaskCommentId(long taskCommentId, long likerId);
+    String likeCommentByTaskCommentId(long taskCommentId, long likerId);
 }
