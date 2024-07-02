@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface ServiceDao {
     List<Service> searchServiceByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh);
+
+	Service findById(long serviceId);
 }

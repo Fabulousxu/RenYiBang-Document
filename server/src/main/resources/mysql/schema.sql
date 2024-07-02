@@ -107,19 +107,6 @@ CREATE TABLE task_access
     FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务接取候选表';
 
-CREATE TABLE task_order
-(
-    task_order_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务订单id',
-    task_id       BIGINT                     NOT NULL COMMENT '任务id',
-    owner_id      BIGINT                     NOT NULL COMMENT '任务发布者id',
-    accessor_id   BIGINT                     NOT NULL COMMENT '任务接取者id',
-    status        TINYINT UNSIGNED DEFAULT 0 NOT NULL COMMENT '任务状态(0:未付款,1:已付款,任务进行中,2:接收者已完成，等待发布者确认,3:发布者已确认完成,4:订单已取消)',
-    cost          BIGINT           DEFAULT 0 NOT NULL COMMENT '任务价格(存储100倍价格)',
-    FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
-    FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE,
-    FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
-) COMMENT '任务订单表';
-
 CREATE TABLE service
 (
     service_id  BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务id',
@@ -195,15 +182,32 @@ CREATE TABLE service_access
     FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务购买候选表';
 
-CREATE TABLE service_order
+CREATE TABLE `order`
 (
-    service_order_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务订单id',
-    service_id       BIGINT NOT NULL COMMENT '服务id',
-    owner_id         BIGINT NOT NULL COMMENT '服务发布者id',
-    accessor_id      BIGINT NOT NULL COMMENT '服务购买者id',
-    FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
+    order_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '订单id',
+    type     TINYINT UNSIGNED DEFAULT 0 NOT NULL COMMENT '订单类型(0:任务订单,1:服务订单)',
+    owner_id BIGINT NOT NULL COMMENT '订单发布者id',
+    accessor_id BIGINT NOT NULL COMMENT '订单接取者id',
+    status   TINYINT UNSIGNED DEFAULT 0 NOT NULL COMMENT '订单状态(0:未付款,1:已付款,任务/服务进行中,2:接取者已完成，等待发布者确认,3:发布者已确认完成,4:订单已取消)',
+    cost     BIGINT  DEFAULT 0 NOT NULL COMMENT '订单价格(存储100倍价格)',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE,
     FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
+) COMMENT '订单表';
+
+CREATE TABLE task_order
+(
+    order_id BIGINT PRIMARY KEY COMMENT '任务订单id',
+    task_id  BIGINT NOT NULL COMMENT '任务id',
+    FOREIGN KEY (order_id) REFERENCES `order` (order_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE
+) COMMENT '任务订单表';
+
+CREATE TABLE service_order
+(
+    order_id   BIGINT PRIMARY KEY COMMENT '服务订单id',
+    service_id BIGINT NOT NULL COMMENT '服务id',
+    FOREIGN KEY (order_id) REFERENCES `order` (order_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE
 ) COMMENT '服务订单表';
 
 CREATE TABLE task_chat
@@ -251,4 +255,3 @@ CREATE TABLE service_chat_message
     FOREIGN KEY (sender_id) REFERENCES user (user_id) ON UPDATE CASCADE,
     FOREIGN KEY (receiver_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务聊天消息表';
-

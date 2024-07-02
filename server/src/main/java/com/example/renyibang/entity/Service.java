@@ -2,6 +2,7 @@ package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.example.renyibang.util.DateTimeUtil;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -17,39 +18,57 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Service
-{
+public class Service {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long serviceId;
+    @Column(name = "service_id")
+    private long serviceId; // 服务id
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    private User owner;
+    private User owner; // 服务发布者
 
-    private String title;
-    private String images;
-    private String description;
-    private long price = 0;
-    private int maxAccess = 0;
-    private byte rating = 50;
+    @Column(name = "title")
+    private String title; // 服务标题
+
+    @Column(name = "images")
+    private String images; // 服务图片
+
+    @Column(name = "description")
+    private String description; // 服务描述
+
+    @Column(name = "price")
+    private long price = 0; // 服务价格(存储100倍价格)
+
+    @Column(name = "max_access")
+    private int maxAccess = 0; // 服务最大接取数
+
+    @Column(name = "rating")
+    private byte rating = 50; // 服务评分(存储10倍评分,范围0~100)
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime createdAt;
+    private LocalDateTime createdAt; // 服务创建时间
 
     @OneToMany(mappedBy = "service")
     @OrderBy("createdAt DESC")
-    private List<ServiceComment> comments;
+    @JsonIgnore
+    private List<ServiceComment> comments; // 服务评论列表
 
     @OneToMany(mappedBy = "service")
     @OrderBy("createdAt DESC")
-    private List<ServiceMessage> messages;
+    @JsonIgnore
+    private List<ServiceMessage> messages; // 服务留言列表
 
     @OneToMany(mappedBy = "service")
     @OrderBy("createdAt DESC")
-    private List<ServiceAccess> accesses;
+    @JsonIgnore
+    private List<ServiceAccess> accesses; // 服务接取候选列表
+
+    @OneToMany(mappedBy = "item")
+    @JsonIgnore
+    private List<ServiceOrder> serviceOrders; // 服务订单列表
 
     public static List<String> splitImages(String images) {
         // 使用空格分割字符串，并将结果转换为List<String>
@@ -58,11 +77,11 @@ public class Service
 
     public JSONObject toJSON() {
         JSONObject result = new JSONObject();
-        result.put("taskId", serviceId);
+        result.put("serviceId", serviceId);
         result.put("title", title);
         List<String> imageList = splitImages(images);
         result.put("images", imageList);
-        result.put("cover", imageList.getFirst());
+        result.put("cover", imageList.isEmpty() ? "" : imageList.get(0));
         result.put("description", description);
         result.put("price", price);
         result.put("maxAccess", maxAccess);
