@@ -91,8 +91,8 @@ public class User {
     return collectedTasks.stream().anyMatch(taskCollect -> taskCollect.getTask().equals(task));
   }
 
-  public void addCollectTask(TaskCollect taskCollect)
+  public boolean hasAccessed(Task task)
   {
-    collectedTasks.add(taskCollect);
+    return accessedTasks.stream().anyMatch(taskAccess -> taskAccess.getTask().equals(task));
   }
 }

@@ -148,5 +148,19 @@ public class TaskController {
         return taskService.uncollectTask(taskId, uncollectorId);
     }
 
-    
+    @PutMapping("/{taskId}/access")
+    public JSONObject accessTask(@PathVariable long taskId, long userId)
+    {
+        //userId待替换
+        long accessorId = 1;
+        return taskService.accessTask(taskId, userId);
+    }
+
+    @DeleteMapping("/{taskId}/unaccess")
+    public JSONObject unaccessTask(@PathVariable long taskId, long userId)
+    {
+        //userId待替换
+        long unaccessorId = 1;
+        return taskService.unaccessTask(taskId, userId);
+    }
 }

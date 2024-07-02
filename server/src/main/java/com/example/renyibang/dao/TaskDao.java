@@ -20,4 +20,8 @@ public interface TaskDao {
   String collectTaskByTaskId(long taskId, long collectorId);
 
   String uncollectTaskByTaskId(long taskId, long uncollectorId);
+
+  String accessTaskByTaskId(long taskId, long accessorId);
+
+  String unaccessTaskByTaskId(long taskId, long unaccessorId);
 }
