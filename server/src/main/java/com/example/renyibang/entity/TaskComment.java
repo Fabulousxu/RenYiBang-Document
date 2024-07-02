@@ -54,6 +54,7 @@ public class TaskComment {
     JSONObject result = new JSONObject();
     result.put("taskCommentId", taskCommentId);
     result.put("taskId", task.getTaskId());
+    result.put("commenterId", commenter.getUserId());
     result.put("content", content);
     result.put("rating", rating);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
