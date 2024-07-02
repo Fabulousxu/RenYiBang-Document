@@ -112,4 +112,9 @@ public class Task {
 
     return result;
   }
+
+  public boolean accessNotFull()
+  {
+    return accesses.size() < maxAccess;
+  }
 }

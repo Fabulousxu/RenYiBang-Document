@@ -242,7 +242,7 @@ public class TaskServiceImpl implements TaskService {
         }
         catch (Exception e)
         {
-            return ResponseUtil.error(String.valueOf(e));
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
         }
     }
 
@@ -254,6 +254,52 @@ public class TaskServiceImpl implements TaskService {
         {
             String result = taskDao.uncollectTaskByTaskId(taskId, uncollectorId);
             if("取消收藏成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject accessTask(long taskId, long accessorId)
+    {
+        try
+        {
+            String result = taskDao.accessTaskByTaskId(taskId, accessorId);
+            if("接取任务成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unaccessTask(long taskId, long unaccessorId)
+    {
+        try
+        {
+            String result = taskDao.unaccessTaskByTaskId(taskId, unaccessorId);
+            if("取消接取任务成功！".equals(result))
             {
                 return ResponseUtil.success(result);
             }
