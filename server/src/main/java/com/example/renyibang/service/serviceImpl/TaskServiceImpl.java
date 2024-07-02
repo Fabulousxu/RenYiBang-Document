@@ -13,6 +13,7 @@ import com.example.renyibang.service.TaskService;
 import com.example.renyibang.util.DateTimeUtil;
 import com.example.renyibang.util.PriceUtil;
 import com.example.renyibang.util.ResponseUtil;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -66,7 +67,7 @@ public class TaskServiceImpl implements TaskService {
 
             if(result == null)
             {
-                return ResponseUtil.error("Get task information null.");
+                return ResponseUtil.error("任务信息为null");
             }
 
             else
@@ -127,6 +128,64 @@ public class TaskServiceImpl implements TaskService {
         catch (Exception e)
         {
             return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject likeComment(long taskCommentId, long likerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId));
+
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unlikeComment(long taskCommentId, long unlikerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskCommentDao.unlikeCommentByTaskCommentId(taskCommentId, unlikerId));
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject likeMessage(long taskMessageId, long likerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskMessageDao.likeMessageByTaskMessageId(taskMessageId, likerId));
+
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unlikeMessage(long taskMessageId, long unlikerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskMessageDao.unlikeMessageByTaskMessageId(taskMessageId, unlikerId));
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
         }
     }
 }
