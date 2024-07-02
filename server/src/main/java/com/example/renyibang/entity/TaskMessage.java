@@ -52,7 +52,6 @@ public class TaskMessage {
     JSONObject result = new JSONObject();
     result.put("taskMessageId", taskMessageId);
     result.put("taskId", task.getTaskId());
-    result.put("messagerId", messager.getUserId());
     result.put("content", content);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
     result.put("likedNumber", likedNumber);
@@ -61,4 +60,13 @@ public class TaskMessage {
 
     return result;
   }
+
+  public boolean isLikedByUser(User liker)
+  {
+    return likers.stream().anyMatch(user -> user.equals(liker));
+  }
+
+  public void addLiker(User liker) { likers.add(liker); }
+
+  public void removeLiker(User unliker) { likers.remove(unliker); }
 }

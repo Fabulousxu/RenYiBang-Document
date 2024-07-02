@@ -65,6 +65,9 @@ public class Task {
   @JsonIgnore
   private List<TaskOrder> taskOrders; // 任务订单列表
 
+  @Column(name = "collected")
+  private long collectedNumber = 0;
+
   public static List<String> splitImages(String images) {
     // 使用空格分割字符串，并将结果转换为List<String>
     return Arrays.asList(images.split("\\s+"));
@@ -82,6 +85,7 @@ public class Task {
     result.put("maxAccess", maxAccess);
     result.put("rating", rating);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+    result.put("collectedNumber", collectedNumber);
 
     result.put("owner", owner.toJSON());
 
@@ -101,10 +105,16 @@ public class Task {
     result.put("maxAccess", maxAccess);
     result.put("rating", rating);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+    result.put("collectedNumber", collectedNumber);
     result.put("collected", user.getCollectedTasks().stream().anyMatch(taskCollect -> (taskCollect.getTaskCollectId() == this.taskId)));
 
     result.put("owner", owner.toJSON());
 
     return result;
+  }
+
+  public boolean accessNotFull()
+  {
+    return accesses.size() < maxAccess;
   }
 }

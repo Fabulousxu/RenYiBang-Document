@@ -54,7 +54,6 @@ public class TaskComment {
     JSONObject result = new JSONObject();
     result.put("taskCommentId", taskCommentId);
     result.put("taskId", task.getTaskId());
-    result.put("commenterId", commenter.getUserId());
     result.put("content", content);
     result.put("rating", rating);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
@@ -63,5 +62,15 @@ public class TaskComment {
     result.put("commenter", commenter.toJSON());
 
     return result;
+  }
+
+  public boolean isLikedByUser(User liker)
+  {
+    return likers.stream().anyMatch(user -> user.equals(liker));
+  }
+
+  public void addLiker(User liker) { likers.add(liker); }
+
+  public void removeLiker(User unliker) { likers.remove(unliker);
   }
 }

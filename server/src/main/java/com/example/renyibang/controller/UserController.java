@@ -3,6 +3,7 @@ package com.example.renyibang.controller;
 import com.alibaba.fastjson2.JSONObject;
 import com.example.renyibang.entity.RegisterRequest;
 import com.example.renyibang.service.UserService;
+import com.example.renyibang.util.JwtUtil;
 import com.example.renyibang.util.ResponseUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -14,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -26,7 +27,10 @@ public class UserController {
         UsernamePasswordToken token = new UsernamePasswordToken(name, password);
         try {
             subject.login(token);//执行登录，如果没有异常说明正常
-            return ResponseUtil.success("登录成功");
+            String jwt =JwtUtil.createJWT(name);
+            JSONObject data = new JSONObject();
+            data.put("jwt",jwt);
+            return ResponseUtil.success("登录成功",data);
         } catch (UnknownAccountException e) {
             return ResponseUtil.error("用户名不存在");
         } catch (IncorrectCredentialsException e) {
@@ -38,6 +42,8 @@ public class UserController {
 
     @GetMapping("/register")
     public JSONObject register(@RequestBody RegisterRequest registerRequest) {
+        System.out.println("register");
+
         String password = registerRequest.getPassword();
         String nickname = registerRequest.getNickname();
         String intro = registerRequest.getIntro();

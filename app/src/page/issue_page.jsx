@@ -2,6 +2,7 @@ import { Button, Input, Upload, Image, Radio, Modal } from 'antd';
 import React, { useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import BasicLayout from '../component/basic_layout';
+import { issueService, issueTask } from '../service/issue';
 
 const getBase64 = (file) =>
     new Promise((resolve, reject) => {
@@ -12,6 +13,10 @@ const getBase64 = (file) =>
     });
 
 export default function IssuePage() {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [price, setPrice] = useState(0);
+  const [radioValue, setRadioValue] = useState(1);
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState('');
   const [fileList, setFileList] = useState([
@@ -70,16 +75,26 @@ export default function IssuePage() {
   );
   //上传图片界面设置
 
-  const [value, setValue] = useState(1);
   const onRadioChange = (e) => {
-    setValue(e.target.value);
+    setRadioValue(e.target.value);
   };
   //单选框设置
 
   const handleSubmit = () => { 
-    Modal.success({
-      content: '发布成功',
-    });
+    let ans;
+    let newitem = {
+      title: title,
+      description: description,
+      price: price,
+      type: radioValue,
+      images: fileList.map(file => file.url)
+    }
+    if(radioValue === 1){
+      ans = issueTask(title, description, price, newitem.images)
+    }
+    else if(radioValue === 2){
+      ans = issueService(title, description, price, newitem.images)
+    }
   }
 
   return(
@@ -112,14 +127,14 @@ export default function IssuePage() {
           )}
         </div>
         <div style={{ width: '40%', display: 'flex', 'flex-direction': 'column' }}>
-          <Input placeholder="请输入标题" style={{ margin: '20px', width: '80%' }} size='large'/>
+          <Input placeholder="请输入标题" style={{ margin: '20px', width: '80%' }} size='large' value={title} onChange={e => setTitle(e.target.value)}/>
           <h3 style={{ margin: '20px' }}>请选择发布类型</h3>
-          <Radio.Group onChange={onRadioChange} value={value} style={{ margin: '20px', width: '80%' }}>
+          <Radio.Group onChange={onRadioChange} value={radioValue} style={{ margin: '20px', width: '80%' }}>
             <Radio value={1}>任务</Radio>
             <Radio value={2}>服务</Radio>
           </Radio.Group>
-          <Input.TextArea placeholder="请输入描述" style={{ margin: '20px', width: '80%' }}/>
-          <Input placeholder="初步定价" addonBefore="￥" style={{ margin: '20px', width: '80%' }}/>
+          <Input.TextArea placeholder="请输入描述" style={{ margin: '20px', width: '80%' }} value={description} onChange={e => setDescription(e.target.value)}/>
+          <Input placeholder="初步定价" addonBefore="￥" style={{ margin: '20px', width: '80%' }} value={price} onChange={e => setPrice(e.target.value)}/>
           <Button type="primary" style={{ margin: '20px', width: '100px' }} onClick={handleSubmit}>提交</Button>
         </div>
       </div>
