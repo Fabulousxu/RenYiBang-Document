@@ -66,7 +66,7 @@ public class TaskServiceImpl implements TaskService {
 
             if(result == null)
             {
-                return ResponseUtil.error("Get task information null.");
+                return ResponseUtil.error("任务信息为null");
             }
 
             else
@@ -123,6 +123,28 @@ public class TaskServiceImpl implements TaskService {
             returnRes.put("items", result);
 
             return ResponseUtil.success(returnRes);
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Override
+    public JSONObject likeComment(long taskCommentId, long likerId)
+    {
+        try
+        {
+            if(taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId))
+            {
+                return ResponseUtil.success();
+            }
+
+            else
+            {
+                return ResponseUtil.error("用户已点赞过该评论！");
+            }
+
         }
         catch (Exception e)
         {
