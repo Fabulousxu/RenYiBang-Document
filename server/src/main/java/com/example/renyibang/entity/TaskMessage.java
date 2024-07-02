@@ -60,4 +60,13 @@ public class TaskMessage {
 
     return result;
   }
+
+  public boolean isLikedByUser(User liker)
+  {
+    return likers.stream().anyMatch(user -> user.equals(liker));
+  }
+
+  public void addLiker(User liker) { likers.add(liker); }
+
+  public void removeLiker(User unliker) { likers.remove(unliker); }
 }

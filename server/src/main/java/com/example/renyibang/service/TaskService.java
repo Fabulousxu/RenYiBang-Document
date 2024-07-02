@@ -19,4 +19,8 @@ public interface TaskService {
     JSONObject likeComment(long taskCommentId, long likerId);
 
     JSONObject unlikeComment(long taskCommentId, long unlikerId);
+
+    JSONObject likeMessage(long taskMessageId, long likerId);
+
+    JSONObject unlikeMessage(long taskMessageId, long unlikerId);
 }
