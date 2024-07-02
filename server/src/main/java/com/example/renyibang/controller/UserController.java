@@ -38,6 +38,8 @@ public class UserController {
 
     @GetMapping("/register")
     public JSONObject register(@RequestBody RegisterRequest registerRequest) {
+        System.out.println("register");
+
         String password = registerRequest.getPassword();
         String nickname = registerRequest.getNickname();
         String intro = registerRequest.getIntro();

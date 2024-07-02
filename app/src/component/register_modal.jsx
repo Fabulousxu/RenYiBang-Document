@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Modal, Form, Input, Button, notification, Upload } from 'antd';
-import { UserOutlined, LockOutlined, SmileOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { Modal, Form, Input, Button, notification } from 'antd';
+import { LockOutlined, SmileOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import axios from 'axios';
+import ImageUploader from './ImageUploader'; // Make sure the path to ImageUploader is correct
 
 const { TextArea } = Input;
 
@@ -9,9 +10,10 @@ const RegisterModal = ({ visible, onCancel }) => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const [userId, setUserId] = useState(null);
+  const [avatarUrl, setAvatarUrl] = useState('');
 
   const handleRegister = async (values) => {
-    const { name, password, confirmPassword, nickname, intro, avatar } = values;
+    const { password, confirmPassword, nickname, intro } = values;
 
     if (password !== confirmPassword) {
       notification.error({
@@ -22,20 +24,32 @@ const RegisterModal = ({ visible, onCancel }) => {
       return;
     }
 
+    if (password.length > 16) {
+      notification.error({
+        message: '注册失败',
+        description: '密码不能超过16位',
+        placement: 'topRight',
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       const url = `${process.env.REACT_APP_API_URL}/user/register`;
-      const response = await axios.post(url, {
-        name,
+      const requestData = {
         password,
         nickname,
         intro,
-        avatar
-      });
+        avatar: avatarUrl
+      };
 
+      // 输出请求数据
+      console.log("Request Data:", requestData);
+
+      const response = await axios.post(url, requestData);
       const { data } = response;
 
-      if (data.status !== 'success') {
+      if (!data.ok) {
         throw new Error(data.message || '注册失败，请重试');
       }
 
@@ -57,6 +71,10 @@ const RegisterModal = ({ visible, onCancel }) => {
     }
   };
 
+  const onImageUpload = (url) => {
+    setAvatarUrl(url);
+  };
+
   return (
     <Modal
       visible={visible}
@@ -66,17 +84,20 @@ const RegisterModal = ({ visible, onCancel }) => {
     >
       <Form form={form} onFinish={handleRegister}>
         <Form.Item
-          name="name"
-          rules={[{ required: true, message: '请输入你的用户名!' }]}
+          name="nickname"
+          rules={[{ required: true, message: '请输入你的昵称!' }]}
         >
           <Input
-            prefix={<UserOutlined className="site-form-item-icon" />}
-            placeholder="用户名"
+            prefix={<SmileOutlined className="site-form-item-icon" />}
+            placeholder="昵称"
           />
         </Form.Item>
         <Form.Item
           name="password"
-          rules={[{ required: true, message: '请输入你的密码!' }]}
+          rules={[
+            { required: true, message: '请输入你的密码!' },
+            { max: 16, message: '密码不能超过16位' }
+          ]}
         >
           <Input
             prefix={<LockOutlined className="site-form-item-icon" />}
@@ -95,15 +116,6 @@ const RegisterModal = ({ visible, onCancel }) => {
           />
         </Form.Item>
         <Form.Item
-          name="nickname"
-          rules={[{ required: true, message: '请输入你的昵称!' }]}
-        >
-          <Input
-            prefix={<SmileOutlined className="site-form-item-icon" />}
-            placeholder="昵称"
-          />
-        </Form.Item>
-        <Form.Item
           name="intro"
         >
           <TextArea
@@ -115,9 +127,7 @@ const RegisterModal = ({ visible, onCancel }) => {
         <Form.Item
           name="avatar"
         >
-          <Input
-            placeholder="头像 URL"
-          />
+          <ImageUploader onImageUpload={onImageUpload} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" style={{ width: '100%' }} loading={loading}>
