@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Input, Button, Card, notification, Radio } from 'antd';
+import { Form, Input, Button, Card, notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import axios from 'axios';
 import "../css/login.css";
@@ -9,7 +9,6 @@ import RegisterModal from '../component/register_modal';
 function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [type, setType] = useState(0);
   const [loading, setLoading] = useState(false);
   const [isRegisterModalVisible, setRegisterModalVisible] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +16,7 @@ function LoginPage() {
   const handleLogin = async () => {
     setLoading(true);
     try {
-      const url = `${process.env.REACT_APP_API_URL}/user/login`;
+      const url = `${process.env.REACT_APP_API_URL}/login`;
       const response = await axios.post(url, {
         name: username,
         password: password
@@ -25,16 +24,15 @@ function LoginPage() {
 
       const { data } = response;
 
-      if (data.status !== 'success') {
+      if (!data.ok) {
         throw new Error(data.message || '登录失败，请重试');
       }
 
-      const token = data.token;
-      localStorage.setItem('authToken', token);
+      const token = data.data.jwt;
+      localStorage.setItem('jwt', token);
       localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('isAdmin', type === 1 ? 'true' : 'false');
 
-      navigate('/home');
+      navigate('/task');
     } catch (error) {
       notification.error({
         message: '登录失败',
