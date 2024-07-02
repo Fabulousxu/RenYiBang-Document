@@ -159,4 +159,33 @@ public class TaskServiceImpl implements TaskService {
             return ResponseUtil.error(String.valueOf(e.getMessage()));
         }
     }
+
+    @Transactional
+    @Override
+    public JSONObject likeMessage(long taskMessageId, long likerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskMessageDao.likeMessageByTaskMessageId(taskMessageId, likerId));
+
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unlikeMessage(long taskMessageId, long unlikerId)
+    {
+        try
+        {
+            return ResponseUtil.success(taskMessageDao.unlikeMessageByTaskMessageId(taskMessageId, unlikerId));
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
 }

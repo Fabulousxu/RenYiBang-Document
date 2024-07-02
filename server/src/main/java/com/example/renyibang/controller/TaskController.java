@@ -115,4 +115,20 @@ public class TaskController {
 
         return taskService.unlikeComment(taskCommentId, unlikerId);
     }
+
+    @PutMapping("/message/{taskMessageId}/like")
+    public JSONObject likeMessage(@PathVariable long taskMessageId)
+    {
+        //userId待替换
+        long likerId = 1;
+        return taskService.likeMessage(taskMessageId, likerId);
+    }
+
+    @DeleteMapping("/message/{taskMessageId}/unlike")
+    public JSONObject unlikeMessage(@PathVariable long taskMessageId)
+    {
+        //userId待替换
+        long unlikerId = 1;
+        return taskService.unlikeMessage(taskMessageId, unlikerId);
+    }
 }

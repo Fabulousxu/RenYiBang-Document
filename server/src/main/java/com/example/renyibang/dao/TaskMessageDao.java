@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskMessageDao {
     Page<TaskMessage> getTaskMessages(long taskId, Pageable pageable);
+
+    String likeMessageByTaskMessageId(long taskMessageId, long likerId);
+
+    String unlikeMessageByTaskMessageId(long taskMessageId, long unlikerId);
 }
