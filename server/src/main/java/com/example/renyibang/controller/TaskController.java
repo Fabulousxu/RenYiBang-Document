@@ -131,4 +131,22 @@ public class TaskController {
         long unlikerId = 1;
         return taskService.unlikeMessage(taskMessageId, unlikerId);
     }
+
+    @PutMapping("/{taskId}/collect")
+    public JSONObject collectTask(@PathVariable long taskId)
+    {
+        //userId待替换
+        long collectorId = 1;
+        return taskService.collectTask(taskId, collectorId);
+    }
+
+    @DeleteMapping("/{taskId}/uncollect")
+    public JSONObject uncollectTask(@PathVariable long taskId)
+    {
+        //userId待替换
+        long uncollectorId = 1;
+        return taskService.uncollectTask(taskId, uncollectorId);
+    }
+
+    
 }
