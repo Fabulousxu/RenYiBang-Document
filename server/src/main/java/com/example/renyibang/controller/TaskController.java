@@ -195,4 +195,12 @@ public class TaskController {
         long commenterId = 1;
         return taskService.deleteComment(taskCommentId, userId);
     }
+
+    @PostMapping("/issue")
+    public JSONObject publishTask(@RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long publisherId = 1;
+        return taskService.publishTask(userId, body);
+    }
 }

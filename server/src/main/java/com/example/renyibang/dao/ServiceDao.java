@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
 public interface ServiceDao {
@@ -19,4 +20,6 @@ public interface ServiceDao {
     String accessServiceByServiceId(long serviceId, long accessorId);
 
     String unaccessServiceByServiceId(long serviceId, long unaccessorId);
+
+    String publishService(long userId, String title, String description, long price, List<String> requestImages);
 }

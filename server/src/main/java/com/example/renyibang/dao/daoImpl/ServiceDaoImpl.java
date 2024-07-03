@@ -3,12 +3,14 @@ package com.example.renyibang.dao.daoImpl;
 import com.example.renyibang.dao.ServiceDao;
 import com.example.renyibang.entity.*;
 import com.example.renyibang.repository.*;
+import com.example.renyibang.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
 public class ServiceDaoImpl implements ServiceDao {
@@ -177,6 +179,37 @@ public class ServiceDaoImpl implements ServiceDao {
 
             serviceAccessRepository.deleteByServiceAndAccessor(service, unaccessor);
             return "取消购买服务成功！";
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    @Override
+    public String publishService(long userId, String title, String description, long price, List<String> requestImages)
+    {
+        try
+        {
+            User publisher = userRepository.findById(userId).orElse(null);
+            if(publisher == null)
+            {
+                return "用户不存在！";
+            }
+
+            String imagesURL = ImageUtil.mergeImages(requestImages);
+
+            Service service = new Service();
+            service.setTitle(title);
+            service.setPrice(price);
+            service.setOwner(publisher);
+            service.setImages(imagesURL);
+            service.setDescription(description);
+            service.setCreatedAt(LocalDateTime.now());
+
+            serviceRepository.save(service);
+
+            return "服务发布成功！";
         }
         catch (Exception e)
         {
