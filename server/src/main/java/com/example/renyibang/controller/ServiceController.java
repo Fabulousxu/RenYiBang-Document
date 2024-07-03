@@ -195,4 +195,12 @@ public class ServiceController {
         long commenterId = 1;
         return serviceService.deleteComment(serviceCommentId, userId);
     }
+
+    @PostMapping("/issue")
+    public JSONObject publishService(@RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long publisherId = 1;
+        return serviceService.publishService(userId, body);
+    }
 }
