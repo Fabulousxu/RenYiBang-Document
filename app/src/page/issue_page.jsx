@@ -47,6 +47,17 @@ export default function IssuePage() {
   ]);
   const uploadUrl = '';
 
+  const beforeUpload = (file) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      // 将文件读取为Base64并存储到状态中
+      setFileList(prevList => [...prevList, reader.result]);
+    };
+    reader.readAsDataURL(file);
+    // 阻止文件自动上传
+    return false;
+  };
+
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
       file.preview = await getBase64(file.originFileObj);
@@ -102,13 +113,16 @@ export default function IssuePage() {
       <h1>发布一个新的内容</h1>
       <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
         <div style={{ width: '40%', display: 'flex', 'flex-direction': 'column' }}>
-          <h3>请上传预览照片</h3>
+          <h3>请上传预览照片，数量不超过8张</h3>
           <Upload
-          action={uploadUrl}
+          beforeUpload={beforeUpload}
           listType="picture-card"
           fileList={fileList}
           onPreview={handlePreview}
           onChange={handleChange}
+          onRemove={(file) => {
+            setFileList(curr => curr.filter(item => item.uid !== file.uid));
+          }}
           >
           {fileList.length >= 8 ? null : uploadButton}
           </Upload>
