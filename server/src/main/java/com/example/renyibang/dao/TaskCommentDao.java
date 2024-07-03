@@ -12,4 +12,8 @@ public interface TaskCommentDao {
     String likeCommentByTaskCommentId(long taskCommentId, long likerId);
 
     String unlikeCommentByTaskCommentId(long taskCommentId, long unlikerId);
+
+    String putComment(long taskId, long userId, String content);
+
+    String deleteComment(long taskCommentId, long userId);
 }

@@ -179,4 +179,20 @@ public class TaskController {
         long messagerId = 1;
         return taskService.deleteMessage(taskMessageId, userId);
     }
+
+    @PutMapping("/{taskId}/comment")
+    public JSONObject publishComment(@PathVariable long taskId, @RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long commenterId = 1;
+        return taskService.publishComment(taskId, userId, body);
+    }
+
+    @DeleteMapping("/comment/{taskCommentId}")
+    public JSONObject deleteComment(@PathVariable long taskCommentId, long userId)
+    {
+        //userId待替换
+        long commenterId = 1;
+        return taskService.deleteComment(taskCommentId, userId);
+    }
 }

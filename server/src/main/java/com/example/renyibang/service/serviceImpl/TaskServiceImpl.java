@@ -325,10 +325,14 @@ public class TaskServiceImpl implements TaskService {
             Object requestContent = body.get("content");
             if(requestContent == null)
             {
-                return ResponseUtil.error("留言内容为空！");
+                return ResponseUtil.error("请求体为空！");
             }
 
             String content = requestContent.toString();
+            if(content.isEmpty())
+            {
+                return ResponseUtil.error("留言内容为空！");
+            }
             String result = taskMessageDao.putMessage(taskId, userId, content);
             if("发布留言成功！".equals(result))
             {
@@ -353,6 +357,61 @@ public class TaskServiceImpl implements TaskService {
         {
             String result = taskMessageDao.deleteMessage(taskMessageId, userId);
             if("删除留言成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Override
+    public JSONObject publishComment(long taskId, long userId, JSONObject body)
+    {
+        try
+        {
+            Object requestContent = body.get("content");
+            if(requestContent == null)
+            {
+                return ResponseUtil.error("请求体为空！");
+            }
+
+            String content = requestContent.toString();
+            if(content.isEmpty())
+            {
+                return ResponseUtil.error("评论内容为空！");
+            }
+            String result = taskCommentDao.putComment(taskId, userId, content);
+            if("发布评论成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Override
+    public JSONObject deleteComment(long taskCommentId, long userId)
+    {
+        try
+        {
+            String result = taskCommentDao.deleteComment(taskCommentId, userId);
+            if("删除评论成功！".equals(result))
             {
                 return ResponseUtil.success(result);
             }
