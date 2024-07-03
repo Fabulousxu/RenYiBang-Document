@@ -428,40 +428,6 @@ public class ServiceServiceImpl implements ServiceService {
     @Override
     public JSONObject issueService(long userId, String title, String description, String price, JSONArray images)
     {
-        try
-        {
-            if(title.isEmpty() || description.isEmpty() || price.isEmpty() || images.isEmpty())
-            {
-                return ResponseUtil.error("发布服务信息不完整！");
-            }
-
-            long priceLong = Long.parseLong(price);
-            if(priceLong <= 0)
-            {
-                return ResponseUtil.error("价格不能小于等于0！");
-            }
-
-            User user = userDao.findById(userId);
-            if(user == null)
-            {
-                return ResponseUtil.error("用户不存在！");
-            }
-
-            Service service = new Service();
-            service.setUserId(userId);
-            service.setTitle(title);
-            service.setDescription(description);
-            service.setPrice(priceLong);
-            service.setImages(images.toString());
-            service.setCreatedAt(DateTimeUtil.getCurrentDateTime());
-            service.setUpdatedAt(DateTimeUtil.getCurrentDateTime());
-            serviceDao.save(service);
-
-            return ResponseUtil.success("发布服务成功！");
-        }
-        catch (Exception e)
-        {
-            return ResponseUtil.error(String.valueOf(e));
-        }
+        return new JSONObject();
     }
 }

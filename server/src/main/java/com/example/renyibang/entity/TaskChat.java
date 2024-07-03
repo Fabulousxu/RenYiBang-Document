@@ -26,6 +26,8 @@ public class TaskChat {
   @JoinColumn(name = "chatter_id")
   private User chatter;
 
+  private int unread;
+
   @OneToMany(mappedBy = "taskChat")
   @OrderBy("createdAt DESC")
   private List<TaskChatMessage> messages;
