@@ -2,13 +2,15 @@ package com.example.renyibang.dao.daoImpl;
 
 import com.example.renyibang.dao.ServiceMessageDao;
 import com.example.renyibang.dao.UserDao;
-import com.example.renyibang.entity.ServiceMessage;
-import com.example.renyibang.entity.User;
+import com.example.renyibang.entity.*;
 import com.example.renyibang.repository.ServiceMessageRepository;
+import com.example.renyibang.repository.ServiceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
 
 @Repository
 public class ServiceMessageDaoImpl implements ServiceMessageDao {
@@ -17,6 +19,9 @@ public class ServiceMessageDaoImpl implements ServiceMessageDao {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private ServiceRepository serviceRepository;
 
     @Override
     public Page<ServiceMessage> getServiceMessages(long serviceId, Pageable pageable)
@@ -88,6 +93,70 @@ public class ServiceMessageDaoImpl implements ServiceMessageDao {
                 serviceMessageRepository.save(serviceMessage);
                 return "取消点赞成功！";
             }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    @Override
+    public String putMessage(long serviceId, long userId, String content)
+    {
+        try
+        {
+            User messager = userDao.findById(userId).orElse(null);
+            if(messager == null)
+            {
+                return "用户不存在！";
+            }
+
+            Service service = serviceRepository.findById(serviceId).orElse(null);
+            if(service == null)
+            {
+                return "服务不存在！";
+            }
+
+            ServiceMessage serviceMessage = new ServiceMessage();
+            serviceMessage.setService(service);
+            serviceMessage.setMessager(messager);
+            serviceMessage.setContent(content);
+            serviceMessage.setCreatedAt(LocalDateTime.now());
+            serviceMessageRepository.save(serviceMessage);
+
+            return "发布留言成功！";
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    @Override
+    public String deleteMessage(long serviceMessageId, long userId)
+    {
+        try
+        {
+            User messager = userDao.findById(userId).orElse(null);
+            if(messager == null)
+            {
+                return "用户不存在！";
+            }
+
+            ServiceMessage serviceMessage = serviceMessageRepository.findById(serviceMessageId).orElse(null);
+            if(serviceMessage == null)
+            {
+                return "留言不存在！";
+            }
+
+            if(!serviceMessage.isMessager(messager))
+            {
+                return "该留言不是由此用户发布！";
+            }
+
+            serviceMessageRepository.deleteById(serviceMessageId);
+
+            return "删除留言成功！";
         }
         catch (Exception e)
         {

@@ -71,6 +71,7 @@ public class TaskComment {
 
   public void addLiker(User liker) { likers.add(liker); }
 
-  public void removeLiker(User unliker) { likers.remove(unliker);
-  }
+  public void removeLiker(User unliker) { likers.remove(unliker);}
+
+  public boolean isCommenter(User commenter){ return commenter.equals(this.commenter);}
 }

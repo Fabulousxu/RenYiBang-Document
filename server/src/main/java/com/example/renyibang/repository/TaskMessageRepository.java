@@ -9,5 +9,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskMessageRepository extends JpaRepository<TaskMessage, Long> {
     Page<TaskMessage> findByTaskTaskId(long taskId, Pageable pageable);
-
 }
