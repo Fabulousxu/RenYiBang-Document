@@ -1,11 +1,11 @@
 package com.example.renyibang.entity;
 
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Entity
 @Table(name = "service_chat")
@@ -24,6 +24,12 @@ public class ServiceChat {
   @ManyToOne
   @JoinColumn(name = "chatter_id")
   private User chatter;
+
+  private int unread;
+  private String lastMessage;
+
+  @Temporal(TemporalType.TIMESTAMP)
+  private LocalDateTime lastTime;
 
   @OneToMany(mappedBy = "serviceChat")
   @OrderBy("createdAt DESC")

@@ -216,9 +216,11 @@ CREATE TABLE service_order
 CREATE TABLE task_chat
 (
     task_chat_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '聊天id',
-    task_id      BIGINT                 NOT NULL COMMENT '任务id',
-    chatter_id   BIGINT                 NOT NULL COMMENT '发起聊天者id',
-    unread       INT UNSIGNED DEFAULT 0 NOT NULL COMMENT '未读消息数',
+    task_id      BIGINT    NOT NULL COMMENT '任务id',
+    chatter_id   BIGINT    NOT NULL COMMENT '发起聊天者id',
+    unread       INT UNSIGNED       DEFAULT 0 NOT NULL COMMENT '未读消息数',
+    last_message TEXT      NOT NULL COMMENT '最后一条消息内容',
+    last_time    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一条消息发送时间',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (chatter_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务聊天表';
@@ -226,9 +228,11 @@ CREATE TABLE task_chat
 CREATE TABLE service_chat
 (
     service_chat_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '聊天id',
-    service_id      BIGINT                 NOT NULL COMMENT '服务id',
-    chatter_id      BIGINT                 NOT NULL COMMENT '发起聊天者id',
-    unread          INT UNSIGNED DEFAULT 0 NOT NULL COMMENT '未读消息数',
+    service_id      BIGINT    NOT NULL COMMENT '服务id',
+    chatter_id      BIGINT    NOT NULL COMMENT '发起聊天者id',
+    unread          INT UNSIGNED       DEFAULT 0 NOT NULL COMMENT '未读消息数',
+    last_message    TEXT      NOT NULL COMMENT '最后一条消息内容',
+    last_time       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一条消息发送时间',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (chatter_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务聊天表';

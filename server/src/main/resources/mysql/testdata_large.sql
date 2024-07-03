@@ -6063,9 +6063,6 @@ According everybody attack prepare according protect ability. Air respond south.
         'News think prevent life industry. Sure space range up story. Pull six figure energy service consider international including.',
         '2024-01-27 19:22:50', 434);
 
-INSERT INTO task_chat (task_id, chatter_id)
-VALUES (1, 2);
-
 INSERT INTO `order` (order_id, type, owner_id, accessor_id, status, cost)
 VALUES (1, 0, 16, 4, 0, 8088),
        (2, 0, 12, 9, 3, 1969),
