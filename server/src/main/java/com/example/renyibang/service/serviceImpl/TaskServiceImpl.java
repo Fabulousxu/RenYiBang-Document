@@ -19,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -416,6 +417,72 @@ public class TaskServiceImpl implements TaskService {
         {
             String result = taskCommentDao.deleteComment(taskCommentId, userId);
             if("删除评论成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Override
+    public JSONObject publishTask(long userId, JSONObject body)
+    {
+        try
+        {
+            Object requestTitle = body.get("title");
+            Object requestDescription = body.get("description");
+            Object requestPrice = body.get("price");
+            Object requestImages = body.get("images");
+
+            if(requestTitle == null || requestDescription == null || requestPrice == null || requestImages == null)
+            {
+                return ResponseUtil.error("请求体不完整！");
+            }
+
+            String title = requestTitle.toString();
+            if(title.isEmpty())
+            {
+                return ResponseUtil.error("任务标题为空！");
+            }
+
+            String description = requestDescription.toString();
+            if(description.isEmpty())
+            {
+                return ResponseUtil.error("任务内容为空！");
+            }
+
+            long price = 0L;
+
+            if(requestPrice.getClass() == Integer.class)
+            {
+                price = body.getInteger("price").longValue();
+            }
+
+            else if(requestPrice.getClass() == Long.class)
+            {
+                price = body.getLongValue("price");
+            }
+
+            else
+            {
+                return ResponseUtil.error("非法的价格类型！");
+            }
+
+            if(price < 0)
+            {
+                return ResponseUtil.error("价格不能为负数！");
+            }
+
+            String result = taskDao.publishTask(userId, title, description, price, (List<String>)requestImages);
+            if("任务发布成功！".equals(result))
             {
                 return ResponseUtil.success(result);
             }
