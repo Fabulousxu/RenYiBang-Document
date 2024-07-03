@@ -63,7 +63,7 @@ public class TaskServiceImpl implements TaskService {
     {
         try
         {
-            Task result = taskDao.getTask(taskId);
+            Task result = taskDao.findById(taskId);
 
             if(result == null)
             {

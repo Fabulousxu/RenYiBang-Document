@@ -55,15 +55,30 @@ public class User {
   @JsonIgnore
   private List<Task> tasks; // 发布任务列表
 
+  @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+  @OrderBy("createdAt DESC")
+  @JsonIgnore
+  private List<Service> services; // 发布服务列表
+
   @OneToMany(mappedBy = "collector")
   @OrderBy("createdAt DESC")
   @JsonIgnore
   private List<TaskCollect> collectedTasks; // 收藏任务列表
 
+  @OneToMany(mappedBy = "collector")
+  @OrderBy("createdAt DESC")
+  @JsonIgnore
+  private List<ServiceCollect> collectedServices; // 收藏服务列表
+
   @OneToMany(mappedBy = "accessor")
   @OrderBy("createdAt DESC")
   @JsonIgnore
   private List<TaskAccess> accessedTasks; // 接取任务列表
+
+  @OneToMany(mappedBy = "accessor")
+  @OrderBy("createdAt DESC")
+  @JsonIgnore
+  private List<ServiceAccess> accessedServices; // 购买服务列表
 
   @OneToMany(mappedBy = "owner")
   @JsonIgnore
@@ -94,5 +109,15 @@ public class User {
   public boolean hasAccessed(Task task)
   {
     return accessedTasks.stream().anyMatch(taskAccess -> taskAccess.getTask().equals(task));
+  }
+
+  public boolean hasCollected(Service service)
+  {
+    return collectedServices.stream().anyMatch(serviceCollect -> serviceCollect.getService().equals(service));
+  }
+
+  public boolean hasAccessed(Service service)
+  {
+    return accessedServices.stream().anyMatch(serviceAccess -> serviceAccess.getService().equals(service));
   }
 }

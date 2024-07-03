@@ -70,6 +70,9 @@ public class Service {
     @JsonIgnore
     private List<ServiceOrder> serviceOrders; // 服务订单列表
 
+    @Column(name = "collected")
+    private long collectedNumber = 0;
+
     public static List<String> splitImages(String images) {
         // 使用空格分割字符串，并将结果转换为List<String>
         return Arrays.asList(images.split("\\s+"));
@@ -87,9 +90,36 @@ public class Service {
         result.put("maxAccess", maxAccess);
         result.put("rating", rating);
         result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+        result.put("collectedNumber", collectedNumber);
 
         result.put("owner", owner.toJSON());
 
         return result;
+    }
+
+    public JSONObject toJSON(User user)
+    {
+        JSONObject result = new JSONObject();
+        result.put("serviceId", serviceId);
+        result.put("title", title);
+        List<String> imageList = splitImages(images);
+        result.put("images", imageList);
+        result.put("cover", imageList.getFirst());
+        result.put("description", description);
+        result.put("price", price);
+        result.put("maxAccess", maxAccess);
+        result.put("rating", rating);
+        result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+        result.put("collectedNumber", collectedNumber);
+        result.put("collected", user.getCollectedServices().stream().anyMatch(serviceCollect -> (serviceCollect.getServiceCollectId() == this.serviceId)));
+
+        result.put("owner", owner.toJSON());
+
+        return result;
+    }
+
+    public boolean accessNotFull()
+    {
+        return accesses.size() < maxAccess;
     }
 }

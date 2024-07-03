@@ -118,6 +118,7 @@ CREATE TABLE service
     created_at  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '服务发布时间',
     max_access  INT         NOT NULL DEFAULT 1 COMMENT '服务最大购买数',
     rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
+    collected   BIGINT      NOT NULL COMMENT '服务收藏数',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务表';
 
@@ -139,6 +140,7 @@ CREATE TABLE service_comment
     content            TEXT      NOT NULL COMMENT '服务评论内容',
     created_at         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '服务评论时间',
     rating             TINYINT            DEFAULT 50 NOT NULL COMMENT '服务评论评分(存储10倍评分,范围0~100)',
+    liked_number       BIGINT    NOT NULL COMMENT '服务评论点赞数',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (commenter_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务评论表(仅有购买服务者才能评论)';
@@ -159,6 +161,7 @@ CREATE TABLE service_message
     messager_id        BIGINT    NOT NULL COMMENT '留言者id',
     content            TEXT      NOT NULL COMMENT '消息内容',
     created_at         TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '消息发送时间',
+    liked_number    BIGINT    NOT NULL COMMENT '服务留言点赞数',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (messager_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务留言表';
