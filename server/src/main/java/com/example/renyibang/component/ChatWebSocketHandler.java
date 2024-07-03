@@ -46,6 +46,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     User sender = userRepository.findById(senderId).orElse(null);
     User receiver = userRepository.findById(receiverId).orElse(null);
     if (sender == null || receiver == null) return;
+    if (senderSession.equals(userSessionMap.get(senderId))) return;
     WebSocketSession receiverSession = userSessionMap.get(receiverId);
     String content = json.getString("content");
     String images = "";
