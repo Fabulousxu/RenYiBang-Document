@@ -52,4 +52,22 @@ public class UserController {
         }
     }
 
+    @GetMapping("/profile/self")
+    public JSONObject getSelfInfo(long userId)
+    {
+        //userId待替换
+        return userService.getUserInfo(userId);
+    }
+
+    @GetMapping("/profile/{userId}")
+    public JSONObject getUserInfo(@PathVariable long userId)
+    {
+        return userService.getUserInfo(userId);
+    }
+
+    @PostMapping("/profile/modify/self")
+    public JSONObject modifyUserInfo(long userId, @RequestBody JSONObject body)
+    {
+        return userService.modifyUserInfo(userId, body);
+    }
 }
