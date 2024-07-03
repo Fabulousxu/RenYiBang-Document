@@ -47,12 +47,6 @@ public class TaskDaoImpl implements TaskDao {
   }
 
   @Override
-  public Task getTask(long taskId)
-  {
-      return taskRepository.findById(taskId).orElse(null);
-  }
-
-  @Override
   public String collectTaskByTaskId(long taskId, long collectorId)
   {
       try{

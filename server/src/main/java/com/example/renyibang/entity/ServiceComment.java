@@ -1,5 +1,7 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
+import com.example.renyibang.util.DateTimeUtil;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +9,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
@@ -34,7 +37,10 @@ public class ServiceComment
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private java.util.Date createdAt;
+    private LocalDateTime createdAt;
+
+    @Column(name = "liked_number")
+    private long likedNumber = 0;
 
     @ManyToMany
     @JoinTable(
@@ -42,4 +48,28 @@ public class ServiceComment
             joinColumns = @JoinColumn(name = "service_comment_id"),
             inverseJoinColumns = @JoinColumn(name = "liker_id"))
     private Set<User> likers;
+
+    public JSONObject toJSON()
+    {
+        JSONObject result = new JSONObject();
+        result.put("serviceCommentId", serviceCommentId);
+        result.put("serviceId", service.getServiceId());
+        result.put("content", content);
+        result.put("rating", rating);
+        result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
+        result.put("likedNumber", likedNumber);
+
+        result.put("commenter", commenter.toJSON());
+
+        return result;
+    }
+
+    public boolean isLikedByUser(User liker)
+    {
+        return likers.stream().anyMatch(user -> user.equals(liker));
+    }
+
+    public void addLiker(User liker) { likers.add(liker); }
+
+    public void removeLiker(User unliker) { likers.remove(unliker);}
 }
