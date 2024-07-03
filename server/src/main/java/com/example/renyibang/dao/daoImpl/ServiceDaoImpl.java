@@ -183,9 +183,4 @@ public class ServiceDaoImpl implements ServiceDao {
             throw e;
         }
     }
-
-    @Override
-    public Service findById(long serviceId) {
-        return serviceRepository.findById(serviceId).orElse(null);
-    }
 }
