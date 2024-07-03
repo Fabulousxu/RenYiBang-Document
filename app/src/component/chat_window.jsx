@@ -1,27 +1,53 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card, List, Input, Button, Avatar } from 'antd';
+import connectWebSocket from '../service/chat';
 
-const ChatWindow = ({ chat, socket }) => {
-  const [message, setMessage] = React.useState('');
-  const [messages, setMessages] = React.useState([
-    { sender: 'User 1', content: 'Hello!', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'Me', content: 'Hi, how are you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' },
-    { sender: 'User 1', content: 'I am good, thank you! How about you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-  ]);
+const ChatWindow = ({ chat }) => {
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
+  const [socket, setSocket] = useState(null);
 
   const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    const ws = connectWebSocket({
+      userId: chat.senderId,
+      onopen: () => console.log('WebSocket connection opened'+chat.senderId),
+      onmessage: (data) => handleIncomingMessage(data),
+      onclose: () => console.log('WebSocket connection closed'+chat.senderId),
+    });
+
+    setSocket(ws);
+
+    return () => {
+      if (ws) {
+        ws.send(JSON.stringify({ type: 'unregister', userId: chat.senderId })); // 断开连接时注销用户
+        ws.close();
+      }
+    };
+  }, [chat.senderId]);
+
+  const handleIncomingMessage = (data) => {
+    try {
+      const message = JSON.parse(data);
+      if (message.taskChatId === chat.taskChatId) {
+        setMessages((prevMessages) => [...prevMessages, message]);
+      }
+    } catch (error) {
+      console.error('Error parsing message:', error);
+    }
+  };
 
   const handleSend = () => {
     if (message && socket) {
       const newMessage = {
         type: 'task',
-        chatId: chat.id,
-        senderId: 6, // 假设当前用户ID为0，根据实际情况调整
-        receiverId: 2, // 根据实际情况调整
+        chatId: chat.taskChatId,
+        senderId: chat.senderId,
+        receiverId: chat.receiverId,
         content: message,
       };
-      socket.send(newMessage);
-      setMessages([...messages, { sender: 'Me', content: message, avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' }]);
+      socket.send(JSON.stringify(newMessage));
       setMessage('');
     }
   };
@@ -39,20 +65,20 @@ const ChatWindow = ({ chat, socket }) => {
             <div style={{
               display: 'flex',
               marginBottom: '10px',
-              justifyContent: item.sender === 'Me' ? 'flex-end' : 'flex-start'
+              justifyContent: item.senderId === chat.senderId ? 'flex-end' : 'flex-start'
             }}>
-              {item.sender !== 'Me' && <Avatar src={item.avatar} style={{ marginRight: '10px' }} />}
+              {item.senderId !== chat.senderId && <Avatar src={item.avatar} style={{ marginRight: '10px' }} />}
               <div style={{
                 maxWidth: '60%',
-                backgroundColor: item.sender === 'Me' ? '#1677FF' : '#f1f0f0',
-                color: item.sender === 'Me' ? '#fff' : '#000',
+                backgroundColor: item.senderId === chat.senderId ? '#1677FF' : '#f1f0f0',
+                color: item.senderId === chat.senderId ? '#fff' : '#000',
                 padding: '10px',
                 borderRadius: '15px',
                 wordWrap: 'break-word'
               }}>
                 {item.content}
               </div>
-              {item.sender === 'Me' && <Avatar src={item.avatar} style={{ marginLeft: '10px' }} />}
+              {item.senderId === chat.senderId && <Avatar src={item.avatar} style={{ marginLeft: '10px' }} />}
             </div>
           )}
         />
