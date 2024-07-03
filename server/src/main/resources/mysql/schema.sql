@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS RenYiBang;
-CREATE DATABASE RenYiBang;
-USE RenYiBang;
+DROP DATABASE IF EXISTS renyibang;
+CREATE DATABASE renyibang;
+USE renyibang;
 
 CREATE TABLE user
 (

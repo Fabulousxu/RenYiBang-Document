@@ -37,4 +37,6 @@ public interface TaskService {
     JSONObject publishComment(long taskId, long userId, JSONObject body);
 
     JSONObject deleteComment(long taskCommentId, long userId);
+
+    JSONObject publishTask(long userId, JSONObject body);
 }
