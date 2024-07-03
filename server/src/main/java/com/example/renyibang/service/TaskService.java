@@ -29,4 +29,8 @@ public interface TaskService {
     JSONObject accessTask(long taskId, long accessorId);
 
     JSONObject unaccessTask(long taskId, long unaccessorId);
+
+    JSONObject publishMessage(long taskId, long userId, JSONObject body);
+
+    JSONObject deleteMessage(long taskMessageId, long userId);
 }

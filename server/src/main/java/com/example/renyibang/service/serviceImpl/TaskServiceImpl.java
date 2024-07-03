@@ -19,6 +19,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 @Service
 public class TaskServiceImpl implements TaskService {
     @Autowired
@@ -300,6 +302,57 @@ public class TaskServiceImpl implements TaskService {
         {
             String result = taskDao.unaccessTaskByTaskId(taskId, unaccessorId);
             if("取消接取任务成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Override
+    public JSONObject publishMessage(long taskId, long userId, JSONObject body)
+    {
+        try
+        {
+            Object requestContent = body.get("content");
+            if(requestContent == null)
+            {
+                return ResponseUtil.error("留言内容为空！");
+            }
+
+            String content = requestContent.toString();
+            String result = taskMessageDao.putMessage(taskId, userId, content);
+            if("发布留言成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Override
+    public JSONObject deleteMessage(long taskMessageId, long userId)
+    {
+        try
+        {
+            String result = taskMessageDao.deleteMessage(taskMessageId, userId);
+            if("删除留言成功！".equals(result))
             {
                 return ResponseUtil.success(result);
             }
