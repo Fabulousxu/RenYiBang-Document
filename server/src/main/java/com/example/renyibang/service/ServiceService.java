@@ -29,4 +29,12 @@ public interface ServiceService {
     JSONObject accessService(long serviceId, long accessorId);
 
     JSONObject unaccessService(long serviceId, long unaccessorId);
+
+    JSONObject publishMessage(long serviceId, long userId, JSONObject body);
+
+    JSONObject deleteMessage(long serviceMessageId, long userId);
+
+    JSONObject publishComment(long serviceId, long userId, JSONObject body);
+
+    JSONObject deleteComment(long serviceCommentId, long userId);
 }

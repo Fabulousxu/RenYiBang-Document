@@ -378,9 +378,10 @@ public class TaskServiceImpl implements TaskService {
         try
         {
             Object requestContent = body.get("content");
-            if(requestContent == null)
+            Object requestRating = body.get("rating");
+            if(requestContent == null || requestRating == null)
             {
-                return ResponseUtil.error("请求体为空！");
+                return ResponseUtil.error("请求体不完整！");
             }
 
             String content = requestContent.toString();
@@ -388,7 +389,10 @@ public class TaskServiceImpl implements TaskService {
             {
                 return ResponseUtil.error("评论内容为空！");
             }
-            String result = taskCommentDao.putComment(taskId, userId, content);
+
+            byte rating = body.getByteValue("rating");;
+
+            String result = taskCommentDao.putComment(taskId, userId, content, rating);
             if("发布评论成功！".equals(result))
             {
                 return ResponseUtil.success(result);

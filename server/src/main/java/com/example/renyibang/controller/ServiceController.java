@@ -163,4 +163,36 @@ public class ServiceController {
         long unaccessorId = 1;
         return serviceService.unaccessService(serviceId, userId);
     }
+
+    @PutMapping("/{serviceId}/message")
+    public JSONObject publishMessage(@PathVariable long serviceId, @RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long publisherId = 1;
+        return serviceService.publishMessage(serviceId, userId, body);
+    }
+
+    @DeleteMapping("/message/{serviceMessageId}")
+    public JSONObject deleteMessage(@PathVariable long serviceMessageId, long userId)
+    {
+        //userId待替换
+        long messagerId = 1;
+        return serviceService.deleteMessage(serviceMessageId, userId);
+    }
+
+    @PutMapping("/{serviceId}/comment")
+    public JSONObject publishComment(@PathVariable long serviceId, @RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long commenterId = 1;
+        return serviceService.publishComment(serviceId, userId, body);
+    }
+
+    @DeleteMapping("/comment/{serviceCommentId}")
+    public JSONObject deleteComment(@PathVariable long serviceCommentId, long userId)
+    {
+        //userId待替换
+        long commenterId = 1;
+        return serviceService.deleteComment(serviceCommentId, userId);
+    }
 }

@@ -12,4 +12,8 @@ public interface ServiceCommentDao {
     String likeCommentByServiceCommentId(long serviceCommentId, long likerId);
 
     String unlikeCommentByServiceCommentId(long serviceCommentId, long unlikerId);
+
+    String putComment(long serviceId, long userId, String content, byte rating);
+
+    String deleteComment(long serviceCommentId, long userId);
 }

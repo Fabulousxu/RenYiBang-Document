@@ -13,7 +13,7 @@ public interface TaskCommentDao {
 
     String unlikeCommentByTaskCommentId(long taskCommentId, long unlikerId);
 
-    String putComment(long taskId, long userId, String content);
+    String putComment(long taskId, long userId, String content, byte rating);
 
     String deleteComment(long taskCommentId, long userId);
 }

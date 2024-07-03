@@ -104,7 +104,7 @@ public class TaskCommentDaoImpl implements TaskCommentDao {
     }
 
     @Override
-    public String putComment(long taskId, long userId, String content)
+    public String putComment(long taskId, long userId, String content, byte rating)
     {
         try
         {
@@ -130,6 +130,7 @@ public class TaskCommentDaoImpl implements TaskCommentDao {
             taskComment.setTask(task);
             taskComment.setContent(content);
             taskComment.setCreatedAt(LocalDateTime.now());
+            taskComment.setRating(rating);
 
             taskCommentRepository.save(taskComment);
 
