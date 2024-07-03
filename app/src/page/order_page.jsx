@@ -1,32 +1,51 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import BasicLayout from "../component/basic_layout";
 import { Table, Tag, Tabs } from 'antd';
 import { Link } from 'react-router-dom';
-import data from '../util/order_data';
 import moment from 'moment';
+import { fetchInitiatorTasks, fetchRecipientTasks, fetchInitiatorServices, fetchRecipientServices } from '../service/order';
 
 const { TabPane } = Tabs;
 
+const statusMap = {
+    0: { text: '未付款', color: 'gray' },
+    1: { text: '进行中', color: 'blue' },
+    2: { text: '已完成', color: 'green' },
+    3: { text: '已确认', color: 'purple' },
+    4: { text: '已取消', color: 'red' },
+};
+
 export default function OrderPage() {
     const [activeTab, setActiveTab] = useState('1');
+    const [data, setData] = useState([]);
 
-    const handleTabChange = (key) => {
-        setActiveTab(key);
-    };
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let responseData;
+                switch (activeTab) {
+                    case '1':
+                        responseData = await fetchInitiatorTasks();
+                        break;
+                    case '2':
+                        responseData = await fetchRecipientTasks();
+                        break;
+                    case '3':
+                        responseData = await fetchInitiatorServices();
+                        break;
+                    case '4':
+                        responseData = await fetchRecipientServices();
+                        break;
+                    default:
+                        responseData = await fetchInitiatorTasks();
+                }
+                setData(responseData);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
 
-    const filteredData = useMemo(() => {
-        switch (activeTab) {
-            case '1':
-                return data;
-            case '2':
-                return data;
-            case '3':
-                return data;
-            case '4':
-                return data;
-            default:
-                return data;
-        }
+        fetchData();
     }, [activeTab]);
 
     const generateLink = (record) => {
@@ -46,61 +65,50 @@ export default function OrderPage() {
 
     const columns = [{
         title: '任务标题',
-        dataIndex: 'title',
+        dataIndex: 'name',
         key: 'title',
         render: (text, record) => <Link to={generateLink(record)}>{text}</Link>,
     }, {
         title: '发起人', dataIndex: 'initiator', key: 'initiator',
     }, {
-        title: '接收人', dataIndex: 'receiver', key: 'receiver',
+        title: '接收人', dataIndex: 'recipient', key: 'receiver',
     }, {
         title: '发起时间',
-        dataIndex: 'startTime',
-        key: 'startTime',
+        dataIndex: 'time',
+        key: 'time',
         sorter: (a, b) => moment(a.startTime).unix() - moment(b.startTime).unix(),
     }, {
         title: '当前状态',
         dataIndex: 'status',
         key: 'status',
         filters: [
-            { text: '进行中', value: '进行中' },
-            { text: '已完成', value: '已完成' },
-            { text: '已取消', value: '已取消' },
+            { text: '未付款', value: 0 },
+            { text: '进行中', value: 1 },
+            { text: '已完成', value: 2 },
+            { text: '已确认', value: 3 },
+            { text: '已取消', value: 4 },
         ],
-        onFilter: (value, record) => record.status.includes(value),
+        onFilter: (value, record) => record.status === value,
         render: (status) => {
-            let color = '';
-            switch (status) {
-                case '进行中':
-                    color = 'blue';
-                    break;
-                case '已完成':
-                    color = 'green';
-                    break;
-                case '已取消':
-                    color = 'red';
-                    break;
-                default:
-                    color = 'gray';
-            }
-            return <Tag color={color}>{status}</Tag>;
+            const { text, color } = statusMap[status] || { text: '未知', color: 'gray' };
+            return <Tag color={color}>{text}</Tag>;
         },
     },];
 
     return (
       <BasicLayout page='order'>
-          <Tabs defaultActiveKey="1" onChange={handleTabChange}>
+          <Tabs defaultActiveKey="1" onChange={setActiveTab}>
               <TabPane tab="我发布的任务" key="1">
-                  <Table columns={columns} dataSource={filteredData} />
+                  <Table columns={columns} dataSource={data} />
               </TabPane>
               <TabPane tab="我接收的任务" key="2">
-                  <Table columns={columns} dataSource={filteredData} />
+                  <Table columns={columns} dataSource={data} />
               </TabPane>
               <TabPane tab="我发布的服务" key="3">
-                  <Table columns={columns} dataSource={filteredData} />
+                  <Table columns={columns} dataSource={data} />
               </TabPane>
               <TabPane tab="我接收的服务" key="4">
-                  <Table columns={columns} dataSource={filteredData} />
+                  <Table columns={columns} dataSource={data} />
               </TabPane>
           </Tabs>
       </BasicLayout>
