@@ -43,24 +43,16 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     }
 
     long senderId = json.getLongValue("senderId");
-    System.out.println("senderId " + senderId);
     long receiverId = json.getLongValue("receiverId");
-    System.out.println("receiverId " + receiverId);
     User sender = userRepository.findById(senderId).orElse(null);
     User receiver = userRepository.findById(receiverId).orElse(null);
-    if (sender == null || receiver == null) {
-      System.out.println("sender or receiver is null");
-      return;
-    }
-//    if (senderSession.equals(userSessionMap.get(senderId))) {
-//      System.out.println("senderSession.equals(userSessionMap.get(senderId))");
-//      return;
-//    }
+    if (sender == null || receiver == null) return;
+    if (senderSession.equals(userSessionMap.get(senderId))) return;
     WebSocketSession receiverSession = userSessionMap.get(receiverId);
     String content = json.getString("content");
     String images = "";
     //    for (Object image : json.getJSONArray("images")) images += " " + image.toString();
-    System.out.println("type "+type);
+
     if (type.equals("task")) {
       // 消息存储
       TaskChatMessage taskChatMessage = new TaskChatMessage();
@@ -74,12 +66,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
       taskChatMessageRepository.save(taskChatMessage);
 
       // 消息发送
-      senderSession.sendMessage(new TextMessage(taskChatMessage.toJSON().toString()));
-      System.out.println("send message to sender"+taskChatMessage.toJSON().toString());
       if (receiverSession == null || !receiverSession.isOpen()) return;
       receiverSession.sendMessage(new TextMessage(taskChatMessage.toJSON().toString()));
-      System.out.println("send message to receiver"+taskChatMessage.toJSON().toString());
-
+      senderSession.sendMessage(new TextMessage(taskChatMessage.toJSON().toString()));
     } else if (type.equals("service")) {
       // 消息储存
       ServiceChatMessage serviceChatMessage = new ServiceChatMessage();
@@ -94,10 +83,9 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
       serviceChatMessageRepository.save(serviceChatMessage);
 
       // 消息发送
-      senderSession.sendMessage(new TextMessage(serviceChatMessage.toJSON().toString()));
       if (receiverSession == null || !receiverSession.isOpen()) return;
       receiverSession.sendMessage(new TextMessage(serviceChatMessage.toJSON().toString()));
-
+      senderSession.sendMessage(new TextMessage(serviceChatMessage.toJSON().toString()));
     }
   }
 
