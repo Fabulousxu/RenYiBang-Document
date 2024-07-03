@@ -1,28 +1,26 @@
 import React, { useEffect, useRef } from 'react';
 import { Card, List, Input, Button, Avatar } from 'antd';
 
-const ChatWindow = ({ chat }) => {
+const ChatWindow = ({ chat, socket }) => {
   const [message, setMessage] = React.useState('');
   const [messages, setMessages] = React.useState([
     { sender: 'User 1', content: 'Hello!', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
     { sender: 'Me', content: 'Hi, how are you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' },
     { sender: 'User 1', content: 'I am good, thank you! How about you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'User 1', content: 'Hello!', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'Me', content: 'Hi, how are you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' },
-    { sender: 'User 1', content: 'I am good, thank you! How about you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'User 1', content: 'Hello!', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'Me', content: 'Hi, how are you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' },
-    { sender: 'User 1', content: 'I am good, thank you! How about you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'User 1', content: 'Hello!', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    { sender: 'Me', content: 'Hi, how are you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' },
-    { sender: 'User 1', content: 'I am good, thank you! How about you?', avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=1' },
-    // Add more initial messages if needed
   ]);
 
   const messagesEndRef = useRef(null);
 
   const handleSend = () => {
-    if (message) {
+    if (message && socket) {
+      const newMessage = {
+        type: 'task',
+        chatId: chat.id,
+        senderId: 6, // 假设当前用户ID为0，根据实际情况调整
+        receiverId: 2, // 根据实际情况调整
+        content: message,
+      };
+      socket.send(newMessage);
       setMessages([...messages, { sender: 'Me', content: message, avatar: 'https://api.dicebear.com/7.x/miniavs/svg?seed=2' }]);
       setMessage('');
     }

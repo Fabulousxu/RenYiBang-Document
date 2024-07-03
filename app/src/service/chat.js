@@ -1,22 +1,27 @@
-const connectWebSocket = ({userId, onopen, onmessage, onclose}) => {
-  const socket = new WebSocket('ws://localhost:8080/chat')
+const connectWebSocket = ({ userId, onopen, onmessage, onclose }) => {
+  const socket = new WebSocket('ws://localhost:8080/chat');
 
-  socket.on('open', () => {
-    socket.send(JSON.stringify({type: 'register', userId: userId}))
-    onopen()
-  })
+  socket.onopen = () => {
+    socket.send(JSON.stringify({ type: 'register', userId: userId }));
+    if (onopen) onopen();
+  };
 
-  socket.on('message', data => {
-    onmessage(data)
-  })
+  socket.onmessage = (event) => {
+    if (onmessage) onmessage(event.data);
+  };
 
-  socket.on('close', () => {
-    onclose()
-  })
+  socket.onclose = () => {
+    if (onclose) onclose();
+  };
 
   return {
-    send: message => {
-      socket.send(JSON.stringify(message))
-    }
-  }
-}
+    send: (message) => {
+      socket.send(JSON.stringify(message));
+    },
+    close: () => {
+      socket.close();
+    },
+  };
+};
+
+export default connectWebSocket;

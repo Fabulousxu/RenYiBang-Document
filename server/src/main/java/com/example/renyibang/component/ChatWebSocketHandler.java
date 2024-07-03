@@ -31,6 +31,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
   protected void handleTextMessage(WebSocketSession senderSession, TextMessage message)
       throws Exception {
     JSONObject json = JSONObject.parseObject(message.getPayload());
+    System.out.println(message.getPayload());
     String type = json.getString("type");
 
     // 首次连接注册websocket
@@ -55,7 +56,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
     if (type.equals("task")) {
       // 消息存储
       TaskChatMessage taskChatMessage = new TaskChatMessage();
-      TaskChat taskChat = taskChatRepository.findById(json.getLongValue("taskChatId")).orElse(null);
+      TaskChat taskChat = taskChatRepository.findById(json.getLongValue("chatId")).orElse(null);
       if (taskChat == null) return;
       taskChatMessage.setTaskChat(taskChat);
       taskChatMessage.setContent(content);
@@ -72,7 +73,7 @@ public class ChatWebSocketHandler extends TextWebSocketHandler {
       // 消息储存
       ServiceChatMessage serviceChatMessage = new ServiceChatMessage();
       ServiceChat serviceChat =
-          serviceChatRepository.findById(json.getLongValue("serviceChatId")).orElse(null);
+          serviceChatRepository.findById(json.getLongValue("chatId")).orElse(null);
       if (serviceChat == null) return;
       serviceChatMessage.setServiceChat(serviceChat);
       serviceChatMessage.setContent(content);
