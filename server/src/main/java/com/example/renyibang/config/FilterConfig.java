@@ -12,7 +12,7 @@ public class FilterConfig {
     public FilterRegistrationBean<JwtFilter> jwtFilter() {
         FilterRegistrationBean<JwtFilter> registrationBean = new FilterRegistrationBean<>();
         registrationBean.setFilter(new JwtFilter());
-//        registrationBean.addUrlPatterns("/api/*"); // 需要拦截的URL模式
+        registrationBean.addUrlPatterns("/api/test/*"); // 需要拦截的URL模式
         return registrationBean;
     }
 }
