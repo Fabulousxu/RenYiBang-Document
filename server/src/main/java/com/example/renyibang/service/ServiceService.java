@@ -37,4 +37,6 @@ public interface ServiceService {
     JSONObject publishComment(long serviceId, long userId, JSONObject body);
 
     JSONObject deleteComment(long serviceCommentId, long userId);
+
+    JSONObject publishService(long userId, JSONObject body);
 }
