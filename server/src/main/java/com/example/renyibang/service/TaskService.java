@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface TaskService {
-
-
     JSONObject searchTaskByPaging(String keyword, Pageable pageable, String timeBegin, String timeEnd, long priceLow, long priceHigh);
 
     JSONObject getTaskInfo(long taskId);
@@ -15,4 +13,20 @@ public interface TaskService {
     JSONObject getTaskComments(long taskId, Pageable pageable);
 
     JSONObject getTaskMessages(long taskId, Pageable pageable);
+
+    JSONObject likeComment(long taskCommentId, long likerId);
+
+    JSONObject unlikeComment(long taskCommentId, long unlikerId);
+
+    JSONObject likeMessage(long taskMessageId, long likerId);
+
+    JSONObject unlikeMessage(long taskMessageId, long unlikerId);
+
+    JSONObject collectTask(long taskId, long collectorId);
+
+    JSONObject uncollectTask(long taskId, long uncollectorId);
+
+    JSONObject accessTask(long taskId, long accessorId);
+
+    JSONObject unaccessTask(long taskId, long unaccessorId);
 }

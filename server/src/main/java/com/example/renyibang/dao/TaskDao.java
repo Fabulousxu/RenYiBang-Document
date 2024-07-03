@@ -16,4 +16,12 @@ public interface TaskDao {
   Page<Task> searchTaskByPaging(String keyword, Pageable pageable, LocalDateTime beginDateTime, LocalDateTime endDateTime, long priceLow, long priceHigh);
 
   Task getTask(long taskId);
+
+  String collectTaskByTaskId(long taskId, long collectorId);
+
+  String uncollectTaskByTaskId(long taskId, long uncollectorId);
+
+  String accessTaskByTaskId(long taskId, long accessorId);
+
+  String unaccessTaskByTaskId(long taskId, long unaccessorId);
 }

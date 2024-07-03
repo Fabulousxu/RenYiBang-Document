@@ -1,61 +1,39 @@
 package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.example.renyibang.converter.TaskStatusConverter;
-import com.example.renyibang.enums.TaskStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.Objects;
 
 @Setter
 @Getter
 @Entity
 @Table(name = "task_order", schema = "renyibang")
 @NoArgsConstructor
-public class TaskOrder {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "task_order_id")
-  private long taskOrderId;
+public class TaskOrder extends Order<Task> {
 
   @ManyToOne
   @JoinColumn(name = "task_id", referencedColumnName = "task_id", foreignKey = @ForeignKey(name = "FK_TASK"))
-  private Task task;
-
-  @ManyToOne
-  @JoinColumn(name = "owner_id", referencedColumnName = "user_id", foreignKey = @ForeignKey(name = "FK_OWNER"))
-  private User owner;
-
-  @ManyToOne
-  @JoinColumn(name = "accessor_id", referencedColumnName = "user_id", foreignKey = @ForeignKey(name = "FK_ACCESSOR"))
-  private User accessor;
-
-  @Convert(converter = TaskStatusConverter.class)
-  @Column(name = "status")
-  private TaskStatus status;
-
-  @Column(name = "cost")
-  private long cost;
+  private Task item;
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    TaskOrder taskOrder = (TaskOrder) o;
-    return taskOrderId == taskOrder.taskOrderId
-        && cost == taskOrder.cost
-        && Objects.equals(task, taskOrder.task)
-        && Objects.equals(owner, taskOrder.owner)
-        && Objects.equals(accessor, taskOrder.accessor)
-        && status == taskOrder.status;
+  public Task getItem() {
+    return item;
   }
 
   @Override
-  public int hashCode() {
-    return Objects.hash(taskOrderId, task, owner, accessor, status, cost);
+  public void setItem(Task item) {
+    this.item = item;
   }
+
+  public JSONObject toJSON() {
+    JSONObject json = super.toJSON();
+    json.put("time", item.getCreatedAt());
+    json.put("name", item.getTitle());
+    return json;
+  }
+
+  // equals and hashCode methods
+  // ...
 }

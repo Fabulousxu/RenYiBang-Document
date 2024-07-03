@@ -13,6 +13,7 @@ import com.example.renyibang.service.TaskService;
 import com.example.renyibang.util.DateTimeUtil;
 import com.example.renyibang.util.PriceUtil;
 import com.example.renyibang.util.ResponseUtil;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -66,7 +67,7 @@ public class TaskServiceImpl implements TaskService {
 
             if(result == null)
             {
-                return ResponseUtil.error("Get task information null.");
+                return ResponseUtil.error("任务信息为null");
             }
 
             else
@@ -123,6 +124,190 @@ public class TaskServiceImpl implements TaskService {
             returnRes.put("items", result);
 
             return ResponseUtil.success(returnRes);
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject likeComment(long taskCommentId, long likerId)
+    {
+        try
+        {
+            String result = taskCommentDao.likeCommentByTaskCommentId(taskCommentId, likerId);
+            if("点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unlikeComment(long taskCommentId, long unlikerId)
+    {
+        try
+        {
+            String result = taskCommentDao.unlikeCommentByTaskCommentId(taskCommentId, unlikerId);
+            if("取消点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject likeMessage(long taskMessageId, long likerId)
+    {
+        try
+        {
+            String result = taskMessageDao.likeMessageByTaskMessageId(taskMessageId, likerId);
+            if("点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unlikeMessage(long taskMessageId, long unlikerId)
+    {
+        try
+        {
+            String result = taskMessageDao.unlikeMessageByTaskMessageId(taskMessageId, unlikerId);
+            if("取消点赞成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject collectTask(long taskId, long collectorId)
+    {
+        try
+        {
+            String result = taskDao.collectTaskByTaskId(taskId, collectorId);
+            if("收藏成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject uncollectTask(long taskId, long uncollectorId)
+    {
+        try
+        {
+            String result = taskDao.uncollectTaskByTaskId(taskId, uncollectorId);
+            if("取消收藏成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject accessTask(long taskId, long accessorId)
+    {
+        try
+        {
+            String result = taskDao.accessTaskByTaskId(taskId, accessorId);
+            if("接取任务成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
+        }
+        catch (Exception e)
+        {
+            return ResponseUtil.error(String.valueOf(e.getMessage()));
+        }
+    }
+
+    @Transactional
+    @Override
+    public JSONObject unaccessTask(long taskId, long unaccessorId)
+    {
+        try
+        {
+            String result = taskDao.unaccessTaskByTaskId(taskId, unaccessorId);
+            if("取消接取任务成功！".equals(result))
+            {
+                return ResponseUtil.success(result);
+            }
+
+            else
+            {
+                return ResponseUtil.error(result);
+            }
         }
         catch (Exception e)
         {

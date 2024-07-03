@@ -8,4 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskCommentDao {
     Page<TaskComment> getTaskComments(long taskId, Pageable pageable);
+
+    String likeCommentByTaskCommentId(long taskCommentId, long likerId);
+
+    String unlikeCommentByTaskCommentId(long taskCommentId, long unlikerId);
 }

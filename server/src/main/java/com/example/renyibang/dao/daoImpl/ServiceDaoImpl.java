@@ -27,4 +27,9 @@ public class ServiceDaoImpl implements ServiceDao {
             return serviceRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable).getContent();
         }
     }
+
+    @Override
+    public Service findById(long serviceId) {
+        return serviceRepository.findById(serviceId).orElse(null);
+    }
 }

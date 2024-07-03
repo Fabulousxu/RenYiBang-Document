@@ -27,5 +27,4 @@ public class UserDaoImpl implements UserDao {
     public void deleteById(long userId) {
         userRepository.deleteById(userId);
     }
-
 }

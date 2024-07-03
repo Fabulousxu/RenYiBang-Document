@@ -1,6 +1,7 @@
 package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.example.renyibang.repository.TaskCollectRepository;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.List;
@@ -83,5 +84,15 @@ public class User {
     result.put("balance", getBalance());
 
     return result;
+  }
+
+  public boolean hasCollected(Task task)
+  {
+    return collectedTasks.stream().anyMatch(taskCollect -> taskCollect.getTask().equals(task));
+  }
+
+  public boolean hasAccessed(Task task)
+  {
+    return accessedTasks.stream().anyMatch(taskAccess -> taskAccess.getTask().equals(task));
   }
 }

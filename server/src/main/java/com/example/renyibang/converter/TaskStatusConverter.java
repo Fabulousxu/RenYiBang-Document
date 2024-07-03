@@ -1,14 +1,14 @@
 package com.example.renyibang.converter;
 
-import com.example.renyibang.enums.TaskStatus;
+import com.example.renyibang.enums.OrderStatus;
 import jakarta.persistence.AttributeConverter;
 import jakarta.persistence.Converter;
 
 @Converter(autoApply = true)
-public class TaskStatusConverter implements AttributeConverter<TaskStatus, Byte> {
+public class TaskStatusConverter implements AttributeConverter<OrderStatus, Byte> {
 
 	@Override
-	public Byte convertToDatabaseColumn(TaskStatus status) {
+	public Byte convertToDatabaseColumn(OrderStatus status) {
 		if (status == null) {
 			return null;
 		}
@@ -16,10 +16,10 @@ public class TaskStatusConverter implements AttributeConverter<TaskStatus, Byte>
 	}
 
 	@Override
-	public TaskStatus convertToEntityAttribute(Byte code) {
+	public OrderStatus convertToEntityAttribute(Byte code) {
 		if (code == null) {
 			return null;
 		}
-		return TaskStatus.fromCode(code);
+		return OrderStatus.fromCode(code);
 	}
 }
