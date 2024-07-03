@@ -1,11 +1,11 @@
 import {apiURL, post} from './util'
 
-export async function issueService(title, description, price, images) {
-  let res = await post(`${apiURL}/issue/service`, {title, description, price, images})
+export async function issueService(newitem) {
+  let res = await post(`${apiURL}/issue/service`, newitem)
   return res;
 }
 
-export async function issueTask(title, description, price, images) {
-  let res = await post(`${apiURL}/issue/task`, {title, description, price, images})
+export async function issueTask(newitem) {
+  let res = await post(`${apiURL}/issue/task`, newitem)
   return res;
 }
