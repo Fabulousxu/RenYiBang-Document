@@ -12,4 +12,8 @@ public interface TaskMessageDao {
     String likeMessageByTaskMessageId(long taskMessageId, long likerId);
 
     String unlikeMessageByTaskMessageId(long taskMessageId, long unlikerId);
+
+    String putMessage(long taskId, long userId, String content);
+
+    String deleteMessage(long taskMessageId, long userId);
 }

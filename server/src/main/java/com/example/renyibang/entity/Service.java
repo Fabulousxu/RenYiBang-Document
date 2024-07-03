@@ -122,4 +122,6 @@ public class Service {
     {
         return accesses.size() < maxAccess;
     }
+
+    public boolean isCommented(User commenter) { return comments.stream().anyMatch(comment -> comment.getCommenter().equals(commenter));}
 }

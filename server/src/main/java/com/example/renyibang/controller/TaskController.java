@@ -163,4 +163,36 @@ public class TaskController {
         long unaccessorId = 1;
         return taskService.unaccessTask(taskId, userId);
     }
+
+    @PutMapping("/{taskId}/message")
+    public JSONObject publishMessage(@PathVariable long taskId, @RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long publisherId = 1;
+        return taskService.publishMessage(taskId, userId, body);
+    }
+
+    @DeleteMapping("/message/{taskMessageId}")
+    public JSONObject deleteMessage(@PathVariable long taskMessageId, long userId)
+    {
+        //userId待替换
+        long messagerId = 1;
+        return taskService.deleteMessage(taskMessageId, userId);
+    }
+
+    @PutMapping("/{taskId}/comment")
+    public JSONObject publishComment(@PathVariable long taskId, @RequestBody JSONObject body, long userId)
+    {
+        //userId待替换
+        long commenterId = 1;
+        return taskService.publishComment(taskId, userId, body);
+    }
+
+    @DeleteMapping("/comment/{taskCommentId}")
+    public JSONObject deleteComment(@PathVariable long taskCommentId, long userId)
+    {
+        //userId待替换
+        long commenterId = 1;
+        return taskService.deleteComment(taskCommentId, userId);
+    }
 }
