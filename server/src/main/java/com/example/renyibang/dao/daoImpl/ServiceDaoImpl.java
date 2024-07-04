@@ -2,6 +2,7 @@ package com.example.renyibang.dao.daoImpl;
 
 import com.example.renyibang.dao.ServiceDao;
 import com.example.renyibang.entity.*;
+import com.example.renyibang.enums.ServiceStatus;
 import com.example.renyibang.repository.*;
 import com.example.renyibang.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,11 +37,11 @@ public class ServiceDaoImpl implements ServiceDao {
     {
         if(!keyword.isEmpty())
         {
-            return serviceRepository.searchServices(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable);
+            return serviceRepository.searchServices(keyword, priceLow, priceHigh, beginDateTime, endDateTime, ServiceStatus.DELETE, pageable);
         }
         else
         {
-            return serviceRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable);
+            return serviceRepository.findByPriceBetweenAndCreatedAtBetweenAndStatusNot(priceLow, priceHigh, beginDateTime, endDateTime, ServiceStatus.DELETE, pageable);
         }
     }
     
@@ -58,6 +59,11 @@ public class ServiceDaoImpl implements ServiceDao {
             if(service == null)
             {
                 return "服务不存在！";
+            }
+
+            if(service.getStatus() == ServiceStatus.DELETE)
+            {
+                return "服务已删除！";
             }
 
             if(collector.hasCollected(service))
@@ -98,6 +104,11 @@ public class ServiceDaoImpl implements ServiceDao {
                 return "服务不存在！";
             }
 
+            if(service.getStatus() == ServiceStatus.DELETE)
+            {
+                return "服务已删除！";
+            }
+
             if(!uncollector.hasCollected(service))
             {
                 return "用户未收藏该服务！";
@@ -123,6 +134,21 @@ public class ServiceDaoImpl implements ServiceDao {
             if(service == null)
             {
                 return "服务不存在！";
+            }
+
+            if(service.getOwner() != null && service.getOwner().getUserId() == accessorId)
+            {
+                return "用户不能购买自己发布的服务！";
+            }
+
+            if(service.getStatus() == ServiceStatus.DELETE)
+            {
+                return "服务已删除！";
+            }
+
+            else if(service.getStatus() == ServiceStatus.REMOVE)
+            {
+                return "服务已下架！";
             }
 
             User accessor = userRepository.findById(accessorId).orElse(null);
@@ -164,6 +190,11 @@ public class ServiceDaoImpl implements ServiceDao {
             if(service == null)
             {
                 return "服务不存在！";
+            }
+
+            if(service.getStatus() == ServiceStatus.DELETE)
+            {
+                return "服务已删除！";
             }
 
             User unaccessor = userRepository.findById(unaccessorId).orElse(null);

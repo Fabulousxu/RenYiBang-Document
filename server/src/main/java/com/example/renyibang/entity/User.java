@@ -88,6 +88,9 @@ public class User {
   @JsonIgnore
   private List<TaskOrder> accessedTaskOrders; // 接取者任务订单列表
 
+  @Column(name = "valid")
+  private boolean valid = true; //用户是否有效
+
   public JSONObject toJSON() {
     JSONObject result = new JSONObject();
     result.put("userId", userId);

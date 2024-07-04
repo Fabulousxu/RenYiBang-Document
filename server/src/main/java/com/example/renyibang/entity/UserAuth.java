@@ -17,4 +17,7 @@ public class UserAuth {
   @OneToOne
   @JoinColumn(name = "user_id")
   private User user;
+
+  @Column(name = "valid")
+  private boolean valid = true; //账号是否有效
 }

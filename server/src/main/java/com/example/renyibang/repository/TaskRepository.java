@@ -21,17 +21,20 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
             "LOWER(t.description) LIKE LOWER(CONCAT('%', :searchText, '%')) OR " +
             "LOWER(t.owner.nickname) LIKE LOWER(CONCAT('%', :searchText, '%'))) AND " +
             "t.price BETWEEN :priceLow AND :priceHigh AND " +
-            "t.createdAt BETWEEN :beginDateTime AND :endDateTime")
+            "t.createdAt BETWEEN :beginDateTime AND :endDateTime AND " +
+            "t.status != :status")
     Page<Task> searchTasks(@Param("searchText") String searchText,
                            @Param("priceLow") long priceLow,
                            @Param("priceHigh") long priceHigh,
                            @Param("beginDateTime") LocalDateTime beginDateTime,
                            @Param("endDateTime") LocalDateTime endDateTime,
+                           @Param("status") TaskStatus status,
                            Pageable pageable);
 
-    Page<Task> findByPriceBetweenAndCreatedAtBetween(@Param("priceLow") long priceLow,
+    Page<Task> findByPriceBetweenAndCreatedAtBetweenAndStatusNot(@Param("priceLow") long priceLow,
                                                      @Param("priceHigh") long priceHigh,
                                                      @Param("beginDateTime") LocalDateTime beginDateTime,
                                                      @Param("endDateTime") LocalDateTime endDateTime,
+                                                     @Param("status") TaskStatus status,
                                                      Pageable pageable);
 }
