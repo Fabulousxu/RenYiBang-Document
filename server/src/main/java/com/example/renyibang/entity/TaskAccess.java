@@ -30,4 +30,7 @@ public class TaskAccess {
   @Temporal(TemporalType.TIMESTAMP)
   @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
   private LocalDateTime createdAt; // 任务接取时间
+
+  @Column(name = "valid")
+  private boolean valid = true; //接取候选是否有效
 }

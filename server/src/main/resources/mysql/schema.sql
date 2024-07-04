@@ -10,13 +10,15 @@ CREATE TABLE user
     avatar   TEXT COMMENT '用户头像',
     intro    TEXT COMMENT '用户介绍',
     rating   TINYINT DEFAULT 50 NOT NULL COMMENT '用户评分(存储10倍评分,范围0~100)',
-    balance  BIGINT  DEFAULT 0  NOT NULL COMMENT '用户余额(存储100倍余额)'
+    balance  BIGINT  DEFAULT 0  NOT NULL COMMENT '用户余额(存储100倍余额)',
+    valid    BOOLEAN NOT NULL COMMENT '用户是否注销'
 ) comment '用户表';
 
 CREATE TABLE user_auth
 (
     user_id  BIGINT PRIMARY KEY COMMENT '用户id',
     password VARCHAR(16) NOT NULL COMMENT '用户密码',
+    valid    BOOLEAN NOT NULL COMMENT '用户账号是否被封禁',
     FOREIGN KEY (user_id) REFERENCES user (user_id) ON UPDATE CASCADE ON DELETE CASCADE
 ) COMMENT '用户密码表';
 
@@ -41,6 +43,7 @@ CREATE TABLE task
     max_access  INT         NOT NULL DEFAULT 1 COMMENT '任务最大接取数',
     rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
     collected   BIGINT      NOT NULL COMMENT '任务收藏数',
+    status      TINYINT     NOT NULL COMMENT '任务状态',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务表';
 
@@ -103,6 +106,7 @@ CREATE TABLE task_access
     task_id        BIGINT    NOT NULL COMMENT '任务id',
     accessor_id    BIGINT    NOT NULL COMMENT '接取者id',
     created_at     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '接取时间',
+    valid          BOOLEAN   NOT NULL COMMENT '接取者是否被拒绝',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务接取候选表';
@@ -132,6 +136,7 @@ CREATE TABLE service
     max_access  INT         NOT NULL DEFAULT 1 COMMENT '服务最大购买数',
     rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
     collected   BIGINT      NOT NULL COMMENT '服务收藏数',
+    status      TINYINT     NOT NULL COMMENT '服务状态',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务表';
 
@@ -194,6 +199,7 @@ CREATE TABLE service_access
     service_id        BIGINT    NOT NULL COMMENT '服务id',
     accessor_id       BIGINT    NOT NULL COMMENT '购买者id',
     created_at        TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '购买时间',
+    valid             BOOLEAN   NOT NULL COMMENT '服务购买者是否取消购买',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (accessor_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务购买候选表';

@@ -1,6 +1,7 @@
 package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.example.renyibang.enums.TaskStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.example.renyibang.util.DateTimeUtil;
 import jakarta.persistence.*;
@@ -68,6 +69,9 @@ public class Task {
   @Column(name = "collected")
   private long collectedNumber = 0;
 
+  @Column(name = "status")
+  private TaskStatus status = TaskStatus.NORMAL; //任务状态
+
   public static List<String> splitImages(String images) {
     // 使用空格分割字符串，并将结果转换为List<String>
     return Arrays.asList(images.split("\\s+"));
@@ -86,6 +90,7 @@ public class Task {
     result.put("rating", rating);
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
     result.put("collectedNumber", collectedNumber);
+    result.put("status", status.toString());
 
     result.put("owner", owner.toJSON());
 
@@ -107,6 +112,7 @@ public class Task {
     result.put("createdAt", DateTimeUtil.formatDateTime(createdAt));
     result.put("collectedNumber", collectedNumber);
     result.put("collected", user.getCollectedTasks().stream().anyMatch(taskCollect -> (taskCollect.getTaskCollectId() == this.taskId)));
+    result.put("status", status.toString());
 
     result.put("owner", owner.toJSON());
 

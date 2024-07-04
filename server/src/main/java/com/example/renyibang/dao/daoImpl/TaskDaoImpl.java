@@ -5,6 +5,7 @@ import com.example.renyibang.entity.Task;
 import com.example.renyibang.entity.TaskAccess;
 import com.example.renyibang.entity.TaskCollect;
 import com.example.renyibang.entity.User;
+import com.example.renyibang.enums.TaskStatus;
 import com.example.renyibang.repository.TaskAccessRepository;
 import com.example.renyibang.repository.TaskCollectRepository;
 import com.example.renyibang.repository.TaskRepository;
@@ -39,11 +40,11 @@ public class TaskDaoImpl implements TaskDao {
   {
       if(!keyword.isEmpty())
       {
-          return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, pageable);
+          return taskRepository.searchTasks(keyword, priceLow, priceHigh, beginDateTime, endDateTime, TaskStatus.DELETE, pageable);
       }
       else
       {
-          return taskRepository.findByPriceBetweenAndCreatedAtBetween(priceLow, priceHigh, beginDateTime, endDateTime, pageable);
+          return taskRepository.findByPriceBetweenAndCreatedAtBetweenAndStatusNot(priceLow, priceHigh, beginDateTime, endDateTime, TaskStatus.DELETE, pageable);
       }
   }
 
@@ -61,6 +62,11 @@ public class TaskDaoImpl implements TaskDao {
           if(task == null)
           {
               return "任务不存在！";
+          }
+
+          if(task.getStatus() == TaskStatus.DELETE)
+          {
+              return "该任务已被删除！";
           }
 
           if(collector.hasCollected(task))
@@ -101,6 +107,11 @@ public class TaskDaoImpl implements TaskDao {
               return "任务不存在！";
           }
 
+          if(task.getStatus() == TaskStatus.DELETE)
+          {
+              return "该任务已被删除！";
+          }
+
           if(!uncollector.hasCollected(task))
           {
               return "用户未收藏该任务！";
@@ -128,6 +139,21 @@ public class TaskDaoImpl implements TaskDao {
               return "任务不存在！";
           }
 
+          if(task.getOwner().getUserId() == accessorId)
+          {
+              return "不能接取自己发布的任务！";
+          }
+
+          if(task.getStatus() == TaskStatus.DELETE)
+          {
+              return "该任务已被删除！";
+          }
+
+          else if(task.getStatus() == TaskStatus.REMOVE)
+          {
+              return "该任务已被下架！";
+          }
+
           User accessor = userRepository.findById(accessorId).orElse(null);
           if(accessor == null)
           {
@@ -142,6 +168,16 @@ public class TaskDaoImpl implements TaskDao {
           if(!task.accessNotFull())
           {
               return "该任务接取已达上限！";
+          }
+
+          if(task.getStatus() == TaskStatus.DELETE)
+          {
+              return "该任务已被删除！";
+          }
+
+          else if(task.getStatus() == TaskStatus.REMOVE)
+          {
+              return "该任务已被下架！";
           }
 
           TaskAccess taskAccess = new TaskAccess();
@@ -167,6 +203,11 @@ public class TaskDaoImpl implements TaskDao {
           if(task == null)
           {
               return "任务不存在！";
+          }
+
+          if(task.getStatus() == TaskStatus.DELETE)
+          {
+              return "该任务已被删除！";
           }
 
           User unaccessor = userRepository.findById(unaccessorId).orElse(null);

@@ -31,4 +31,7 @@ public class ServiceAccess {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdAt;
+
+    @Column(name = "valid")
+    private boolean valid = true; // 候选购买是否有效
 }
