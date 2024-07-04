@@ -2,7 +2,7 @@ export const apiURL = 'http://localhost:8080/api'
 
 export async function get(url) {
   let res = await fetch(url, {method: 'GET', credentials: 'include'})
-  if (!res.ok) throw res.status
+  if (res.status !== 200) throw res.status
   res = await res.json()
   if (!res.ok) throw res.message
   return res.data;
@@ -15,8 +15,8 @@ export async function post(url, data) {
     body: JSON.stringify(data),
     credentials: 'include'
   })
-  if (!res.ok) throw res.status
-  res = res.json()
+  if (res.status !== 200) throw res.status
+  res = await res.json()
   if (!res.ok) throw res.message
   return res.data;
 }
@@ -28,8 +28,8 @@ export async function put(url, data) {
     body: JSON.stringify(data),
     credentials: 'include'
   })
-  if (!res.ok) throw res.status
-  res = res.json()
+  if (res.status !== 200) throw res.status
+  res = await res.json()
   if (!res.ok) throw res.message
   return res.data;
 }
@@ -41,8 +41,8 @@ export async function del(url, data) {
     body: JSON.stringify(data),
     credentials: 'include'
   })
-  if (!res.ok) throw res.status
-  res = res.json()
+  if (res.status !== 200) throw res.status
+  res = await res.json()
   if (!res.ok) throw res.message
   return res.data;
 }

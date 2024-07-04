@@ -78,16 +78,16 @@ public class OrderController {
     List<TaskOrder> taskOrders = taskOrderService.findByAccessorId(accessorId);
     return ResponseUtil.success(toJSON(taskOrders));
   }
-  @GetMapping("/service/initiator")
-  public JSONObject getServiceOrderByOwner() {
+  @GetMapping("/service/initiator/{ownerId}")
+  public JSONObject getServiceOrderByOwner(@PathVariable Long ownerId) {
     // TODO：取消路径参数，使用token获取用户id
-    List<ServiceOrder> serviceOrders = serviceOrderService.findByOwnerId(1);
+    List<ServiceOrder> serviceOrders = serviceOrderService.findByOwnerId(ownerId);
     return ResponseUtil.success(toJSON(serviceOrders));
   }
-  @GetMapping("/service/recipient")
-  public JSONObject getServiceOrderByAccessor() {
+  @GetMapping("/service/recipient/{accessorId}")
+  public JSONObject getServiceOrderByAccessor(@PathVariable Long accessorId) {
     // TODO：取消路径参数，使用token获取用户id
-    List<ServiceOrder> serviceOrders = serviceOrderService.findByAccessorId(1);
+    List<ServiceOrder> serviceOrders = serviceOrderService.findByAccessorId(accessorId);
     return ResponseUtil.success(toJSON(serviceOrders));
   }
 

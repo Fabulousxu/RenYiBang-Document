@@ -10,15 +10,23 @@ import java.util.List;
 public interface OrderRepository<T extends Order<U>, U> extends JpaRepository<T, Long> {
   List<T> findByOwner(User owner);
 
+  List<T> findByOwnerAndType(User owner, Byte type);
+
   List<T> findByAccessor(User accessor);
 
+  List<T> findByAccessorAndType(User accessor, Byte type);
+
   List<T> findByStatus(OrderStatus status);
+
+  List<T> findByStatusAndType(OrderStatus status, Byte type);
 
   boolean existsById(long orderId);
 
   T findById(long orderId);
 
   List<T> findAll();
+
+  List<T> findByType(Byte type);
 
 //  T save(T order);
 

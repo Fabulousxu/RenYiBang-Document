@@ -23,14 +23,14 @@ public class ServiceOrderServiceImpl implements OrderService<ServiceOrder, Servi
 	public List<ServiceOrder> findByOwnerId(long ownerId) {
 		User owner = userDao.findById(ownerId)
 				.orElseThrow(() -> new EntityNotFoundException("User not found with id " + ownerId));
-		return serviceOrderDao.findByOwner(owner);
+		return serviceOrderDao.findByOwnerAndType(owner, (byte) 1);
 	}
 
 	@Override
 	public List<ServiceOrder> findByAccessorId(long accessorId) {
 		User accessor = userDao.findById(accessorId)
 				.orElseThrow(() -> new EntityNotFoundException("User not found with id " + accessorId));
-		return serviceOrderDao.findByAccessor(accessor);
+		return serviceOrderDao.findByAccessorAndType(accessor, (byte) 1);
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class ServiceOrderServiceImpl implements OrderService<ServiceOrder, Servi
 
 	@Override
 	public List<ServiceOrder> findByStatus(OrderStatus status) {
-		return serviceOrderDao.findByStatus(status);
+		return serviceOrderDao.findByStatusAndType(status, (byte) 1);
 	}
 
 	@Override
@@ -54,7 +54,8 @@ public class ServiceOrderServiceImpl implements OrderService<ServiceOrder, Servi
 
 	@Override
 	public List<ServiceOrder> findAllOrders() {
-		return serviceOrderDao.findAllOrders();
+		return serviceOrderDao.findByType((byte) 1);
+//		return serviceOrderDao.findAllOrders();
 	}
 
 	@Override

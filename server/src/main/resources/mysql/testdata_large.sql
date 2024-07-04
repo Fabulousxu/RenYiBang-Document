@@ -6115,6 +6115,10 @@ VALUES (1, 0, 16, 4, 0, 8088),
        (49, 1, 1, 2, 3, 5894),
        (50, 1, 4, 8, 0, 5173);
 
+UPDATE `order`
+SET type = 0;
+
+
 INSERT INTO task_order (order_id, task_id)
 VALUES (1, 1),
        (2, 10),

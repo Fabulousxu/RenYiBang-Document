@@ -27,8 +27,18 @@ public class OrderDaoImpl<T extends Order<U>, U> implements OrderDao<T, U> {
 	}
 
 	@Override
+	public List<T> findByOwnerAndType(User owner, Byte type) {
+			return orderRepository.findByOwnerAndType(owner, type);
+	}
+
+	@Override
 	public List<T> findByAccessor(User accessor) {
 			return orderRepository.findByAccessor(accessor);
+	}
+
+	@Override
+	public List<T> findByAccessorAndType(User accessor, Byte type) {
+			return orderRepository.findByAccessorAndType(accessor, type);
 	}
 
 	@Override
@@ -46,6 +56,11 @@ public class OrderDaoImpl<T extends Order<U>, U> implements OrderDao<T, U> {
 	}
 
 	@Override
+	public List<T> findByStatusAndType(OrderStatus status, Byte type) {
+			return orderRepository.findByStatusAndType(status, type);
+	}
+
+	@Override
 	public T findById(long orderId) {
 			return orderRepository.findById(orderId);
 	}
@@ -53,6 +68,11 @@ public class OrderDaoImpl<T extends Order<U>, U> implements OrderDao<T, U> {
 	@Override
 	public List<T> findAllOrders() {
 			return orderRepository.findAll();
+	}
+
+	@Override
+	public List<T> findByType(Byte type) {
+			return orderRepository.findByType(type);
 	}
 
 	@Override

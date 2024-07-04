@@ -100,7 +100,6 @@ export default function IssuePage() {
       });
     });
 
-    let ans;
     let newitem = {
       title: title,
       description: description,
@@ -109,10 +108,31 @@ export default function IssuePage() {
     }
 
     if(radioValue === 1){
-      ans = issueTask(title, description, newitem.price, newitem.images)
+      issueTask(newitem).then(res => {
+        Modal.success({
+          title: '发布成功',
+          content: '发布成功',
+        });
+      }).catch(err => {
+        Modal.error({
+          title: '发布失败',
+          content: err,
+        });
+
+      })
     }
     else if(radioValue === 2){
-      ans = issueService(title, description, newitem.price, newitem.images)
+      issueService(newitem).then(res => {
+        Modal.success({
+          title: '发布成功',
+          content: '发布成功',
+        });
+      }).catch(err => {
+        Modal.error({
+          title: '发布失败',
+          content: err,
+        });
+      })
     }
   }
 
