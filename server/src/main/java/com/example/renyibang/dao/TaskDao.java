@@ -22,4 +22,6 @@ public interface TaskDao {
   String accessTaskByTaskId(long taskId, long accessorId);
 
   String unaccessTaskByTaskId(long taskId, long unaccessorId);
+
+  String publishTask(long userId, String title, String description, long price, List<String> requestImages);
 }

@@ -2,11 +2,11 @@ package com.example.renyibang.entity;
 
 import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @Entity
 @Table(name = "task_chat")
@@ -25,6 +25,16 @@ public class TaskChat {
   @ManyToOne
   @JoinColumn(name = "chatter_id")
   private User chatter;
+
+  private int unread;
+  private String lastMessage;
+
+  @Temporal(TemporalType.TIMESTAMP)
+  private LocalDateTime lastTime;
+
+  @ManyToOne
+  @JoinColumn(name = "last_chatter_id")
+  private User lastChatter;
 
   @OneToMany(mappedBy = "taskChat")
   @OrderBy("createdAt DESC")

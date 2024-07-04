@@ -9,6 +9,7 @@ import com.example.renyibang.repository.TaskAccessRepository;
 import com.example.renyibang.repository.TaskCollectRepository;
 import com.example.renyibang.repository.TaskRepository;
 import com.example.renyibang.repository.UserRepository;
+import com.example.renyibang.util.ImageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -181,6 +182,37 @@ public class TaskDaoImpl implements TaskDao {
 
           taskAccessRepository.deleteByTaskAndAccessor(task, unaccessor);
           return "取消接取任务成功！";
+      }
+      catch (Exception e)
+      {
+          throw e;
+      }
+  }
+
+  @Override
+  public String publishTask(long userId, String title, String description, long price, List<String> requestImages)
+  {
+      try
+      {
+          User publisher = userRepository.findById(userId).orElse(null);
+          if(publisher == null)
+          {
+              return "用户不存在！";
+          }
+
+          String imagesURL = ImageUtil.mergeImages(requestImages);
+
+          Task task = new Task();
+          task.setTitle(title);
+          task.setPrice(price);
+          task.setOwner(publisher);
+          task.setImages(imagesURL);
+          task.setDescription(description);
+          task.setCreatedAt(LocalDateTime.now());
+
+          taskRepository.save(task);
+
+          return "任务发布成功！";
       }
       catch (Exception e)
       {

@@ -1,6 +1,7 @@
 package com.example.renyibang.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.example.renyibang.dto.OrderDto;
 import com.example.renyibang.entity.Order;
 import com.example.renyibang.entity.Service;
 import com.example.renyibang.entity.ServiceOrder;
@@ -50,6 +51,17 @@ public class OrderController {
     // 创建订单
     taskOrderService.createOrder(taskId, ownerId, accessorId, cost);
     return ResponseUtil.success("订单创建成功");
+  }
+
+  // 获取指定id的order信息
+  // /api/order/{id}
+  @GetMapping("/{id}")
+  public JSONObject getOrder(@PathVariable Long id) {
+    // TODO: token, 获取当前用户id
+    // 身份校验
+    Order order = taskOrderService.findById(id);
+    OrderDto orderDto = new OrderDto(order);
+    return ResponseUtil.success(orderDto.toJSON());
   }
 
   // /task/owner/:ownerId

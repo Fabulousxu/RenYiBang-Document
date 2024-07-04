@@ -1,5 +1,6 @@
 package com.example.renyibang.service;
 
+import com.alibaba.fastjson2.JSONArray;
 import com.alibaba.fastjson2.JSONObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -37,4 +38,6 @@ public interface ServiceService {
     JSONObject publishComment(long serviceId, long userId, JSONObject body);
 
     JSONObject deleteComment(long serviceCommentId, long userId);
+
+    JSONObject publishService(long userId, JSONObject body);
 }

@@ -4,13 +4,6 @@ import { PlusOutlined } from '@ant-design/icons';
 import BasicLayout from '../component/basic_layout';
 import { issueService, issueTask } from '../service/issue';
 
-const getBase64 = (file) =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = (error) => reject(error);
-    });
 
 export default function IssuePage() {
   const [title, setTitle] = useState('');
@@ -45,7 +38,19 @@ export default function IssuePage() {
       url: 'https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',
     },
   ]);
-  const uploadUrl = '';
+  const [Base64List, setBase64List] = useState([]);
+
+  const beforeUpload = (file) => {  
+    // 阻止文件自动上传
+    console.log(fileList);
+    return false;
+  };
+
+  const getBase64 = (img, callback) => {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => callback(reader.result));
+    reader.readAsDataURL(img);
+};
 
   const handlePreview = async (file) => {
     if (!file.url && !file.preview) {
@@ -81,19 +86,33 @@ export default function IssuePage() {
   //单选框设置
 
   const handleSubmit = () => { 
+    if(!title || !description || !price || fileList.length === 0){
+      Modal.error({
+        title: '请填写完整信息',
+        content: '请填写完整信息',
+      });
+      return;
+    }
+
+    fileList.map(file => {
+      getBase64(file.originFileObj, imageBase64 => {
+        setBase64List(prevList => [...prevList, imageBase64]);
+      });
+    });
+
     let ans;
     let newitem = {
       title: title,
       description: description,
-      price: price,
-      type: radioValue,
-      images: fileList.map(file => file.url)
+      price: price * 100,
+      images: Base64List
     }
+
     if(radioValue === 1){
-      ans = issueTask(title, description, price, newitem.images)
+      ans = issueTask(title, description, newitem.price, newitem.images)
     }
     else if(radioValue === 2){
-      ans = issueService(title, description, price, newitem.images)
+      ans = issueService(title, description, newitem.price, newitem.images)
     }
   }
 
@@ -102,13 +121,16 @@ export default function IssuePage() {
       <h1>发布一个新的内容</h1>
       <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
         <div style={{ width: '40%', display: 'flex', 'flex-direction': 'column' }}>
-          <h3>请上传预览照片</h3>
+          <h3>请上传预览照片，数量不超过8张</h3>
           <Upload
-          action={uploadUrl}
+          beforeUpload={beforeUpload}
           listType="picture-card"
           fileList={fileList}
           onPreview={handlePreview}
           onChange={handleChange}
+          onRemove={(file) => {
+            setFileList(curr => curr.filter(item => item.uid !== file.uid));
+          }}
           >
           {fileList.length >= 8 ? null : uploadButton}
           </Upload>

@@ -15,13 +15,13 @@ export default function ProfilePage() {
 
     useEffect(() => {
         getUserProfile().then(res => {
-            setUser(res.user);
+            setUser(res);
         }).catch(err => {
             console.error(err);
         });
 
         getUserTasks().then(res => {
-            setTasks(res.tasks);
+            setTasks(res);
         }).catch(err => {
             console.error(err);
         });
@@ -30,32 +30,33 @@ export default function ProfilePage() {
     return (
         <BasicLayout page='profile'>
             <div style={{ display: 'flex', alignItems: 'center', marginBottom: 24 }}>
-                <Avatar size={64} src={user.user_avatar} />
+                <Avatar size={64} src={user.avatar} />
                 <div style={{ marginLeft: 24 }}>
-                    <Title level={2}>{user.user_nickname}</Title>
-                    <Title level={4} type="secondary">{user.user_intro}</Title>
+                    <Title level={2}>{user.nickname}</Title>
+                    <Title level={4} type="secondary">{user.intro}</Title>
                 </div>
             </div>
 
-            <Descriptions title="用户信息" bordered>
-                <Descriptions.Item label="用户名">{user.user_nickname}</Descriptions.Item>
-                <Descriptions.Item label="管理员">
-                    {user.user_admin ? <Tag color="red">是</Tag> : <Tag color="blue">否</Tag>}
-                </Descriptions.Item>
-                <Descriptions.Item label="评分">{(user.user_rating / 10).toFixed(1)}</Descriptions.Item>
-                <Descriptions.Item label="余额">{(user.user_balance / 100).toFixed(2)}元</Descriptions.Item>
-                <Descriptions.Item label="关注者">{user.user_following}</Descriptions.Item>
+            <Descriptions title="用户信息" bordered column={4}>
+                <Descriptions.Item label="用户名">{user.nickname}</Descriptions.Item>
+                <Descriptions.Item label="用户类型">{user.type}</Descriptions.Item>
+                <Descriptions.Item label="评分">{(user.rating / 10).toFixed(1)}</Descriptions.Item>
+                <Descriptions.Item label="余额">{(user.balance / 100).toFixed(2)}元</Descriptions.Item>
             </Descriptions>
 
-            <Title level={3} style={{ marginTop: 24 }}>用户任务</Title>
+            <Title level={3} style={{ marginTop: 24 }}>接收的任务</Title>
             <List
                 itemLayout="horizontal"
                 dataSource={tasks}
                 renderItem={task => (
                     <List.Item>
+                        {/*id,title,status,rating,time*/}
                         <List.Item.Meta
                             title={<Link to={`/task/${task.id}`}>{task.title}</Link>}
-                            description={task.description}
+                            description={<>
+                                <Tag color="blue">{task.rating}</Tag>
+                                <Tag color="green">{task.time}</Tag>
+                            </>}
                         />
                         <div>{task.status}</div>
                     </List.Item>
