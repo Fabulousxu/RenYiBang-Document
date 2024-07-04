@@ -40,3 +40,8 @@ export async function getTaskMessage(taskId, pageSize, pageIndex, order) {
   for (let item of res.items) item.user = item.messager
   return res
 }
+
+export async function unaccessTask(taskId) {
+  let res = await get(`${apiURL}/task/${taskId}/unaccess`)
+  return res
+}

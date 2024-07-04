@@ -17,4 +17,10 @@ public class ChatController {
     long userId = 1;
     return chatService.getChatList(userId);
   }
+
+  @GetMapping("/history")
+  public JSONObject getChatHistory(String type, long chatId, long lastMessageId, int count) {
+    long userId = 1;
+    return chatService.getChatHistory(userId, type, chatId, lastMessageId, count);
+  }
 }
