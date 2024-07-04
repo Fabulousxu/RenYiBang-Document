@@ -24,14 +24,14 @@ public class TaskOrderServiceImpl implements OrderService<TaskOrder, Task>{
   public List<TaskOrder> findByOwnerId(long ownerId) {
     User owner = userDao.findById(ownerId)
             .orElseThrow(() -> new EntityNotFoundException("User not found with id " + ownerId));
-    return taskOrderDao.findByOwner(owner);
+    return taskOrderDao.findByOwnerAndType(owner, (byte) 0);
   }
 
   @Override
   public List<TaskOrder> findByAccessorId(long accessorId) {
     User accessor = userDao.findById(accessorId)
             .orElseThrow(() -> new EntityNotFoundException("User not found with id " + accessorId));
-    return taskOrderDao.findByAccessor(accessor);
+    return taskOrderDao.findByAccessorAndType(accessor, (byte) 0);
   }
 
   @Override
@@ -45,7 +45,7 @@ public class TaskOrderServiceImpl implements OrderService<TaskOrder, Task>{
 
   @Override
   public List<TaskOrder> findByStatus(OrderStatus status) {
-    return taskOrderDao.findByStatus(status);
+    return taskOrderDao.findByStatusAndType(status, (byte) 0);
   }
 
   @Override
@@ -55,7 +55,8 @@ public class TaskOrderServiceImpl implements OrderService<TaskOrder, Task>{
 
   @Override
   public List<TaskOrder> findAllOrders() {
-    return taskOrderDao.findAllOrders();
+    return taskOrderDao.findByType((byte) 0);
+//    return taskOrderDao.findAllOrders();
   }
 
   @Override
