@@ -10,4 +10,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/help")
-public class HelpController {}
+public class HelpController {
+    @PostMapping("/test1")
+    public JSONObject testForNormal() {
+        return ResponseUtil.success("success");
+    }
+
+    @PostMapping("/test2")
+    public JSONObject testForWaiter() {
+        return ResponseUtil.success("success");
+    }
+
+    @PostMapping("/test3")
+    public JSONObject testForAdmin() {
+        return ResponseUtil.success("success");
+    }
+
+}

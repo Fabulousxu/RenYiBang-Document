@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -27,6 +27,7 @@ public class UserController {
         UsernamePasswordToken token = new UsernamePasswordToken(name, password);
         try {
             subject.login(token);//执行登录，如果没有异常说明正常
+            System.out.println("当前登录用户：" + SecurityUtils.getSubject().getPrincipal());
             String jwt =JwtUtil.createJWT(name);
             JSONObject data = new JSONObject();
             data.put("jwt",jwt);
@@ -56,6 +57,16 @@ public class UserController {
         } catch (Exception e) {
             return ResponseUtil.error("注册失败: " + e.getMessage());
         }
+    }
+
+
+    @PostMapping("/logout")
+    public JSONObject logout() {
+        Subject subject = SecurityUtils.getSubject();
+        System.out.println("当前要被注销的登录用户：" + subject.getPrincipal());
+        subject.logout(); // 执行注销
+        System.out.println("用户已注销");
+        return ResponseUtil.success("注销成功");
     }
 
 }
