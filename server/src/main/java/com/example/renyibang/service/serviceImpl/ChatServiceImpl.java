@@ -11,9 +11,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Service;
 
-@Service
+@org.springframework.stereotype.Service
 public class ChatServiceImpl implements ChatService {
   private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
   @Autowired private TaskChatRepository taskChatRepository;
@@ -21,6 +20,8 @@ public class ChatServiceImpl implements ChatService {
   @Autowired private TaskChatMessageRepository taskChatMessageRepository;
   @Autowired private ServiceChatMessageRepository serviceChatMessageRepository;
   @Autowired private UserRepository userRepository;
+  @Autowired private TaskRepository taskRepository;
+  @Autowired private ServiceRepository serviceRepository;
 
   @Override
   public JSONObject getChatList(long userId) {
@@ -159,6 +160,44 @@ public class ChatServiceImpl implements ChatService {
         history.add(message);
       }
       return ResponseUtil.success(history);
+    }
+  }
+
+  @Override
+  public JSONObject enterChat(long userId, String type, long id) {
+    User user = userRepository.findById(userId).orElse(null);
+    if (user == null) return ResponseUtil.error("用户不存在");
+    if (type.equals("task")) {
+      TaskChat taskChat = taskChatRepository.findByTask_TaskIdAndChatter_UserId(id, userId);
+      if (taskChat == null) {
+        Task task = taskRepository.findById(id).orElse(null);
+        if (task == null) return ResponseUtil.error("任务不存在");
+        taskChat = new TaskChat();
+        taskChat.setTask(task);
+        taskChat.setChatter(user);
+        taskChat.setLastChatter(user);
+        taskChat.setLastTime(task.getCreatedAt());
+        taskChatRepository.save(taskChat);
+      }
+      JSONObject data = new JSONObject();
+      data.put("chatId", taskChat.getTaskChatId());
+      return ResponseUtil.success(data);
+    } else {
+      ServiceChat serviceChat =
+          serviceChatRepository.findByService_ServiceIdAndChatter_UserId(id, userId);
+      if (serviceChat == null) {
+        Service service = serviceRepository.findById(id).orElse(null);
+        if (service == null) return ResponseUtil.error("服务不存在");
+        serviceChat = new ServiceChat();
+        serviceChat.setService(service);
+        serviceChat.setChatter(user);
+        serviceChat.setLastChatter(user);
+        serviceChat.setLastTime(service.getCreatedAt());
+        serviceChatRepository.save(serviceChat);
+      }
+      JSONObject data = new JSONObject();
+      data.put("chatId", serviceChat.getServiceChatId());
+      return ResponseUtil.success(data);
     }
   }
 }

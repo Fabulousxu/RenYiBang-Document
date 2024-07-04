@@ -5,20 +5,20 @@ USE renyibang;
 CREATE TABLE user
 (
     user_id  BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '用户id',
-    type     TINYINT DEFAULT 0  NOT NULL COMMENT '用户类型(0:普通用户,1:客服,2:管理员)',
-    nickname VARCHAR(16)        NOT NULL COMMENT '用户昵称',
+    type     TINYINT DEFAULT 0    NOT NULL COMMENT '用户类型(0:普通用户,1:客服,2:管理员)',
+    nickname VARCHAR(16)          NOT NULL COMMENT '用户昵称',
     avatar   LONGTEXT COMMENT '用户头像',
     intro    TEXT COMMENT '用户介绍',
-    rating   TINYINT DEFAULT 50 NOT NULL COMMENT '用户评分(存储10倍评分,范围0~100)',
-    balance  BIGINT  DEFAULT 0  NOT NULL COMMENT '用户余额(存储100倍余额)',
-    valid    BOOLEAN NOT NULL COMMENT '用户是否注销'
+    rating   TINYINT DEFAULT 50   NOT NULL COMMENT '用户评分(存储10倍评分,范围0~100)',
+    balance  BIGINT  DEFAULT 0    NOT NULL COMMENT '用户余额(存储100倍余额)',
+    valid    BOOLEAN DEFAULT TRUE NOT NULL COMMENT '用户是否注销'
 ) comment '用户表';
 
 CREATE TABLE user_auth
 (
     user_id  BIGINT PRIMARY KEY COMMENT '用户id',
     password VARCHAR(16) NOT NULL COMMENT '用户密码',
-    valid    BOOLEAN NOT NULL COMMENT '用户账号是否被封禁',
+    valid    BOOLEAN     NOT NULL COMMENT '用户账号是否被封禁',
     FOREIGN KEY (user_id) REFERENCES user (user_id) ON UPDATE CASCADE ON DELETE CASCADE
 ) COMMENT '用户密码表';
 
@@ -34,16 +34,16 @@ CREATE TABLE follow
 CREATE TABLE task
 (
     task_id     BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '任务id',
-    owner_id    BIGINT      NOT NULL COMMENT '任务发布者id',
-    title       VARCHAR(32) NOT NULL COMMENT '任务标题',
+    owner_id    BIGINT             NOT NULL COMMENT '任务发布者id',
+    title       VARCHAR(32)        NOT NULL COMMENT '任务标题',
     images      LONGTEXT COMMENT '任务图片',
     description TEXT COMMENT '任务描述',
-    price       BIGINT               DEFAULT 0 NOT NULL COMMENT '任务价格(存储100倍价格)',
-    created_at  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务发布时间',
-    max_access  INT         NOT NULL DEFAULT 1 COMMENT '任务最大接取数',
-    rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
-    collected   BIGINT      NOT NULL COMMENT '任务收藏数',
-    status      TINYINT     NOT NULL COMMENT '任务状态',
+    price       BIGINT  DEFAULT 0  NOT NULL COMMENT '任务价格(存储100倍价格)',
+    created_at  TIMESTAMP          NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '任务发布时间',
+    max_access  INT                NOT NULL DEFAULT 1 COMMENT '任务最大接取数',
+    rating      TINYINT DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
+    collected   BIGINT             NOT NULL COMMENT '任务收藏数',
+    status      TINYINT DEFAULT 0  NOT NULL COMMENT '任务状态',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务表';
 
@@ -114,16 +114,16 @@ CREATE TABLE task_access
 CREATE TABLE service
 (
     service_id  BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '服务id',
-    owner_id    BIGINT      NOT NULL COMMENT '服务发布者id',
-    title       VARCHAR(32) NOT NULL COMMENT '服务标题',
+    owner_id    BIGINT             NOT NULL COMMENT '服务发布者id',
+    title       VARCHAR(32)        NOT NULL COMMENT '服务标题',
     images      LONGTEXT COMMENT '服务图片',
     description TEXT COMMENT '服务描述',
-    price       BIGINT               DEFAULT 0 NOT NULL COMMENT '服务价格(存储100倍价格)',
-    created_at  TIMESTAMP   NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '服务发布时间',
-    max_access  INT         NOT NULL DEFAULT 1 COMMENT '服务最大购买数',
-    rating      TINYINT              DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
-    collected   BIGINT      NOT NULL COMMENT '服务收藏数',
-    status      TINYINT     NOT NULL COMMENT '服务状态',
+    price       BIGINT  DEFAULT 0  NOT NULL COMMENT '服务价格(存储100倍价格)',
+    created_at  TIMESTAMP          NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '服务发布时间',
+    max_access  INT                NOT NULL DEFAULT 1 COMMENT '服务最大购买数',
+    rating      TINYINT DEFAULT 50 NOT NULL COMMENT '任务评分(存储10倍评分,范围0~100)',
+    collected   BIGINT             NOT NULL COMMENT '服务收藏数',
+    status      TINYINT DEFAULT 0  NOT NULL COMMENT '服务状态',
     FOREIGN KEY (owner_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务表';
 
@@ -221,12 +221,12 @@ CREATE TABLE service_order
 
 CREATE TABLE task_chat
 (
-    task_chat_id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '聊天id',
-    task_id      BIGINT    NOT NULL COMMENT '任务id',
-    chatter_id   BIGINT    NOT NULL COMMENT '发起聊天者id',
-    unread       INT UNSIGNED       DEFAULT 0 NOT NULL COMMENT '未读消息数',
-    last_message TEXT      NOT NULL COMMENT '最后一条消息内容',
-    last_time    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一条消息发送时间',
+    task_chat_id    BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '聊天id',
+    task_id         BIGINT    NOT NULL COMMENT '任务id',
+    chatter_id      BIGINT    NOT NULL COMMENT '发起聊天者id',
+    unread          INT UNSIGNED       DEFAULT 0 NOT NULL COMMENT '未读消息数',
+    last_message    TEXT      NOT NULL COMMENT '最后一条消息内容',
+    last_time       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一条消息发送时间',
     last_chatter_id BIGINT    NOT NULL COMMENT '最后一条消息发送者id',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (chatter_id) REFERENCES user (user_id) ON UPDATE CASCADE

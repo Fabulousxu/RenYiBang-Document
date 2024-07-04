@@ -9,4 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface TaskChatRepository extends JpaRepository<TaskChat, Long> {
   List<TaskChat> findByChatter_UserIdOrTask_Owner_UserIdOrderByLastTimeDesc(
       long userId1, long userId2);
+
+  TaskChat findByTask_TaskIdAndChatter_UserId(long taskId, long userId);
 }

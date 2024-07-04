@@ -8,4 +8,6 @@ public interface ChatService {
   JSONObject getChatList(long userId);
 
   JSONObject getChatHistory(long userId, String type, long chatId, long lastMessageId, int count);
+
+  JSONObject enterChat(long userId, String type, long id);
 }
