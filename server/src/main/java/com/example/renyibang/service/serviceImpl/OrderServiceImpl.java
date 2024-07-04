@@ -37,10 +37,24 @@
 //	}
 //
 //	@Override
+//	public List<T> findByOwnerIdAndType(long ownerId, byte type) {
+//		User owner = userDao.findById(ownerId)
+//						.orElseThrow(() -> new EntityNotFoundException("User not found with id " + ownerId));
+//		return orderDao.findByOwnerAndType(owner, type);
+//	}
+//
+//	@Override
 //	public List<T> findByAccessorId(long accessorId) {
 //		User accessor = userDao.findById(accessorId)
 //						.orElseThrow(() -> new EntityNotFoundException("User not found with id " + accessorId));
 //		return orderDao.findByAccessor(accessor);
+//	}
+//
+//	@Override
+//	public List<T> findByAccessorIdAndType(long accessorId, byte type) {
+//		User accessor = userDao.findById(accessorId)
+//						.orElseThrow(() -> new EntityNotFoundException("User not found with id " + accessorId));
+//		return orderDao.findByAccessorAndType(accessor, type);
 //	}
 //
 //	@Override
@@ -68,6 +82,11 @@
 //	@Override
 //	public List<T> findByStatus(OrderStatus status) {
 //		return orderDao.findByStatus(status);
+//	}
+//
+//	@Override
+//	public List<T> findByStatusAndType(OrderStatus status, byte type) {
+//		return orderDao.findByStatusAndType(status, type);
 //	}
 //
 //	@Override

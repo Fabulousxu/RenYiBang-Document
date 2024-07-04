@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("api/user")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -69,7 +69,7 @@ public class UserController {
         return ResponseUtil.success("注销成功");
     }
 
-    @GetMapping("/profile/self")
+    @GetMapping("/api/profile/self")
     public JSONObject getSelfInfo(long userId)
     {
         //userId待替换

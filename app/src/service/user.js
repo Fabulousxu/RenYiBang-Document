@@ -9,7 +9,7 @@ export const getUserProfile = async () => {
     return res;
 };
 
-export const getUserTasks = async () => {
+export const  getUserTasks = async () => {
     // let userId = localStorage.getItem('userId');
     let userId = 1;
     let res = await get(`${apiURL}/order/task/recipient/${userId}?capacity=10`);

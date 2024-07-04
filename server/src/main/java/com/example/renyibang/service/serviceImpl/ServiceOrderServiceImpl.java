@@ -10,6 +10,7 @@ import com.example.renyibang.enums.OrderStatus;
 import com.example.renyibang.service.OrderService;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.List;
+import org.antlr.v4.runtime.misc.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @org.springframework.stereotype.Service
@@ -89,8 +90,33 @@ public class ServiceOrderServiceImpl implements OrderService<ServiceOrder, Servi
 
 
 	@Override
-	public boolean markOrderStatus(long ServiceOrderId, OrderStatus status) {
-		ServiceOrder ServiceOrder = serviceOrderDao.findById(ServiceOrderId);
+	public Pair<Boolean, String> markOrderStatus(long ServiceOrderId, OrderStatus status) {
+		ServiceOrder serviceOrder = serviceOrderDao.findById(ServiceOrderId);
+		if (serviceOrder == null) {
+			return new Pair<>(false, "订单不存在");
+		}
+
+		OrderStatus currentStatus = serviceOrder.getStatus();
+		if (currentStatus == OrderStatus.UNPAID && status == OrderStatus.IN_PROGRESS) {
+			this.payOrder(serviceOrder);
+			return new Pair<>(true, "订单支付成功");
+		} else if (currentStatus == OrderStatus.IN_PROGRESS && status == OrderStatus.COMPLETED) {
+			this.completeOrder(serviceOrder);
+			return new Pair<>(true, "订单完成成功");
+		} else if (currentStatus == OrderStatus.COMPLETED && status == OrderStatus.CONFIRMED) {
+			this.confirmOrder(serviceOrder);
+			return new Pair<>(true, "订单确认成功");
+		} else if(status == OrderStatus.CANCELLED && currentStatus != OrderStatus.CONFIRMED && currentStatus != OrderStatus.CANCELLED) {
+			this.cancelOrder(serviceOrder);
+			return new Pair<>(true, "订单取消成功");
+		} else {
+			return new Pair<>(false, "订单状态不合法");
+		}
+	}
+
+	@Override
+	public boolean setOrderStatusForce(long orderId, OrderStatus status) {
+		ServiceOrder ServiceOrder = serviceOrderDao.findById(orderId);
 		if (ServiceOrder == null) {
 			return false;
 		}
@@ -121,6 +147,28 @@ public class ServiceOrderServiceImpl implements OrderService<ServiceOrder, Servi
 	}
 
 	@Override
+	public void completeOrder(ServiceOrder order) {
+		order.setStatus(OrderStatus.COMPLETED);
+		serviceOrderDao.save(order);
+	}
+
+	@Override
+	public void confirmOrder(ServiceOrder order) {
+		order.setStatus(OrderStatus.CONFIRMED);
+		// 转账
+		this.modifyUserBalance(order.getAccessor(), order.getCost());
+		serviceOrderDao.save(order);
+	}
+
+	@Override
+	public void cancelOrder(ServiceOrder order) {
+		order.setStatus(OrderStatus.CANCELLED);
+		// 退款
+		this.modifyUserBalance(order.getOwner(), order.getCost());
+		serviceOrderDao.save(order);
+	}
+
+	@Override
 	public void modifyUserBalance(User user, long amount) {
 		if(user == null) {
 			throw new EntityNotFoundException("User not found");
@@ -130,4 +178,3 @@ public class ServiceOrderServiceImpl implements OrderService<ServiceOrder, Servi
 	}
 }
 
-		

@@ -40,7 +40,7 @@ export default function OrderInitiatorPage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const orderData = await fetchOrderById(id);
+        const orderData = await fetchOrderById(id, isTask);
         setOrder(orderData);
       } catch (error) {
         console.error("Error fetching order data:", error);
@@ -50,32 +50,41 @@ export default function OrderInitiatorPage() {
     fetchData();
   }, [id]);
 
-  const handleConfirm = async (id) => {
+  const handleConfirm = async () => {
     try {
-      await changeOrderStatus(id, 2); // 已完成
+      await changeOrderStatus(id, 3, isTask); // 已完成
       setOrder({ ...order, status: 2 });
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleCancel = async (id) => {
+  const handleCancel = async () => {
     try {
-      await changeOrderStatus(id, 4); // 已取消
+      await changeOrderStatus(id, 4, isTask); // 已取消
       setOrder({ ...order, status: 4 });
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleComplete = async (id) => {
+  const handleComplete = async () => {
     try {
-      await changeOrderStatus(id, 3); // 待确认
+      await changeOrderStatus(id, 2, isTask); // 待确认
       setOrder({ ...order, status: 3 });
     } catch (error) {
       console.error(error);
     }
   };
+
+  const handlePay = async () => {
+    try {
+      await changeOrderStatus(id, 1, isTask); // 进行中
+      setOrder({ ...order, status: 1 });
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   if (!order) {
     return (
@@ -87,7 +96,7 @@ export default function OrderInitiatorPage() {
     );
   }
 
-  const statusStep = getStatusStep(order.status);
+  // const statusStep = getStatusStep(order.status);
 
   return (
     <BasicLayout>
@@ -128,22 +137,38 @@ export default function OrderInitiatorPage() {
               {order.description}
             </Paragraph>
             <Divider orientation="left">当前状态</Divider>
-            <Steps current={statusStep} size="small">
-              <Step title="创建" />
+            <Steps current={order.status} size="small">
+              <Step title={statusMap[0].text} />
               <Step title={statusMap[1].text} />
-              <Step title={statusMap[3].text} />
-              <Step title={statusMap[order.status]?.text || '未知'} />
+              <Step title={statusMap[2].text} />
+              {order.status <= 3 ? <Step title={statusMap[3].text} /> : <Step title={statusMap[4].text} />}
             </Steps>
           </Typography>
-          {(isTask && order.status === 3) ? (
+          {(order.status === 0) ? (
+            <div>
+              <Button type="primary" onClick={() => handlePay(order.id)} style={{ margin: '20px' }}>支付订单</Button>
+              <Button type="danger" onClick={() => handleCancel(order.id)} style={{ margin: '20px' }}>取消订单</Button>
+            </div>
+          ) : null}
+          {(order.status === 1) ? (
+            <div>
+              等待对方完成...
+            </div>
+          ) : null}
+          {(order.status === 2) ? (
             <div>
               <Button type="primary" onClick={() => handleConfirm(order.id)} style={{ margin: '20px' }}>确认完成</Button>
               <Button type="danger" onClick={() => handleCancel(order.id)} style={{ margin: '20px' }}>发起退款</Button>
             </div>
           ) : null}
-          {(isService && order.status === 1) ? (
+          {(order.status === 3) ? (
             <div>
-              <Button type="primary" onClick={() => handleComplete(order.id)} style={{ margin: '20px' }}>完成订单</Button>
+              您的订单已结束！
+            </div>
+          ) : null}
+          {(order.status === 4) ? (
+            <div>
+              订单已取消！
             </div>
           ) : null}
         </Col>

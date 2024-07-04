@@ -1,8 +1,8 @@
 import {apiURL} from "./util";
 import {get, post, put, del} from "./util";
 
-export async function changeOrderStatus(id, status) {
-	const url = `${apiURL}/changeOrderStatus?id=${id}&status=${status}`;
+export async function changeOrderStatus(id, status, isTask) {
+	const url = isTask ? `${apiURL}/order/task/status?id=${id}&status=${status}` : `${apiURL}/order/service/status?id=${id}&status=${status}`;
 	return put(url, {status});
 }
 
@@ -30,7 +30,7 @@ export async function fetchRecipientServices() {
 	return get(url);
 }
 
-export async function fetchOrderById(id) {
-	const url = `${apiURL}/order/${id}`;
+export async function fetchOrderById(id, isTask) {
+	const url = isTask ? `${apiURL}/order/task/${id}` : `${apiURL}/order/service/${id}`;
 	return get(url);
 }
