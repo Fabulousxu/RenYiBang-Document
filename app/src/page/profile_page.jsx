@@ -1,10 +1,11 @@
 // profile_page.jsx
 import React, { useEffect, useState } from 'react';
 import BasicLayout from "../component/basic_layout";
-import { Descriptions, Avatar, List, Typography, Tag } from 'antd';
+import { Descriptions, Avatar, List, Typography, Tag, Button } from 'antd';
 import { getUserProfile, getUserTasks } from '../service/user';
 import {Link} from "react-router-dom";
 import {useParams} from "react-router-dom";
+import { unaccessTask } from '../service/task';
 
 const { Title } = Typography;
 
@@ -59,6 +60,7 @@ export default function ProfilePage() {
                             </>}
                         />
                         <div>{task.status}</div>
+                        <Button type="danger" onClick={() => unaccessTask(task.id)}>取消接取任务</Button>
                     </List.Item>
                 )}
             />

@@ -1,23 +1,56 @@
 package com.example.renyibang.config;
 
+import com.example.renyibang.entity.User;
 import com.example.renyibang.entity.UserAuth;
 import com.example.renyibang.service.UserAuthService;
+import com.example.renyibang.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.Optional;
+
 public class UserRealm extends AuthorizingRealm {
     @Autowired
     private UserAuthService userAuthService;
-    //授权
+
+    @Autowired
+    private UserService userService;
+    // 授权
     @Override
-    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        System.out.println("执行了=>授权doGetAuthorizationInfo");
-        return null;
+    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        System.out.println("执行了 => 授权 doGetAuthorizationInfo");
+        String username = (String) principals.getPrimaryPrincipal();
+        System.out.println("授权用户：" + username);
+        Optional<User> currentUser = userService.findById(Long.parseLong(username));
+        if (currentUser.isEmpty()) {
+            System.out.println("未找到用户：" + username);
+            return null;
+        }
+        byte currentType = currentUser.get().getType();
+        String perms = "";
+        switch (currentType) {
+            case 0:
+                perms = "normal";
+                break;
+            case 1:
+                perms = "waiter";
+                break;
+            case 2:
+                perms = "admin";
+                break;
+            default:
+                perms = "unknown";
+        }
+        System.out.println("用户权限：" + perms);
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        info.addStringPermission(perms);
+        return info;
     }
 
     //认证

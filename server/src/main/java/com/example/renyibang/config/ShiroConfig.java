@@ -20,7 +20,7 @@ public class ShiroConfig {
         /*
          * anon： 无需认证即可访问
          * authc： 必须认证才能访问
-         * user: 不许拥有 记住我 功能才能用
+         * user: 必须拥有 记住我 功能才能用
          * perms: 拥有对某个资源的权限才能访问
          * role: 拥有某个角色权限才能访问
          * */
@@ -30,7 +30,9 @@ public class ShiroConfig {
         filterMap.put("/user/login", "anon"); // 登录接口不需要认证
         filterMap.put("/user/add", "authc");
         filterMap.put("/user/update", "authc");
-
+        filterMap.put("/help/test1", "authc,perms[normal]");
+        filterMap.put("/help/test2", "authc,perms[waiter]");
+        filterMap.put("/help/test3", "authc,perms[admin]");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         return shiroFilterFactoryBean;
     }
