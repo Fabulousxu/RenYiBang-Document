@@ -1,5 +1,6 @@
 package com.example.renyibang.entity;
 
+import com.alibaba.fastjson2.JSONObject;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -30,6 +31,10 @@ public class TaskChat {
 
   @Temporal(TemporalType.TIMESTAMP)
   private LocalDateTime lastTime;
+
+  @ManyToOne
+  @JoinColumn(name = "last_chatter_id")
+  private User lastChatter;
 
   @OneToMany(mappedBy = "taskChat")
   @OrderBy("createdAt DESC")

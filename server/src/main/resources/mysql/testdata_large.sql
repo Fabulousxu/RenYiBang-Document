@@ -6166,3 +6166,14 @@ VALUES (1, 1),
        (48, 6),
        (49, 6),
        (50, 15);
+
+INSERT INTO task_chat (task_id, chatter_id, unread, last_message, last_time, last_chatter_id)
+VALUES (1, 1, 1,
+        'Society sit brother government southern side season. Either learn reality pattern role number beat. Worry whom people meet strategy season health.',
+        '2024-05-03 00:39:20', 12),
+       (2, 1, 2,
+        'Huge throughout doctor significant mention perhaps list. Later might student across what. Change subject foreign economic.',
+        '2024-01-28 04:12:16', 8),
+       (3, 1, 0,
+        'Energy office poor fish successful. Couple writer most care common challenge leave campaign. Reason week collection what how the meeting.',
+        '2023-11-12 17:41:01', 20);

@@ -31,6 +31,10 @@ public class ServiceChat {
   @Temporal(TemporalType.TIMESTAMP)
   private LocalDateTime lastTime;
 
+  @ManyToOne
+  @JoinColumn(name = "last_chatter_id")
+  private User lastChatter;
+
   @OneToMany(mappedBy = "serviceChat")
   @OrderBy("createdAt DESC")
   private List<ServiceChatMessage> messages;

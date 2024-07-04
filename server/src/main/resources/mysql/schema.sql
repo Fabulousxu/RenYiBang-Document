@@ -221,6 +221,7 @@ CREATE TABLE task_chat
     unread       INT UNSIGNED       DEFAULT 0 NOT NULL COMMENT '未读消息数',
     last_message TEXT      NOT NULL COMMENT '最后一条消息内容',
     last_time    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一条消息发送时间',
+    last_chatter_id BIGINT    NOT NULL COMMENT '最后一条消息发送者id',
     FOREIGN KEY (task_id) REFERENCES task (task_id) ON UPDATE CASCADE,
     FOREIGN KEY (chatter_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '任务聊天表';
@@ -233,6 +234,7 @@ CREATE TABLE service_chat
     unread          INT UNSIGNED       DEFAULT 0 NOT NULL COMMENT '未读消息数',
     last_message    TEXT      NOT NULL COMMENT '最后一条消息内容',
     last_time       TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一条消息发送时间',
+    last_chatter_id BIGINT    NOT NULL COMMENT '最后一条消息发送者id',
     FOREIGN KEY (service_id) REFERENCES service (service_id) ON UPDATE CASCADE,
     FOREIGN KEY (chatter_id) REFERENCES user (user_id) ON UPDATE CASCADE
 ) COMMENT '服务聊天表';
