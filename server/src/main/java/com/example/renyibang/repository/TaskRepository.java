@@ -1,6 +1,7 @@
 package com.example.renyibang.repository;
 
 import com.example.renyibang.entity.Task;
+import com.example.renyibang.enums.TaskStatus;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
