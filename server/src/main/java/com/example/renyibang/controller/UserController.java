@@ -2,6 +2,8 @@ package com.example.renyibang.controller;
 
 import com.alibaba.fastjson2.JSONObject;
 import com.example.renyibang.entity.RegisterRequest;
+import com.example.renyibang.entity.User;
+import com.example.renyibang.repository.UserRepository;
 import com.example.renyibang.service.UserService;
 import com.example.renyibang.util.JwtUtil;
 import com.example.renyibang.util.ResponseUtil;
@@ -12,6 +14,7 @@ import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +22,10 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
+
     @PostMapping("/login")
     public JSONObject login(String name, String password) {
         //获取当前用户
@@ -86,5 +93,12 @@ public class UserController {
     public JSONObject modifyUserInfo(long userId, @RequestBody JSONObject body)
     {
         return userService.modifyUserInfo(userId, body);
+    }
+
+    @GetMapping("/getUserById")
+    public JSONObject getUserById(long userId)
+    {
+        // 返回 查找到的 User 对象，将对象直接封装成JSON返回
+        return ResponseUtil.success("查找成功", userRepository.findById(userId).orElse(null).toJSON());
     }
 }

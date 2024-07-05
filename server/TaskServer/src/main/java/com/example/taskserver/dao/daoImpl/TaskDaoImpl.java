@@ -30,6 +30,7 @@ public class TaskDaoImpl implements TaskDao {
 
   @Autowired TaskAccessRepository taskAccessRepository;
 
+
   @Override
   public Task findById(long taskId) {
     return taskRepository.findById(taskId).orElse(null);
