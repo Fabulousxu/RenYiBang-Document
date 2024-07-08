@@ -1,6 +1,30 @@
-2024-07-08 13:46:15,860 INFO Current addressing mode selection : StandaloneMemberLookup
+2024-07-08 14:23:40,041 INFO Current addressing mode selection : StandaloneMemberLookup
 
-2024-07-08 13:46:17,653 INFO [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
+2024-07-08 14:23:41,737 INFO [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
 
-2024-07-08 13:46:19,525 INFO This node is ready to provide external services
+2024-07-08 14:23:43,474 INFO This node is ready to provide external services
+
+2024-07-08 14:26:50,010 INFO Current addressing mode selection : AddressServerMemberLookup
+
+2024-07-08 14:26:50,046 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2024-07-08 14:26:50,046 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2024-07-08 14:26:50,046 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2024-07-08 14:26:50,046 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2024-07-08 14:26:50,048 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
+
+2024-07-08 14:27:02,719 INFO Current addressing mode selection : StandaloneMemberLookup
+
+2024-07-08 14:27:04,035 INFO [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
+
+2024-07-08 14:27:05,775 INFO This node is ready to provide external services
+
+2024-07-08 14:27:26,463 INFO Current addressing mode selection : StandaloneMemberLookup
+
+2024-07-08 14:27:27,847 INFO [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
+
+2024-07-08 14:27:29,653 INFO This node is ready to provide external services
 

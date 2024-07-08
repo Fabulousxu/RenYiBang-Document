@@ -1,82 +1,288 @@
-2024-07-08 13:46:18,150 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+2024-07-08 14:23:42,213 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
 
-2024-07-08 13:46:18,199 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+2024-07-08 14:23:42,258 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
 
-2024-07-08 13:46:18,284 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+2024-07-08 14:23:42,339 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
 
-2024-07-08 13:46:18,286 INFO The number of active nodes increment to 1.
+2024-07-08 14:23:42,340 INFO The number of active nodes increment to 1.
 
-2024-07-08 13:46:18,606 INFO Starts FSMCaller successfully.
+2024-07-08 14:23:42,670 INFO Starts FSMCaller successfully.
 
-2024-07-08 13:46:18,609 WARN No data for snapshot reader F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+2024-07-08 14:23:42,674 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
 
-2024-07-08 13:46:18,614 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=2.0.0.1:7848, oldConf=.
+2024-07-08 14:23:42,678 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=2.0.0.1:7848, oldConf=.
 
-2024-07-08 13:46:18,616 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> start vote and grant vote self, term=0.
+2024-07-08 14:23:42,679 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> start vote and grant vote self, term=0.
 
-2024-07-08 13:46:18,629 WARN Unable to fsync directory F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+2024-07-08 14:23:42,693 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
 
-2024-07-08 13:46:18,631 INFO Save raft meta, path=F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=1, votedFor=2.0.0.1:7848, cost time=13 ms
+2024-07-08 14:23:42,695 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=1, votedFor=2.0.0.1:7848, cost time=13 ms
 
-2024-07-08 13:46:18,632 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> become leader of group, term=1, conf=2.0.0.1:7848, oldConf=.
+2024-07-08 14:23:42,696 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> become leader of group, term=1, conf=2.0.0.1:7848, oldConf=.
 
-2024-07-08 13:46:18,633 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+2024-07-08 14:23:42,697 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
 
-2024-07-08 13:46:18,635 WARN RPC server is not started in RaftGroupService.
+2024-07-08 14:23:42,698 WARN RPC server is not started in RaftGroupService.
 
-2024-07-08 13:46:18,635 INFO Start the RaftGroupService successfully.
+2024-07-08 14:23:42,698 INFO Start the RaftGroupService successfully.
 
-2024-07-08 13:46:18,644 INFO onLeaderStart: term=1.
+2024-07-08 14:23:42,708 INFO The number of active nodes increment to 2.
 
-2024-07-08 13:46:18,644 INFO The number of active nodes increment to 2.
+2024-07-08 14:23:42,708 INFO onLeaderStart: term=1.
 
-2024-07-08 13:46:18,685 INFO Creating new channel to: 2.0.0.1:7848.
+2024-07-08 14:23:42,745 INFO Creating new channel to: 2.0.0.1:7848.
 
-2024-07-08 13:46:18,703 INFO Starts FSMCaller successfully.
+2024-07-08 14:23:42,759 INFO Starts FSMCaller successfully.
 
-2024-07-08 13:46:18,703 WARN No data for snapshot reader F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+2024-07-08 14:23:42,759 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
 
-2024-07-08 13:46:18,704 INFO Node <naming_instance_metadata/2.0.0.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=2.0.0.1:7848, oldConf=.
+2024-07-08 14:23:42,760 INFO Node <naming_instance_metadata/2.0.0.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=2.0.0.1:7848, oldConf=.
 
-2024-07-08 13:46:18,704 INFO Node <naming_instance_metadata/2.0.0.1:7848> start vote and grant vote self, term=0.
+2024-07-08 14:23:42,760 INFO Node <naming_instance_metadata/2.0.0.1:7848> start vote and grant vote self, term=0.
 
-2024-07-08 13:46:18,709 WARN Unable to fsync directory F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+2024-07-08 14:23:42,766 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
 
-2024-07-08 13:46:18,709 INFO Save raft meta, path=F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=1, votedFor=2.0.0.1:7848, cost time=5 ms
+2024-07-08 14:23:42,766 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=1, votedFor=2.0.0.1:7848, cost time=4 ms
 
-2024-07-08 13:46:18,709 INFO Node <naming_instance_metadata/2.0.0.1:7848> become leader of group, term=1, conf=2.0.0.1:7848, oldConf=.
+2024-07-08 14:23:42,766 INFO Node <naming_instance_metadata/2.0.0.1:7848> become leader of group, term=1, conf=2.0.0.1:7848, oldConf=.
 
-2024-07-08 13:46:18,709 WARN RPC server is not started in RaftGroupService.
+2024-07-08 14:23:42,766 WARN RPC server is not started in RaftGroupService.
 
-2024-07-08 13:46:18,709 INFO Start the RaftGroupService successfully.
+2024-07-08 14:23:42,766 INFO Start the RaftGroupService successfully.
 
-2024-07-08 13:46:18,711 INFO onLeaderStart: term=1.
+2024-07-08 14:23:42,768 INFO onLeaderStart: term=1.
 
-2024-07-08 13:46:18,712 INFO The number of active nodes increment to 3.
+2024-07-08 14:23:42,768 INFO The number of active nodes increment to 3.
 
-2024-07-08 13:46:18,712 INFO The channel 2.0.0.1:7848 is in state: CONNECTING.
+2024-07-08 14:23:42,770 INFO The channel 2.0.0.1:7848 is in state: CONNECTING.
 
-2024-07-08 13:46:18,770 INFO Starts FSMCaller successfully.
+2024-07-08 14:23:42,823 INFO Starts FSMCaller successfully.
 
-2024-07-08 13:46:18,770 WARN No data for snapshot reader F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+2024-07-08 14:23:42,823 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot.
 
-2024-07-08 13:46:18,771 INFO Node <naming_service_metadata/2.0.0.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=2.0.0.1:7848, oldConf=.
+2024-07-08 14:23:42,823 INFO Node <naming_service_metadata/2.0.0.1:7848> init, term=0, lastLogId=LogId [index=0, term=0], conf=2.0.0.1:7848, oldConf=.
 
-2024-07-08 13:46:18,771 INFO Node <naming_service_metadata/2.0.0.1:7848> start vote and grant vote self, term=0.
+2024-07-08 14:23:42,824 INFO Node <naming_service_metadata/2.0.0.1:7848> start vote and grant vote self, term=0.
 
-2024-07-08 13:46:18,780 WARN Unable to fsync directory F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+2024-07-08 14:23:42,828 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
 
-2024-07-08 13:46:18,780 INFO Save raft meta, path=F:\WebAppDevlopment\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=1, votedFor=2.0.0.1:7848, cost time=8 ms
+2024-07-08 14:23:42,829 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=1, votedFor=2.0.0.1:7848, cost time=4 ms
 
-2024-07-08 13:46:18,780 INFO Node <naming_service_metadata/2.0.0.1:7848> become leader of group, term=1, conf=2.0.0.1:7848, oldConf=.
+2024-07-08 14:23:42,829 INFO Node <naming_service_metadata/2.0.0.1:7848> become leader of group, term=1, conf=2.0.0.1:7848, oldConf=.
 
-2024-07-08 13:46:18,780 WARN RPC server is not started in RaftGroupService.
+2024-07-08 14:23:42,829 WARN RPC server is not started in RaftGroupService.
 
-2024-07-08 13:46:18,780 INFO Start the RaftGroupService successfully.
+2024-07-08 14:23:42,829 INFO Start the RaftGroupService successfully.
 
-2024-07-08 13:46:18,782 INFO onLeaderStart: term=1.
+2024-07-08 14:23:42,831 INFO onLeaderStart: term=1.
 
-2024-07-08 13:46:18,810 INFO The channel 2.0.0.1:7848 is in state: READY.
+2024-07-08 14:23:42,865 INFO The channel 2.0.0.1:7848 is in state: READY.
 
-2024-07-08 13:46:18,810 INFO The channel 2.0.0.1:7848 has successfully established.
+2024-07-08 14:23:42,865 INFO The channel 2.0.0.1:7848 has successfully established.
+
+2024-07-08 14:27:04,498 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2024-07-08 14:27:04,578 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2024-07-08 14:27:04,664 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2024-07-08 14:27:04,667 INFO The number of active nodes increment to 1.
+
+2024-07-08 14:27:04,988 INFO Starts FSMCaller successfully.
+
+2024-07-08 14:27:04,991 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2024-07-08 14:27:04,991 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> target priority value has changed from: 0, to: -1.
+
+2024-07-08 14:27:04,995 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:04,996 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> start vote and grant vote self, term=1.
+
+2024-07-08 14:27:05,011 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2024-07-08 14:27:05,013 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=2, votedFor=2.0.0.1:7848, cost time=12 ms
+
+2024-07-08 14:27:05,013 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> become leader of group, term=2, conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:05,014 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2024-07-08 14:27:05,015 WARN RPC server is not started in RaftGroupService.
+
+2024-07-08 14:27:05,015 INFO Start the RaftGroupService successfully.
+
+2024-07-08 14:27:05,026 INFO The number of active nodes increment to 2.
+
+2024-07-08 14:27:05,026 INFO onLeaderStart: term=2.
+
+2024-07-08 14:27:05,068 INFO Creating new channel to: 2.0.0.1:7848.
+
+2024-07-08 14:27:05,078 INFO Starts FSMCaller successfully.
+
+2024-07-08 14:27:05,078 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2024-07-08 14:27:05,078 INFO Node <naming_instance_metadata/2.0.0.1:7848> target priority value has changed from: 0, to: -1.
+
+2024-07-08 14:27:05,079 INFO Node <naming_instance_metadata/2.0.0.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:05,079 INFO Node <naming_instance_metadata/2.0.0.1:7848> start vote and grant vote self, term=1.
+
+2024-07-08 14:27:05,083 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2024-07-08 14:27:05,083 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=2, votedFor=2.0.0.1:7848, cost time=4 ms
+
+2024-07-08 14:27:05,083 INFO Node <naming_instance_metadata/2.0.0.1:7848> become leader of group, term=2, conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:05,083 WARN RPC server is not started in RaftGroupService.
+
+2024-07-08 14:27:05,083 INFO Start the RaftGroupService successfully.
+
+2024-07-08 14:27:05,085 INFO The number of active nodes increment to 3.
+
+2024-07-08 14:27:05,086 INFO onLeaderStart: term=2.
+
+2024-07-08 14:27:05,094 INFO The channel 2.0.0.1:7848 is in state: CONNECTING.
+
+2024-07-08 14:27:05,140 INFO Starts FSMCaller successfully.
+
+2024-07-08 14:27:05,140 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2024-07-08 14:27:05,140 INFO Node <naming_service_metadata/2.0.0.1:7848> target priority value has changed from: 0, to: -1.
+
+2024-07-08 14:27:05,140 INFO Node <naming_service_metadata/2.0.0.1:7848> init, term=1, lastLogId=LogId [index=1, term=1], conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:05,140 INFO Node <naming_service_metadata/2.0.0.1:7848> start vote and grant vote self, term=1.
+
+2024-07-08 14:27:05,145 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2024-07-08 14:27:05,145 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=2, votedFor=2.0.0.1:7848, cost time=4 ms
+
+2024-07-08 14:27:05,145 INFO Node <naming_service_metadata/2.0.0.1:7848> become leader of group, term=2, conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:05,145 WARN RPC server is not started in RaftGroupService.
+
+2024-07-08 14:27:05,145 INFO Start the RaftGroupService successfully.
+
+2024-07-08 14:27:05,148 INFO onLeaderStart: term=2.
+
+2024-07-08 14:27:05,189 INFO The channel 2.0.0.1:7848 is in state: READY.
+
+2024-07-08 14:27:05,189 INFO The channel 2.0.0.1:7848 has successfully established.
+
+2024-07-08 14:27:28,330 INFO SPI service [com.alipay.sofa.jraft.JRaftServiceFactory - com.alipay.sofa.jraft.core.DefaultJRaftServiceFactory] loading.
+
+2024-07-08 14:27:28,404 INFO SPI service [com.alipay.sofa.jraft.rpc.RaftRpcFactory - com.alipay.sofa.jraft.rpc.impl.GrpcRaftRpcFactory] loading.
+
+2024-07-08 14:27:28,487 INFO SPI service [com.alipay.sofa.jraft.util.timer.RaftTimerFactory - com.alipay.sofa.jraft.util.timer.DefaultRaftTimerFactory] loading.
+
+2024-07-08 14:27:28,490 INFO The number of active nodes increment to 1.
+
+2024-07-08 14:27:28,811 INFO Truncated prefix logs in data path: F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\log from log index 0 to 1, cost 0 ms.
+
+2024-07-08 14:27:28,813 INFO Starts FSMCaller successfully.
+
+2024-07-08 14:27:28,818 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot.
+
+2024-07-08 14:27:28,818 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> target priority value has changed from: 0, to: -1.
+
+2024-07-08 14:27:28,823 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:28,825 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> start vote and grant vote self, term=2.
+
+2024-07-08 14:27:28,840 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data on windows.
+
+2024-07-08 14:27:28,840 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\meta-data, term=3, votedFor=2.0.0.1:7848, cost time=13 ms
+
+2024-07-08 14:27:28,840 INFO Node <naming_persistent_service_v2/2.0.0.1:7848> become leader of group, term=3, conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:28,841 INFO -Djraft.recyclers.maxCapacityPerThread: 4096.
+
+2024-07-08 14:27:28,843 WARN RPC server is not started in RaftGroupService.
+
+2024-07-08 14:27:28,843 INFO Start the RaftGroupService successfully.
+
+2024-07-08 14:27:28,851 INFO onLeaderStart: term=3.
+
+2024-07-08 14:27:28,853 INFO The number of active nodes increment to 2.
+
+2024-07-08 14:27:28,896 INFO Creating new channel to: 2.0.0.1:7848.
+
+2024-07-08 14:27:28,912 INFO Truncated prefix logs in data path: F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\log from log index 0 to 1, cost 0 ms.
+
+2024-07-08 14:27:28,913 INFO Starts FSMCaller successfully.
+
+2024-07-08 14:27:28,914 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot.
+
+2024-07-08 14:27:28,914 INFO Node <naming_instance_metadata/2.0.0.1:7848> target priority value has changed from: 0, to: -1.
+
+2024-07-08 14:27:28,916 INFO Node <naming_instance_metadata/2.0.0.1:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:28,916 INFO Node <naming_instance_metadata/2.0.0.1:7848> start vote and grant vote self, term=2.
+
+2024-07-08 14:27:28,920 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data on windows.
+
+2024-07-08 14:27:28,920 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\meta-data, term=3, votedFor=2.0.0.1:7848, cost time=4 ms
+
+2024-07-08 14:27:28,920 INFO Node <naming_instance_metadata/2.0.0.1:7848> become leader of group, term=3, conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:28,920 WARN RPC server is not started in RaftGroupService.
+
+2024-07-08 14:27:28,920 INFO Start the RaftGroupService successfully.
+
+2024-07-08 14:27:28,923 INFO The number of active nodes increment to 3.
+
+2024-07-08 14:27:28,923 INFO onLeaderStart: term=3.
+
+2024-07-08 14:27:28,923 INFO The channel 2.0.0.1:7848 is in state: CONNECTING.
+
+2024-07-08 14:27:28,987 INFO Truncated prefix logs in data path: F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\log from log index 0 to 1, cost 0 ms.
+
+2024-07-08 14:27:28,988 INFO Starts FSMCaller successfully.
+
+2024-07-08 14:27:28,988 WARN No data for snapshot reader F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot.
+
+2024-07-08 14:27:28,988 INFO Node <naming_service_metadata/2.0.0.1:7848> target priority value has changed from: 0, to: -1.
+
+2024-07-08 14:27:28,989 INFO Node <naming_service_metadata/2.0.0.1:7848> init, term=2, lastLogId=LogId [index=2, term=2], conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:28,989 INFO Node <naming_service_metadata/2.0.0.1:7848> start vote and grant vote self, term=2.
+
+2024-07-08 14:27:28,993 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data on windows.
+
+2024-07-08 14:27:28,993 INFO Save raft meta, path=F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\meta-data, term=3, votedFor=2.0.0.1:7848, cost time=5 ms
+
+2024-07-08 14:27:28,994 INFO Node <naming_service_metadata/2.0.0.1:7848> become leader of group, term=3, conf=2.0.0.1:7848, oldConf=.
+
+2024-07-08 14:27:28,994 WARN RPC server is not started in RaftGroupService.
+
+2024-07-08 14:27:28,994 INFO Start the RaftGroupService successfully.
+
+2024-07-08 14:27:28,996 INFO onLeaderStart: term=3.
+
+2024-07-08 14:27:29,030 INFO The channel 2.0.0.1:7848 is in state: READY.
+
+2024-07-08 14:27:29,030 INFO The channel 2.0.0.1:7848 has successfully established.
+
+2024-07-08 14:46:48,428 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp on windows.
+
+2024-07-08 14:46:48,428 INFO Deleting snapshot F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_3.
+
+2024-07-08 14:46:48,428 INFO Renaming F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot\temp to F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot\snapshot_3.
+
+2024-07-08 14:46:48,428 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_instance_metadata\snapshot on windows.
+
+2024-07-08 14:48:11,969 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp on windows.
+
+2024-07-08 14:48:11,969 INFO Deleting snapshot F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_3.
+
+2024-07-08 14:48:11,969 INFO Renaming F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\temp to F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot\snapshot_3.
+
+2024-07-08 14:48:11,969 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_persistent_service_v2\snapshot on windows.
+
+2024-07-08 14:51:36,161 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp on windows.
+
+2024-07-08 14:51:36,161 INFO Deleting snapshot F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_3.
+
+2024-07-08 14:51:36,161 INFO Renaming F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot\temp to F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot\snapshot_3.
+
+2024-07-08 14:51:36,161 WARN Unable to fsync directory F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\data\protocol\raft\naming_service_metadata\snapshot on windows.
 
