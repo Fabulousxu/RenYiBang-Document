@@ -620,3 +620,15 @@ java.lang.IllegalStateException: call already closed
 
 2024-07-08 14:58:02,865 INFO Connection transportReady,connectionId = 1720421882865_2.0.0.1_55298 
 
+2024-07-08 15:11:11,849 INFO Connection transportReady,connectionId = 1720422671849_2.0.0.1_63856 
+
+2024-07-08 15:11:11,849 INFO Connection transportReady,connectionId = 1720422671849_2.0.0.1_63857 
+
+2024-07-08 15:11:11,849 INFO Connection transportReady,connectionId = 1720422671849_2.0.0.1_63858 
+
+2024-07-08 15:11:12,039 INFO Connection transportTerminated,connectionId = 1720422671849_2.0.0.1_63856 
+
+2024-07-08 15:11:12,039 INFO Connection transportTerminated,connectionId = 1720422671849_2.0.0.1_63857 
+
+2024-07-08 15:11:12,039 INFO Connection transportTerminated,connectionId = 1720422671849_2.0.0.1_63858 
+

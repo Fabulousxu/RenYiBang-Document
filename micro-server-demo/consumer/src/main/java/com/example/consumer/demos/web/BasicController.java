@@ -21,38 +21,28 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import com.example.consumer.demos.web.client.feignTest;
 
 import java.util.List;
-import java.util.Random;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
 @Controller
 public class BasicController {
-    private final DiscoveryClient discoveryClient;
+//    private final DiscoveryClient discoveryClient;
+//
+//    private final RestTemplate restTemplate;
 
-    private final RestTemplate restTemplate;
+    private final feignTest feignTest;
 
-    public BasicController(DiscoveryClient discoveryClient, RestTemplate restTemplate) {
-        this.discoveryClient = discoveryClient;
-        this.restTemplate = restTemplate;
+    public BasicController(com.example.consumer.demos.web.client.feignTest feignTest) {
+        this.feignTest = feignTest;
     }
 
     @GetMapping("/hello")
     public void helloUser(String name) {
-        List<ServiceInstance> list = discoveryClient.getInstances("producer");
-        if(list == null)
-        {
-            System.out.println("No producer found");
-        }
-
-        //负载均衡算法
-        ServiceInstance serviceInstance = list.get(0);
-
-        System.out.println(serviceInstance.getUri());
-
-        String result = restTemplate.getForObject(serviceInstance.getUri() + "/hello?name=" + name, String.class);
+        String result = feignTest.getHello(name);
 
         System.out.println(result);
     }
