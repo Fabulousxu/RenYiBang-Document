@@ -1,0 +1,406 @@
+2024-07-08 13:46:13,315 INFO Starting Nacos v2.2.3 using Java 21.0.2 on LAPTOP-A23TU625 with PID 24176 (F:\WebAppDevlopment\micro-server-demo\nacos\target\nacos-server.jar started by asus in F:\WebAppDevlopment\micro-server-demo\nacos\bin)
+
+2024-07-08 13:46:13,317 INFO The following 1 profile is active: "standalone"
+
+2024-07-08 13:46:15,507 INFO Tomcat initialized with port(s): 8848 (http)
+
+2024-07-08 13:46:15,519 INFO Starting service [Tomcat]
+
+2024-07-08 13:46:15,519 INFO Starting Servlet engine: [Apache Tomcat/9.0.69]
+
+2024-07-08 13:46:15,608 INFO Initializing Spring embedded WebApplicationContext
+
+2024-07-08 13:46:15,609 INFO Root WebApplicationContext: initialization completed in 2239 ms
+
+2024-07-08 13:46:15,855 INFO Nacos-related cluster resource initialization
+
+2024-07-08 13:46:15,860 INFO Load com.alibaba.nacos.core.ability.RemoteAbilityInitializer for ServerAbilityInitializer
+
+2024-07-08 13:46:15,860 INFO Load com.alibaba.nacos.naming.ability.NamingAbilityInitializer for ServerAbilityInitializer
+
+2024-07-08 13:46:15,861 INFO The cluster resource is initialized
+
+2024-07-08 13:46:16,215 INFO HikariPool-1 - Starting...
+
+2024-07-08 13:46:16,222 WARN Registered driver with driverClassName=org.apache.derby.jdbc.EmbeddedDriver was not found, trying direct instantiation.
+
+2024-07-08 13:46:16,803 INFO HikariPool-1 - Driver does not support get/set network timeout for connections. (Feature not implemented: No details.)
+
+2024-07-08 13:46:16,806 INFO HikariPool-1 - Start completed.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoAggrMapperByMySql) datasource(mysql) tableName(config_info_aggr) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoBetaMapperByMySql) datasource(mysql) tableName(config_info_beta) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoMapperByMySql) datasource(mysql) tableName(config_info) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigInfoTagMapperByMySql) datasource(mysql) tableName(config_info_tag) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.ConfigTagsRelationMapperByMySql) datasource(mysql) tableName(config_tags_relation) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.HistoryConfigInfoMapperByMySql) datasource(mysql) tableName(his_config_info) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.TenantInfoMapperByMySql) datasource(mysql) tableName(tenant_info) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.TenantCapacityMapperByMySql) datasource(mysql) tableName(tenant_capacity) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.mysql.GroupCapacityMapperByMysql) datasource(mysql) tableName(group_capacity) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoAggrMapperByDerby) datasource(derby) tableName(config_info_aggr) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoBetaMapperByDerby) datasource(derby) tableName(config_info_beta) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoMapperByDerby) datasource(derby) tableName(config_info) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoTagMapperByDerby) datasource(derby) tableName(config_info_tag) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.ConfigInfoTagsRelationMapperByDerby) datasource(derby) tableName(config_tags_relation) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.HistoryConfigInfoMapperByDerby) datasource(derby) tableName(his_config_info) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.TenantInfoMapperByDerby) datasource(derby) tableName(tenant_info) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.TenantCapacityMapperByDerby) datasource(derby) tableName(tenant_capacity) successfully.
+
+2024-07-08 13:46:17,206 INFO [MapperManager] Load Mapper(class com.alibaba.nacos.plugin.datasource.impl.derby.GroupCapacityMapperByDerby) datasource(derby) tableName(group_capacity) successfully.
+
+2024-07-08 13:46:17,586 INFO [MapperManager] findMapper dataSource: derby, tableName: config_info
+
+2024-07-08 13:46:17,626 INFO [MapperManager] findMapper dataSource: derby, tableName: config_info_beta
+
+2024-07-08 13:46:17,632 INFO [MapperManager] findMapper dataSource: derby, tableName: config_info_tag
+
+2024-07-08 13:46:17,636 INFO [MapperManager] findMapper dataSource: derby, tableName: config_info_aggr
+
+2024-07-08 13:46:17,722 INFO Fail to find connection runtime ejector for name nacos,use default
+
+2024-07-08 13:46:17,756 WARN Fail to found tps control manager of name ：nacos
+
+2024-07-08 13:46:17,757 WARN Fail to connection control manager of name ：nacos
+
+2024-07-08 13:46:17,758 INFO Load connection metrics collector,size=2,[com.alibaba.nacos.config.server.service.LongPollingConnectionMetricsCollector@1dd7796b, com.alibaba.nacos.core.remote.LongConnectionMetricsCollector@57402ba1]
+
+2024-07-08 13:46:17,762 INFO No connection rule content found ,use default empty rule 
+
+2024-07-08 13:46:17,764 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:17,766 INFO Found tps barrier creator of name : nacos
+
+2024-07-08 13:46:17,769 WARN Fail to found tps rule creator of name : nacos,use  default local simple creator
+
+2024-07-08 13:46:17,770 INFO No tps control rule of CONFIG_PUSH_COUNT found  
+
+2024-07-08 13:46:17,770 INFO No tps control rule of CONFIG_PUSH_SUCCESS found  
+
+2024-07-08 13:46:17,770 INFO No tps control rule of CONFIG_PUSH_FAIL found  
+
+2024-07-08 13:46:18,734 INFO Connection check task start
+
+2024-07-08 13:46:18,737 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:18,739 INFO Connection check task end
+
+2024-07-08 13:46:19,101 INFO Adding welcome page: class path resource [static/index.html]
+
+2024-07-08 13:46:19,438 WARN You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+
+2024-07-08 13:46:19,443 INFO Will not secure Ant [pattern='/**']
+
+2024-07-08 13:46:19,458 INFO Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@553da911, org.springframework.security.web.context.SecurityContextPersistenceFilter@664212ab, org.springframework.security.web.header.HeaderWriterFilter@7a687d8d, org.springframework.security.web.csrf.CsrfFilter@17043b04, org.springframework.security.web.authentication.logout.LogoutFilter@6975fb1c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3443e476, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32f5ecc4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@327e5be5, org.springframework.security.web.session.SessionManagementFilter@33e434c8, org.springframework.security.web.access.ExceptionTranslationFilter@511f5b1d]
+
+2024-07-08 13:46:19,480 INFO Exposing 1 endpoint(s) beneath base path '/actuator'
+
+2024-07-08 13:46:19,523 INFO Tomcat started on port(s): 8848 (http) with context path '/nacos'
+
+2024-07-08 13:46:19,539 INFO No tps control rule of ConfigPublish found  
+
+2024-07-08 13:46:19,539 INFO No tps control rule of ConfigQuery found  
+
+2024-07-08 13:46:19,540 INFO No tps control rule of ClusterConfigChangeNotify found  
+
+2024-07-08 13:46:19,540 INFO No tps control rule of ConfigListen found  
+
+2024-07-08 13:46:19,541 INFO No tps control rule of ConfigRemove found  
+
+2024-07-08 13:46:19,541 INFO No tps control rule of HealthCheck found  
+
+2024-07-08 13:46:19,545 INFO Started Nacos in 6.883 seconds (JVM running for 7.393)
+
+2024-07-08 13:46:19,545 INFO Nacos started successfully in stand alone mode. use embedded storage
+
+2024-07-08 13:46:20,777 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:21,747 INFO Connection check task start
+
+2024-07-08 13:46:21,747 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:21,747 INFO Connection check task end
+
+2024-07-08 13:46:23,791 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:24,756 INFO Connection check task start
+
+2024-07-08 13:46:24,756 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:24,756 INFO Connection check task end
+
+2024-07-08 13:46:26,808 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:27,769 INFO Connection check task start
+
+2024-07-08 13:46:27,769 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:27,769 INFO Connection check task end
+
+2024-07-08 13:46:29,816 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:30,778 INFO Connection check task start
+
+2024-07-08 13:46:30,778 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:30,778 INFO Connection check task end
+
+2024-07-08 13:46:31,615 INFO Initializing Spring DispatcherServlet 'dispatcherServlet'
+
+2024-07-08 13:46:31,616 INFO Initializing Servlet 'dispatcherServlet'
+
+2024-07-08 13:46:31,617 INFO Completed initialization in 1 ms
+
+2024-07-08 13:46:31,665 INFO [AuthPluginManager] Load AuthPluginService(class com.alibaba.nacos.plugin.auth.impl.NacosAuthPluginService) AuthServiceName(nacos) successfully.
+
+2024-07-08 13:46:31,665 INFO [AuthPluginManager] Load AuthPluginService(class com.alibaba.nacos.plugin.auth.impl.LdapAuthPluginService) AuthServiceName(ldap) successfully.
+
+2024-07-08 13:46:31,721 INFO [MapperManager] findMapper dataSource: derby, tableName: tenant_info
+
+2024-07-08 13:46:31,732 INFO [MapperManager] findMapper dataSource: derby, tableName: config_info
+
+2024-07-08 13:46:31,821 INFO [MapperManager] findMapper dataSource: derby, tableName: config_info
+
+2024-07-08 13:46:32,825 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:33,788 INFO Connection check task start
+
+2024-07-08 13:46:33,788 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:33,788 INFO Connection check task end
+
+2024-07-08 13:46:35,832 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:36,794 INFO Connection check task start
+
+2024-07-08 13:46:36,794 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:36,794 INFO Connection check task end
+
+2024-07-08 13:46:38,839 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:39,801 INFO Connection check task start
+
+2024-07-08 13:46:39,801 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:46:39,801 INFO Connection check task end
+
+2024-07-08 13:46:41,845 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:46:42,079 INFO new connection registered successfully, connectionId = 1720417601941_2.0.0.1_50767,connection=Connection{traced=false, abilities=null, metaInfo=ConnectionMeta{connectType='GRPC', clientIp='2.0.0.1', remoteIp='2.0.0.1', remotePort=50767, localPort=9848, version='Nacos-Java-Client:v2.2.1', connectionId='1720417601941_2.0.0.1_50767', createTime=Mon Jul 08 13:46:42 CST 2024, lastActiveTime=1720417602071, appName='-', tenant='null', labels={module=naming, source=sdk}}} 
+
+2024-07-08 13:46:42,175 INFO Get Push config from env, PushConfig{pushTaskDelay=500, pushTaskTimeout=5000, pushTaskRetryDelay=1000}
+
+2024-07-08 13:46:42,810 INFO Connection check task start
+
+2024-07-08 13:46:42,810 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:46:42,810 INFO Connection check task end
+
+2024-07-08 13:46:44,857 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:46:45,812 INFO Connection check task start
+
+2024-07-08 13:46:45,812 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:46:45,813 INFO Connection check task end
+
+2024-07-08 13:46:47,867 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:46:48,816 INFO Connection check task start
+
+2024-07-08 13:46:48,817 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:46:48,817 INFO Connection check task end
+
+2024-07-08 13:46:50,883 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:46:51,832 INFO Connection check task start
+
+2024-07-08 13:46:51,832 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:46:51,832 INFO Connection check task end
+
+2024-07-08 13:46:52,250 INFO Tps reporting...
+HealthCheck|point|SECONDS|2024-07-08 13:46:51|1|0|
+
+
+2024-07-08 13:46:53,885 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:46:54,844 INFO Connection check task start
+
+2024-07-08 13:46:54,844 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:46:54,844 INFO Connection check task end
+
+2024-07-08 13:46:56,900 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:46:57,692 INFO Tps reporting...
+HealthCheck|point|SECONDS|2024-07-08 13:46:56|1|0|
+
+
+2024-07-08 13:46:57,846 INFO Connection check task start
+
+2024-07-08 13:46:57,846 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:46:57,847 INFO Connection check task end
+
+2024-07-08 13:46:59,901 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:47:00,853 INFO Connection check task start
+
+2024-07-08 13:47:00,853 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:47:00,853 INFO Connection check task end
+
+2024-07-08 13:47:02,214 INFO Tps reporting...
+HealthCheck|point|SECONDS|2024-07-08 13:47:01|1|0|
+
+
+2024-07-08 13:47:02,902 INFO ConnectionMetrics, totalCount = 1, detail = {long_connection=1, long_polling=0}
+
+2024-07-08 13:47:03,864 INFO Connection check task start
+
+2024-07-08 13:47:03,864 INFO Long connection metrics detail ,Total count =1, sdkCount=1,clusterCount=0
+
+2024-07-08 13:47:03,864 INFO Connection check task end
+
+2024-07-08 13:47:04,457 INFO [1720417601941_2.0.0.1_50767]Connection unregistered successfully. 
+
+2024-07-08 13:47:05,913 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:06,875 INFO Connection check task start
+
+2024-07-08 13:47:06,875 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:06,875 INFO Connection check task end
+
+2024-07-08 13:47:08,918 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:09,889 INFO Connection check task start
+
+2024-07-08 13:47:09,889 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:09,889 INFO Connection check task end
+
+2024-07-08 13:47:11,928 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:12,892 INFO Connection check task start
+
+2024-07-08 13:47:12,892 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:12,892 INFO Connection check task end
+
+2024-07-08 13:47:14,939 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:15,903 INFO Connection check task start
+
+2024-07-08 13:47:15,903 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:15,903 INFO Connection check task end
+
+2024-07-08 13:47:17,953 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:18,906 INFO Connection check task start
+
+2024-07-08 13:47:18,906 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:18,906 INFO Connection check task end
+
+2024-07-08 13:47:20,964 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:21,909 INFO Connection check task start
+
+2024-07-08 13:47:21,909 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:21,909 INFO Connection check task end
+
+2024-07-08 13:47:23,975 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:24,910 INFO Connection check task start
+
+2024-07-08 13:47:24,910 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:24,910 INFO Connection check task end
+
+2024-07-08 13:47:26,979 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:27,914 INFO Connection check task start
+
+2024-07-08 13:47:27,916 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:27,916 INFO Connection check task end
+
+2024-07-08 13:47:29,992 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:30,925 INFO Connection check task start
+
+2024-07-08 13:47:30,925 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:30,925 INFO Connection check task end
+
+2024-07-08 13:47:32,994 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:33,927 INFO Connection check task start
+
+2024-07-08 13:47:33,927 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:33,927 INFO Connection check task end
+
+2024-07-08 13:47:36,009 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:36,939 INFO Connection check task start
+
+2024-07-08 13:47:36,939 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:36,940 INFO Connection check task end
+
+2024-07-08 13:47:39,016 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:39,944 INFO Connection check task start
+
+2024-07-08 13:47:39,944 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:39,944 INFO Connection check task end
+
+2024-07-08 13:47:42,026 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:42,948 INFO Connection check task start
+
+2024-07-08 13:47:42,948 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:42,948 INFO Connection check task end
+
+2024-07-08 13:47:45,037 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:45,953 INFO Connection check task start
+
+2024-07-08 13:47:45,953 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:45,953 INFO Connection check task end
+
+2024-07-08 13:47:48,042 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+
+2024-07-08 13:47:48,958 INFO Connection check task start
+
+2024-07-08 13:47:48,958 INFO Long connection metrics detail ,Total count =0, sdkCount=0,clusterCount=0
+
+2024-07-08 13:47:48,958 INFO Connection check task end
+
+2024-07-08 13:47:51,048 INFO ConnectionMetrics, totalCount = 0, detail = {long_connection=0, long_polling=0}
+

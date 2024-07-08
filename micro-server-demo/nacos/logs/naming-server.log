@@ -1,0 +1,18 @@
+2024-07-08 13:46:18,063 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+
+2024-07-08 13:46:18,063 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+
+2024-07-08 13:46:18,064 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+
+2024-07-08 13:46:18,064 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+
+2024-07-08 13:46:18,836 INFO Load instance extension handler []
+
+2024-07-08 13:46:42,072 INFO Client connection 1720417601941_2.0.0.1_50767 connect
+
+2024-07-08 13:46:42,172 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=0}, 1720417601941_2.0.0.1_50767
+
+2024-07-08 13:47:04,444 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=1}, 1720417601941_2.0.0.1_50767
+
+2024-07-08 13:47:04,457 INFO Client connection 1720417601941_2.0.0.1_50767 disconnect, remove instances and subscribers
+
