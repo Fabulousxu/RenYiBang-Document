@@ -52,3 +52,101 @@
 
 2024-07-08 14:27:28,996 INFO This Raft event changes : RaftEvent{groupId='naming_service_metadata', leader='2.0.0.1:7848', term=3, raftClusterInfo=[2.0.0.1:7848]}
 
+2024-07-08 15:11:11,569 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:11:11,707 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:11:11,725 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:11:11,735 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:11:12,025 INFO shutdown jraft server
+
+2024-07-08 15:11:12,025 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:11:12,025 INFO ========= The raft protocol has been closed =========
+
+2024-07-08 15:15:59,465 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:15:59,605 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:15:59,622 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:15:59,632 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:15:59,919 INFO shutdown jraft server
+
+2024-07-08 15:15:59,919 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:15:59,919 INFO ========= The raft protocol has been closed =========
+
+2024-07-08 15:22:13,675 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:22:13,819 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:22:13,836 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:22:13,848 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:22:14,124 INFO shutdown jraft server
+
+2024-07-08 15:22:14,124 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:22:14,124 INFO ========= The raft protocol has been closed =========
+
+2024-07-08 15:26:54,670 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:26:54,796 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:26:54,813 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:26:54,823 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:26:55,107 INFO shutdown jraft server
+
+2024-07-08 15:26:55,107 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:26:55,107 INFO ========= The raft protocol has been closed =========
+
+2024-07-08 15:34:11,521 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:34:11,654 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:34:11,671 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:34:11,681 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:34:11,978 INFO shutdown jraft server
+
+2024-07-08 15:34:11,979 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:34:11,979 INFO ========= The raft protocol has been closed =========
+
+2024-07-08 15:43:00,309 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:43:00,452 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:43:00,468 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:43:00,479 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:43:00,764 INFO shutdown jraft server
+
+2024-07-08 15:43:00,764 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:43:00,765 INFO ========= The raft protocol has been closed =========
+
+2024-07-08 15:43:36,467 INFO Initializes the Raft protocol, raft-config info : {}
+
+2024-07-08 15:43:36,609 INFO ========= The raft protocol is starting... =========
+
+2024-07-08 15:43:36,625 INFO ========= The raft protocol start finished... =========
+
+2024-07-08 15:43:36,634 INFO create raft group : naming_persistent_service_v2
+
+2024-07-08 15:43:36,934 INFO shutdown jraft server
+
+2024-07-08 15:43:36,934 INFO ========= The raft protocol is starting to close =========
+
+2024-07-08 15:43:36,934 INFO ========= The raft protocol has been closed =========
+
