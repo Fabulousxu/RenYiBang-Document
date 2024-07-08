@@ -340,6 +340,7 @@ java.lang.InterruptedException: null
 
 2024-07-08 14:58:03,035 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=6}, 1720421882865_2.0.0.1_55298
 
+<<<<<<< Updated upstream
 2024-07-08 15:11:11,522 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
 
 2024-07-08 15:11:11,522 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
@@ -945,11 +946,15 @@ java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
 2024-07-08 15:42:16,830 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,707 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:42:16,830 ERROR [TASK-FAILED] java.lang.InterruptedException
 
 java.lang.InterruptedException: null
@@ -1111,48 +1116,79 @@ java.lang.InterruptedException: null
 2024-07-08 15:43:36,418 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
 
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,707 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,707 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,707 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,708 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,707 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,707 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,708 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
 	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
 	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+<<<<<<< Updated upstream
 2024-07-08 15:43:37,283 ERROR [TASK-FAILED] java.lang.InterruptedException
+=======
+2024-07-08 16:53:42,708 ERROR [TASK-FAILED] java.lang.InterruptedException
+>>>>>>> Stashed changes
 
 java.lang.InterruptedException: null
 	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)

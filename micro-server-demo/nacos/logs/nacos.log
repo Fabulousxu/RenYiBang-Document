@@ -11634,6 +11634,7 @@ HealthCheck|point|SECONDS|2024-07-08 15:07:11|1|0|
 
 2024-07-08 15:07:13,406 INFO ConnectionMetrics, totalCount = 3, detail = {long_connection=3, long_polling=0}
 
+<<<<<<< Updated upstream
 2024-07-08 15:11:07,308 INFO Starting Nacos v2.2.3 using Java 21.0.2 on LAPTOP-A23TU625 with PID 27632 (F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\target\nacos-server.jar started by asus in F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\bin)
 
 2024-07-08 15:11:07,308 INFO The following 1 profile is active: "standalone"
@@ -11740,17 +11741,158 @@ HealthCheck|point|SECONDS|2024-07-08 15:07:11|1|0|
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
  java.base/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:3780)
  java.base/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3725)
+=======
+2024-07-08 16:53:38,246 INFO The server IP list of Nacos is []
+
+2024-07-08 16:53:38,253 INFO Starting Nacos v2.3.2 using Java 22 on LAPTOP-HPFV1BCB with PID 17032 (E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\target\nacos-server.jar started by Lenovo in E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\bin)
+
+2024-07-08 16:53:38,255 INFO No active profile set, falling back to 1 default profile: "default"
+
+2024-07-08 16:53:38,441 INFO Load Nacos package exclude filter success, package prefix com.alibaba.nacos.config.server, filter com.alibaba.nacos.config.server.filter.ConfigEnabledFilter
+
+2024-07-08 16:53:38,442 INFO Load Nacos package exclude filter success, package prefix com.alibaba.nacos.naming, filter com.alibaba.nacos.naming.config.NamingEnabledFilter
+
+2024-07-08 16:53:38,442 INFO Load Nacos package exclude filter success, package prefix com.alibaba.nacos.istio, filter com.alibaba.nacos.istio.config.IstioEnabledFilter
+
+2024-07-08 16:53:38,767 INFO Skip @SpringBootApplication annotation for class com.alibaba.nacos.config.server.Config to avoid duplicate scan
+
+2024-07-08 16:53:38,892 INFO Skip @SpringBootApplication annotation for class com.alibaba.nacos.naming.NamingApp to avoid duplicate scan
+
+2024-07-08 16:53:38,908 INFO Skip @SpringBootApplication annotation for class com.alibaba.nacos.cmdb.CmdbApp to avoid duplicate scan
+
+2024-07-08 16:53:38,924 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,925 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,925 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,925 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,925 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,925 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,925 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,926 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,927 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,928 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,928 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,928 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,928 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,928 INFO Skip @SpringBootApplication annotation for class com.alibaba.nacos.istio.IstioApp to avoid duplicate scan
+
+2024-07-08 16:53:38,928 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,929 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,930 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,930 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:38,930 WARN Istio module disabled because set nacos.extension.naming.istio.enabled as false
+
+2024-07-08 16:53:39,161 INFO Skip @SpringBootApplication annotation for class com.alibaba.nacos.prometheus.PrometheusApp to avoid duplicate scan
+
+2024-07-08 16:53:39,254 INFO Nacos is starting...
+
+2024-07-08 16:53:40,258 INFO Nacos is starting...
+
+2024-07-08 16:53:41,263 INFO Tomcat initialized with port(s): 8848 (http)
+
+2024-07-08 16:53:41,267 INFO Nacos is starting...
+
+2024-07-08 16:53:41,274 INFO Initializing ProtocolHandler ["http-nio-8848"]
+
+2024-07-08 16:53:41,276 INFO Starting service [Tomcat]
+
+2024-07-08 16:53:41,276 INFO Starting Servlet engine: [Apache Tomcat/9.0.83]
+
+2024-07-08 16:53:41,354 INFO Initializing Spring embedded WebApplicationContext
+
+2024-07-08 16:53:41,354 INFO Root WebApplicationContext: initialization completed in 3007 ms
+
+2024-07-08 16:53:41,602 INFO Nacos-related cluster resource initialization
+
+2024-07-08 16:53:41,607 INFO Load com.alibaba.nacos.core.ability.RemoteAbilityInitializer for ServerAbilityInitializer
+
+2024-07-08 16:53:41,607 INFO Load com.alibaba.nacos.naming.ability.NamingAbilityInitializer for ServerAbilityInitializer
+
+2024-07-08 16:53:41,612 INFO ServerListService address-server port:8080
+
+2024-07-08 16:53:41,612 INFO ADDRESS_SERVER_URL:http://jmenv.tbsite.net:8080/nacos/serverlist
+
+2024-07-08 16:53:42,281 INFO Nacos is starting...
+
+2024-07-08 16:53:42,663 ERROR Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'distroFilterRegistration' defined in class path resource [com/alibaba/nacos/naming/web/NamingConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+
+2024-07-08 16:53:42,681 INFO Stopping service [Tomcat]
+
+2024-07-08 16:53:42,689 WARN The web application [nacos] appears to have started a thread named [nacos.publisher-com.alibaba.nacos.common.event.ServerConfigChangeEvent] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base/java.util.concurrent.locks.LockSupport.park(LockSupport.java:371)
+ java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:519)
+ java.base/java.util.concurrent.ForkJoinPool.unmanagedBlock(ForkJoinPool.java:4013)
+ java.base/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3961)
+>>>>>>> Stashed changes
  java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1707)
  java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
  com.alibaba.nacos.common.notify.DefaultPublisher.openEventHandler(DefaultPublisher.java:111)
  com.alibaba.nacos.common.notify.DefaultPublisher.run(DefaultPublisher.java:95)
 
+<<<<<<< Updated upstream
 2024-07-08 15:11:12,042 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client.0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+2024-07-08 16:53:42,689 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client.0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
  java.base/sun.nio.ch.SelectorImpl.select(SelectorImpl.java:142)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor.execute(AbstractMultiworkerIOReactor.java:343)
+<<<<<<< Updated upstream
  org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager.execute(PoolingNHttpClientConnectionManager.java:194)
  org.apache.http.impl.nio.client.CloseableHttpAsyncClientBase$1.run(CloseableHttpAsyncClientBase.java:64)
  java.base/java.lang.Thread.run(Thread.java:1583)
@@ -15576,6 +15718,21 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.16] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ org.apache.http.impl.nio.conn.PoolingNHttpClientConnectionManager.execute(PoolingNHttpClientConnectionManager.java:221)
+ org.apache.http.impl.nio.client.CloseableHttpAsyncClientBase$1.run(CloseableHttpAsyncClientBase.java:64)
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,690 WARN The web application [nacos] appears to have started a thread named [nacos.publisher-com.alibaba.nacos.core.cluster.MembersChangeEvent] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base/java.lang.Thread.sleepNanos0(Native Method)
+ java.base/java.lang.Thread.sleepNanos(Thread.java:491)
+ java.base/java.lang.Thread.sleep(Thread.java:522)
+ com.alibaba.nacos.common.utils.ThreadUtils.sleep(ThreadUtils.java:45)
+ com.alibaba.nacos.common.notify.DefaultPublisher.openEventHandler(DefaultPublisher.java:106)
+ com.alibaba.nacos.common.notify.DefaultPublisher.run(DefaultPublisher.java:95)
+
+2024-07-08 16:53:42,690 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.0] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15583,9 +15740,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.17] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,690 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.1] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15593,9 +15756,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.18] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,690 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.2] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15603,9 +15772,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.19] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,690 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.3] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15613,9 +15788,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.20] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,690 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.4] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15623,9 +15804,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.21] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.5] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15633,9 +15820,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,814 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.22] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.6] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15643,9 +15836,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.23] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.7] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15653,9 +15852,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.24] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.8] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15663,9 +15868,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.25] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.9] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15673,9 +15884,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.26] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.10] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15683,9 +15900,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.27] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.11] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15693,9 +15916,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.28] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.12] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15703,9 +15932,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.29] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,691 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.13] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15713,9 +15948,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.30] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,692 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.14] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15723,9 +15964,15 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,815 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.31] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,692 WARN The web application [nacos] appears to have started a thread named [nacos-http-async-client#I/O Reactor.15] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+>>>>>>> Stashed changes
  java.base/sun.nio.ch.WEPoll.wait(Native Method)
  java.base/sun.nio.ch.WEPollSelectorImpl.doSelect(WEPollSelectorImpl.java:114)
  java.base/sun.nio.ch.SelectorImpl.lockAndDoSelect(SelectorImpl.java:130)
@@ -15733,6 +15980,7 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
  org.apache.http.impl.nio.reactor.AbstractIOReactor.execute(AbstractIOReactor.java:255)
  org.apache.http.impl.nio.reactor.BaseIOReactor.execute(BaseIOReactor.java:104)
  org.apache.http.impl.nio.reactor.AbstractMultiworkerIOReactor$Worker.run(AbstractMultiworkerIOReactor.java:591)
+<<<<<<< Updated upstream
  java.base/java.lang.Thread.run(Thread.java:1583)
 
 2024-07-08 15:42:16,816 WARN Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
@@ -15755,6 +16003,30 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at com.alibaba.nacos.Nacos.main(Nacos.java:35)
+=======
+ java.base/java.lang.Thread.run(Thread.java:1570)
+
+2024-07-08 16:53:42,692 WARN Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+
+2024-07-08 16:53:42,696 INFO Nacos Log files: E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\logs
+
+2024-07-08 16:53:42,696 INFO Nacos Log files: E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\conf
+
+2024-07-08 16:53:42,697 INFO Nacos Log files: E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\data
+
+2024-07-08 16:53:42,699 ERROR Startup errors : 
+
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:585)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at com.alibaba.nacos.Nacos.main(Nacos.java:48)
+>>>>>>> Stashed changes
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
@@ -15764,6 +16036,7 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
 	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
 	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+<<<<<<< Updated upstream
 	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
 	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
@@ -15772,6 +16045,16 @@ Caused by: org.springframework.boot.web.server.WebServerException: Unable to sta
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'distroFilterRegistration' defined in class path resource [com/alibaba/nacos/naming/web/NamingConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.2.3.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.2.3.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+=======
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 14 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'distroFilterRegistration' defined in class path resource [com/alibaba/nacos/naming/web/NamingConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:481)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
@@ -15780,6 +16063,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+<<<<<<< Updated upstream
 	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
 	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
 	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
@@ -15821,6 +16105,49 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+=======
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:98)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4904)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:794)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:248)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
@@ -15830,6 +16157,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
+<<<<<<< Updated upstream
 	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$45f296a.distroFilter(<generated>)
 	at com.alibaba.nacos.naming.web.NamingConfig.distroFilterRegistration(NamingConfig.java:44)
 	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$45f296a.CGLIB$distroFilterRegistration$5(<generated>)
@@ -15837,13 +16165,28 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
 	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$45f296a.distroFilterRegistration(<generated>)
+=======
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc.distroFilter(<generated>)
+	at com.alibaba.nacos.naming.web.NamingConfig.distroFilterRegistration(NamingConfig.java:48)
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc.CGLIB$distroFilterRegistration$5(<generated>)
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc$$FastClassBySpringCGLIB$$7f8e9a0d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc.distroFilterRegistration(<generated>)
+>>>>>>> Stashed changes
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 60 common frames omitted
+<<<<<<< Updated upstream
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.2.3.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.2.3.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+=======
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
@@ -15855,11 +16198,19 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+<<<<<<< Updated upstream
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
 	... 82 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.2.3.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+=======
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:291)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
@@ -15871,6 +16222,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+<<<<<<< Updated upstream
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
 	... 95 common frames omitted
@@ -15878,11 +16230,21 @@ Caused by: org.springframework.beans.BeanInstantiationException: Failed to insta
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+=======
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:226)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:306)
+>>>>>>> Stashed changes
 	... 109 common frames omitted
 Caused by: com.alibaba.nacos.api.exception.NacosException: java.net.UnknownHostException: jmenv.tbsite.net
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.run(AddressServerMemberLookup.java:152)
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.doStart(AddressServerMemberLookup.java:100)
 	at com.alibaba.nacos.core.cluster.AbstractMemberLookup.start(AbstractMemberLookup.java:55)
+<<<<<<< Updated upstream
 	at com.alibaba.nacos.core.cluster.ServerMemberManager.initAndStartLookup(ServerMemberManager.java:224)
 	at com.alibaba.nacos.core.cluster.ServerMemberManager.init(ServerMemberManager.java:171)
 	at com.alibaba.nacos.core.cluster.ServerMemberManager.<init>(ServerMemberManager.java:152)
@@ -15894,22 +16256,43 @@ Caused by: com.alibaba.nacos.api.exception.NacosException: java.net.UnknownHostE
 Caused by: java.net.UnknownHostException: jmenv.tbsite.net
 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
 	at java.base/java.net.Socket.connect(Socket.java:751)
+=======
+	at com.alibaba.nacos.core.cluster.ServerMemberManager.initAndStartLookup(ServerMemberManager.java:237)
+	at com.alibaba.nacos.core.cluster.ServerMemberManager.init(ServerMemberManager.java:178)
+	at com.alibaba.nacos.core.cluster.ServerMemberManager.<init>(ServerMemberManager.java:158)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:213)
+	... 111 common frames omitted
+Caused by: java.net.UnknownHostException: jmenv.tbsite.net
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+>>>>>>> Stashed changes
 	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
 	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
 	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
 	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+<<<<<<< Updated upstream
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+=======
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1310)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1243)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1129)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1058)
+>>>>>>> Stashed changes
 	at com.alibaba.nacos.common.http.client.request.JdkHttpClientRequest.execute(JdkHttpClientRequest.java:114)
 	at com.alibaba.nacos.common.http.client.NacosRestTemplate.execute(NacosRestTemplate.java:482)
 	at com.alibaba.nacos.common.http.client.NacosRestTemplate.get(NacosRestTemplate.java:72)
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.syncFromAddressUrl(AddressServerMemberLookup.java:175)
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.run(AddressServerMemberLookup.java:143)
 	... 120 common frames omitted
+<<<<<<< Updated upstream
 2024-07-08 15:42:16,825 WARN [WatchFileCenter] start close
 
 2024-07-08 15:42:16,826 WARN [WatchFileCenter] start to shutdown this watcher which is watch : F:\WebAppDevlopment\RenYiBang\micro-server-demo\nacos\conf
@@ -15938,6 +16321,36 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1317)
 	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
 	at com.alibaba.nacos.Nacos.main(Nacos.java:35)
+=======
+2024-07-08 16:53:42,703 WARN [WatchFileCenter] start close
+
+2024-07-08 16:53:42,703 WARN [WatchFileCenter] start to shutdown this watcher which is watch : E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\conf
+
+2024-07-08 16:53:42,703 WARN [WatchFileCenter] already closed
+
+2024-07-08 16:53:42,704 WARN [NotifyCenter] Start destroying Publisher
+
+2024-07-08 16:53:42,704 WARN [NotifyCenter] Destruction of the end
+
+2024-07-08 16:53:42,704 ERROR Nacos failed to start, please see E:\GitHub\RenYiBang\RenYiBang-All\micro-server-demo\nacos\logs\nacos.log for more details.
+
+2024-07-08 16:53:42,715 INFO 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+
+2024-07-08 16:53:42,746 ERROR Application run failed
+
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:165)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:585)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289)
+	at com.alibaba.nacos.Nacos.main(Nacos.java:48)
+>>>>>>> Stashed changes
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
@@ -15947,6 +16360,7 @@ org.springframework.context.ApplicationContextException: Unable to start web ser
 Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
 	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
 	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+<<<<<<< Updated upstream
 	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:479)
 	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
 	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
@@ -15955,6 +16369,16 @@ Caused by: org.springframework.boot.web.server.WebServerException: Unable to sta
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'distroFilterRegistration' defined in class path resource [com/alibaba/nacos/naming/web/NamingConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.2.3.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.2.3.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:486)
+=======
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:481)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:184)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:162)
+	... 14 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'distroFilterRegistration' defined in class path resource [com/alibaba/nacos/naming/web/NamingConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:481)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
@@ -15963,6 +16387,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+<<<<<<< Updated upstream
 	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
 	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:203)
 	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:97)
@@ -16004,6 +16429,49 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
 	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+=======
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:98)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:86)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:262)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:236)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4904)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:794)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1332)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1322)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.base/java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:145)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:866)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:248)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:433)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:921)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:171)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:489)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.FilterRegistrationBean]: Factory method 'distroFilterRegistration' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:648)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroFilter': Unsatisfied dependency expressed through field 'distroMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:713)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:693)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:408)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
@@ -16013,6 +16481,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.resolveBeanReference(ConfigurationClassEnhancer.java:362)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:334)
+<<<<<<< Updated upstream
 	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$45f296a.distroFilter(<generated>)
 	at com.alibaba.nacos.naming.web.NamingConfig.distroFilterRegistration(NamingConfig.java:44)
 	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$45f296a.CGLIB$distroFilterRegistration$5(<generated>)
@@ -16020,13 +16489,28 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
 	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
 	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$45f296a.distroFilterRegistration(<generated>)
+=======
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc.distroFilter(<generated>)
+	at com.alibaba.nacos.naming.web.NamingConfig.distroFilterRegistration(NamingConfig.java:48)
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc.CGLIB$distroFilterRegistration$5(<generated>)
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc$$FastClassBySpringCGLIB$$7f8e9a0d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at com.alibaba.nacos.naming.web.NamingConfig$$EnhancerBySpringCGLIB$$eec4d8cc.distroFilterRegistration(<generated>)
+>>>>>>> Stashed changes
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 60 common frames omitted
+<<<<<<< Updated upstream
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.2.3.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.2.3.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+=======
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'distroMapper' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-naming-2.3.2.jar!/com/alibaba/nacos/naming/core/DistroMapper.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:801)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:224)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
@@ -16038,11 +16522,19 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+<<<<<<< Updated upstream
 	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
 	... 82 common frames omitted
 Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/F:/WebAppDevlopment/RenYiBang/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.2.3.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:315)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:296)
+=======
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:710)
+	... 82 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'serverMemberManager' defined in URL [jar:file:/E:/GitHub/RenYiBang/RenYiBang-All/micro-server-demo/nacos/target/nacos-server.jar!/BOOT-INF/lib/nacos-core-2.3.2.jar!/com/alibaba/nacos/core/cluster/ServerMemberManager.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:310)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:291)
+>>>>>>> Stashed changes
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
@@ -16054,6 +16546,7 @@ Caused by: org.springframework.beans.factory.BeanCreationException: Error creati
 	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+<<<<<<< Updated upstream
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
 	... 95 common frames omitted
@@ -16061,11 +16554,21 @@ Caused by: org.springframework.beans.BeanInstantiationException: Failed to insta
 	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:224)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:311)
+=======
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:911)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:788)
+	... 95 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.alibaba.nacos.core.cluster.ServerMemberManager]: Constructor threw exception; nested exception is ErrCode:500, ErrMsg:jmenv.tbsite.net
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:226)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:117)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:306)
+>>>>>>> Stashed changes
 	... 109 common frames omitted
 Caused by: com.alibaba.nacos.api.exception.NacosException: java.net.UnknownHostException: jmenv.tbsite.net
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.run(AddressServerMemberLookup.java:152)
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.doStart(AddressServerMemberLookup.java:100)
 	at com.alibaba.nacos.core.cluster.AbstractMemberLookup.start(AbstractMemberLookup.java:55)
+<<<<<<< Updated upstream
 	at com.alibaba.nacos.core.cluster.ServerMemberManager.initAndStartLookup(ServerMemberManager.java:224)
 	at com.alibaba.nacos.core.cluster.ServerMemberManager.init(ServerMemberManager.java:171)
 	at com.alibaba.nacos.core.cluster.ServerMemberManager.<init>(ServerMemberManager.java:152)
@@ -16077,22 +16580,43 @@ Caused by: com.alibaba.nacos.api.exception.NacosException: java.net.UnknownHostE
 Caused by: java.net.UnknownHostException: jmenv.tbsite.net
 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
 	at java.base/java.net.Socket.connect(Socket.java:751)
+=======
+	at com.alibaba.nacos.core.cluster.ServerMemberManager.initAndStartLookup(ServerMemberManager.java:237)
+	at com.alibaba.nacos.core.cluster.ServerMemberManager.init(ServerMemberManager.java:178)
+	at com.alibaba.nacos.core.cluster.ServerMemberManager.<init>(ServerMemberManager.java:158)
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:213)
+	... 111 common frames omitted
+Caused by: java.net.UnknownHostException: jmenv.tbsite.net
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.Socket.connect(Socket.java:752)
+>>>>>>> Stashed changes
 	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:178)
 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:531)
 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:636)
 	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:280)
 	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:386)
 	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:408)
+<<<<<<< Updated upstream
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1304)
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1237)
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1123)
 	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1052)
+=======
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1310)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1243)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1129)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1058)
+>>>>>>> Stashed changes
 	at com.alibaba.nacos.common.http.client.request.JdkHttpClientRequest.execute(JdkHttpClientRequest.java:114)
 	at com.alibaba.nacos.common.http.client.NacosRestTemplate.execute(NacosRestTemplate.java:482)
 	at com.alibaba.nacos.common.http.client.NacosRestTemplate.get(NacosRestTemplate.java:72)
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.syncFromAddressUrl(AddressServerMemberLookup.java:175)
 	at com.alibaba.nacos.core.cluster.lookup.AddressServerMemberLookup.run(AddressServerMemberLookup.java:143)
 	... 120 common frames omitted
+<<<<<<< Updated upstream
 2024-07-08 15:42:16,860 WARN [HttpClientBeanHolder] Start destroying common HttpClient
 
 2024-07-08 15:42:16,861 WARN [HttpClientBeanHolder] Destruction of the end
@@ -17588,4 +18112,13 @@ Caused by: java.lang.IllegalStateException: Fail to init node, please see the lo
 2024-07-08 15:43:37,309 WARN [ThreadPoolManager] Start destroying ThreadPool
 
 2024-07-08 15:43:37,309 WARN [ThreadPoolManager] Destruction of the end
+=======
+2024-07-08 16:53:42,747 WARN [HttpClientBeanHolder] Start destroying common HttpClient
+
+2024-07-08 16:53:42,748 WARN [ThreadPoolManager] Start destroying ThreadPool
+
+2024-07-08 16:53:42,748 WARN [ThreadPoolManager] Destruction of the end
+
+2024-07-08 16:53:42,748 WARN [HttpClientBeanHolder] Destruction of the end
+>>>>>>> Stashed changes
 

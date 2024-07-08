@@ -11,6 +11,7 @@ rem distributed under the License is distributed on an "AS IS" BASIS,
 rem WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 rem See the License for the specific language governing permissions and
 rem limitations under the License.
+set JAVA_HOME="D:\JDK\openjdk-22"
 if not exist "%JAVA_HOME%\bin\java.exe" echo Please set the JAVA_HOME variable in your environment, We need java(x64)! jdk8 or later is better! & EXIT /B 1
 set "JAVA=%JAVA_HOME%\bin\java.exe"
 
@@ -23,7 +24,11 @@ set BASE_DIR="%BASE_DIR:~0,-5%"
 
 set CUSTOM_SEARCH_LOCATIONS=file:%BASE_DIR%/conf/
 
+<<<<<<< Updated upstream
 set MODE="standalone"
+=======
+set MODE="standlone"
+>>>>>>> Stashed changes
 set FUNCTION_MODE="all"
 set SERVER=nacos-server
 set MODE_INDEX=-1
