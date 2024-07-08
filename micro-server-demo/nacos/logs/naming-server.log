@@ -1,18 +1,342 @@
-2024-07-08 13:46:18,063 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+2024-07-08 14:23:42,127 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
 
-2024-07-08 13:46:18,063 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+2024-07-08 14:23:42,127 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
 
-2024-07-08 13:46:18,064 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+2024-07-08 14:23:42,129 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
 
-2024-07-08 13:46:18,064 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+2024-07-08 14:23:42,129 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
 
-2024-07-08 13:46:18,836 INFO Load instance extension handler []
+2024-07-08 14:23:42,883 INFO Load instance extension handler []
 
-2024-07-08 13:46:42,072 INFO Client connection 1720417601941_2.0.0.1_50767 connect
+2024-07-08 14:24:25,408 INFO Client connection 1720419865295_2.0.0.1_53098 connect
 
-2024-07-08 13:46:42,172 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=0}, 1720417601941_2.0.0.1_50767
+2024-07-08 14:24:25,503 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=0}, 1720419865295_2.0.0.1_53098
 
-2024-07-08 13:47:04,444 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=1}, 1720417601941_2.0.0.1_50767
+2024-07-08 14:24:48,675 INFO Client connection 1720419888618_2.0.0.1_53128 connect
 
-2024-07-08 13:47:04,457 INFO Client connection 1720417601941_2.0.0.1_50767 disconnect, remove instances and subscribers
+2024-07-08 14:24:48,792 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=1}, 1720419888618_2.0.0.1_53128
+
+2024-07-08 14:26:35,598 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=2}, 1720419865295_2.0.0.1_53098
+
+2024-07-08 14:26:35,607 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=3}, 1720419888618_2.0.0.1_53128
+
+2024-07-08 14:26:35,609 INFO Client connection 1720419865295_2.0.0.1_53098 disconnect, remove instances and subscribers
+
+2024-07-08 14:26:35,616 INFO Client connection 1720419888618_2.0.0.1_53128 disconnect, remove instances and subscribers
+
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,116 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,115 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,116 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,116 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:26:50,116 ERROR [TASK-FAILED] java.lang.InterruptedException
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1722)
+	at java.base/java.util.concurrent.ArrayBlockingQueue.take(ArrayBlockingQueue.java:420)
+	at com.alibaba.nacos.common.task.engine.TaskExecuteWorker$InnerWorker.run(TaskExecuteWorker.java:118)
+2024-07-08 14:27:04,415 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+
+2024-07-08 14:27:04,415 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+
+2024-07-08 14:27:04,416 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+
+2024-07-08 14:27:04,416 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+
+2024-07-08 14:27:05,194 INFO Load instance extension handler []
+
+2024-07-08 14:27:28,268 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.CmdbSelectorContextBuilder) contextType(CMDB) successfully.
+
+2024-07-08 14:27:28,268 INFO [SelectorManager] Load SelectorContextBuilder(class com.alibaba.nacos.naming.selector.context.NoneSelectorContextBuilder) contextType(NONE) successfully.
+
+2024-07-08 14:27:28,269 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.LabelSelector) type(label) contextType(CMDB) successfully.
+
+2024-07-08 14:27:28,269 INFO [SelectorManager] Load Selector(class com.alibaba.nacos.naming.selector.NoneSelector) type(none) contextType(NONE) successfully.
+
+2024-07-08 14:27:29,051 INFO Load instance extension handler []
+
+2024-07-08 14:30:46,663 INFO Client connection 1720420246497_2.0.0.1_53511 connect
+
+2024-07-08 14:30:46,730 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=0}, 1720420246497_2.0.0.1_53511
+
+2024-07-08 14:30:54,608 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=1}, 1720420246497_2.0.0.1_53511
+
+2024-07-08 14:30:54,948 INFO Client connection 1720420246497_2.0.0.1_53511 disconnect, remove instances and subscribers
+
+2024-07-08 14:31:03,462 INFO Client connection 1720420263409_2.0.0.1_53540 connect
+
+2024-07-08 14:31:03,580 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=2}, 1720420263409_2.0.0.1_53540
+
+2024-07-08 14:32:32,057 INFO Client connection 1720420351996_2.0.0.1_53634 connect
+
+2024-07-08 14:32:32,174 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=3}, 1720420351996_2.0.0.1_53634
+
+2024-07-08 14:36:24,270 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=4}, 1720420351996_2.0.0.1_53634
+
+2024-07-08 14:36:24,278 INFO Client connection 1720420351996_2.0.0.1_53634 disconnect, remove instances and subscribers
+
+2024-07-08 14:36:26,121 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='micro-server-demo', ephemeral=true, revision=5}, 1720420263409_2.0.0.1_53540
+
+2024-07-08 14:36:26,126 INFO Client connection 1720420263409_2.0.0.1_53540 disconnect, remove instances and subscribers
+
+2024-07-08 14:37:58,957 WARN namespace : public, [DEFAULT_GROUP@@micro-server-demo] services are automatically cleaned
+
+2024-07-08 14:44:48,082 INFO Client connection 1720421088024_2.0.0.1_54294 connect
+
+2024-07-08 14:44:48,210 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=0}, 1720421088024_2.0.0.1_54294
+
+2024-07-08 14:44:55,424 INFO Client connection 1720421095367_2.0.0.1_54316 connect
+
+2024-07-08 14:44:55,552 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=1}, 1720421095367_2.0.0.1_54316
+
+2024-07-08 14:45:22,284 INFO Client connection 1720421122226_2.0.0.1_54346 connect
+
+2024-07-08 14:45:22,405 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=0}, 1720421122226_2.0.0.1_54346
+
+2024-07-08 14:50:24,614 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=1}, 1720421122226_2.0.0.1_54346
+
+2024-07-08 14:50:24,620 INFO Client connection 1720421122226_2.0.0.1_54346 disconnect, remove instances and subscribers
+
+2024-07-08 14:50:29,458 INFO Client connection 1720421429408_2.0.0.1_54628 connect
+
+2024-07-08 14:50:29,584 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=2}, 1720421429408_2.0.0.1_54628
+
+2024-07-08 14:52:36,162 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=2}, 1720421088024_2.0.0.1_54294
+
+2024-07-08 14:52:36,168 INFO Client connection 1720421088024_2.0.0.1_54294 disconnect, remove instances and subscribers
+
+2024-07-08 14:52:40,408 INFO Client connection 1720421560345_2.0.0.1_54759 connect
+
+2024-07-08 14:52:40,533 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=3}, 1720421560345_2.0.0.1_54759
+
+2024-07-08 14:52:55,109 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=4}, 1720421095367_2.0.0.1_54316
+
+2024-07-08 14:52:55,115 INFO Client connection 1720421095367_2.0.0.1_54316 disconnect, remove instances and subscribers
+
+2024-07-08 14:52:58,585 INFO Client connection 1720421578532_2.0.0.1_54789 connect
+
+2024-07-08 14:52:58,699 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=5}, 1720421578532_2.0.0.1_54789
+
+2024-07-08 14:53:33,646 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=6}, 1720421560345_2.0.0.1_54759
+
+2024-07-08 14:53:33,651 INFO Client connection 1720421560345_2.0.0.1_54759 disconnect, remove instances and subscribers
+
+2024-07-08 14:53:37,673 INFO Client connection 1720421617622_2.0.0.1_54835 connect
+
+2024-07-08 14:53:37,796 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=7}, 1720421617622_2.0.0.1_54835
+
+2024-07-08 14:53:38,257 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=8}, 1720421578532_2.0.0.1_54789
+
+2024-07-08 14:53:38,263 INFO Client connection 1720421578532_2.0.0.1_54789 disconnect, remove instances and subscribers
+
+2024-07-08 14:53:42,180 INFO Client connection 1720421622119_2.0.0.1_54855 connect
+
+2024-07-08 14:53:42,297 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=9}, 1720421622119_2.0.0.1_54855
+
+2024-07-08 14:55:31,222 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=10}, 1720421617622_2.0.0.1_54835
+
+2024-07-08 14:55:31,228 INFO Client connection 1720421617622_2.0.0.1_54835 disconnect, remove instances and subscribers
+
+2024-07-08 14:55:35,322 INFO Client connection 1720421735271_2.0.0.1_55087 connect
+
+2024-07-08 14:55:35,444 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=11}, 1720421735271_2.0.0.1_55087
+
+2024-07-08 14:55:37,734 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=12}, 1720421622119_2.0.0.1_54855
+
+2024-07-08 14:55:37,738 INFO Client connection 1720421622119_2.0.0.1_54855 disconnect, remove instances and subscribers
+
+2024-07-08 14:55:41,166 INFO Client connection 1720421741114_2.0.0.1_55110 connect
+
+2024-07-08 14:55:41,290 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='producer', ephemeral=true, revision=13}, 1720421741114_2.0.0.1_55110
+
+2024-07-08 14:55:58,971 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=3}, 1720421429408_2.0.0.1_54628
+
+2024-07-08 14:55:58,978 INFO Client connection 1720421429408_2.0.0.1_54628 disconnect, remove instances and subscribers
+
+2024-07-08 14:56:03,037 INFO Client connection 1720421762988_2.0.0.1_55140 connect
+
+2024-07-08 14:56:03,153 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=4}, 1720421762988_2.0.0.1_55140
+
+2024-07-08 14:57:58,272 INFO Client remove for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=5}, 1720421762988_2.0.0.1_55140
+
+2024-07-08 14:57:58,277 INFO Client connection 1720421762988_2.0.0.1_55140 disconnect, remove instances and subscribers
+
+2024-07-08 14:58:02,918 INFO Client connection 1720421882865_2.0.0.1_55298 connect
+
+2024-07-08 14:58:03,035 INFO Client change for service Service{namespace='public', group='DEFAULT_GROUP', name='consumer', ephemeral=true, revision=6}, 1720421882865_2.0.0.1_55298
 
