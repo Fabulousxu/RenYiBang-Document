@@ -28,7 +28,6 @@
 
 2024-07-08 14:27:29,653 INFO This node is ready to provide external services
 
-<<<<<<< Updated upstream
 2024-07-08 15:11:09,792 INFO Current addressing mode selection : StandaloneMemberLookup
 
 2024-07-08 15:11:11,060 INFO [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
@@ -68,17 +67,4 @@
 2024-07-08 15:43:34,700 INFO Current addressing mode selection : StandaloneMemberLookup
 
 2024-07-08 15:43:35,989 INFO [ClusterRpcClientProxy] success to refresh cluster rpc client on start up,members =[] 
-=======
-2024-07-08 16:53:41,611 INFO Current addressing mode selection : AddressServerMemberLookup
-
-2024-07-08 16:53:42,659 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
-
-2024-07-08 16:53:42,660 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
-
-2024-07-08 16:53:42,660 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
-
-2024-07-08 16:53:42,661 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
-
-2024-07-08 16:53:42,661 ERROR [serverlist] exception, error : caused: jmenv.tbsite.net;
->>>>>>> Stashed changes
 

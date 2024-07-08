@@ -214,7 +214,6 @@
 
 2024-07-08 14:27:27,812 WARN clear all config-info-tag-tenant failed.
 
-<<<<<<< Updated upstream
 2024-07-08 15:11:07,297 INFO notifyConnectTimeout:100
 
 2024-07-08 15:11:07,299 INFO notifySocketTimeout:200
@@ -784,15 +783,4 @@
 2024-07-08 15:43:35,967 WARN clear all config-info-tag failed.
 
 2024-07-08 15:43:35,967 WARN clear all config-info-tag-tenant failed.
-=======
-2024-07-08 16:53:38,229 INFO notifyConnectTimeout:100
-
-2024-07-08 16:53:38,236 INFO notifySocketTimeout:200
-
-2024-07-08 16:53:38,236 INFO isHealthCheck:true
-
-2024-07-08 16:53:38,236 INFO maxHealthCheckFailCount:12
-
-2024-07-08 16:53:38,236 INFO maxContent:10485760
->>>>>>> Stashed changes
 
