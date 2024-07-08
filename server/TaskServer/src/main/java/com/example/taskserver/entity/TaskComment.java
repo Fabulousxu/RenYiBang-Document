@@ -1,7 +1,7 @@
 package com.example.taskserver.entity;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.example.renyibang.util.DateTimeUtil;
+import com.example.taskserver.util.DateTimeUtil;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

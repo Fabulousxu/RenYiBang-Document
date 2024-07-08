@@ -1,7 +1,6 @@
 package com.example.taskserver.dao.daoImpl;
 
 import com.example.taskserver.dao.TaskCommentDao;
-import com.example.taskserver.dao.UserDao;
 import com.example.taskserver.entity.Task;
 import com.example.taskserver.entity.TaskComment;
 import com.example.taskserver.entity.User;
@@ -19,9 +18,6 @@ import java.time.LocalDateTime;
 public class TaskCommentDaoImpl implements TaskCommentDao {
     @Autowired
     private TaskCommentRepository taskCommentRepository;
-
-    @Autowired
-    private UserDao userDao;
 
     @Autowired TaskRepository taskRepository;
 

@@ -1,9 +1,6 @@
 package com.example.taskserver.entity;
 
 import com.alibaba.fastjson2.JSONObject;
-import com.example.taskserver.entity.TaskAccess;
-import com.example.taskserver.entity.TaskComment;
-import com.example.taskserver.entity.TaskMessage;
 import com.example.taskserver.enums.TaskStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.example.taskserver.util.DateTimeUtil;
@@ -65,15 +62,16 @@ public class Task {
   @JsonIgnore
   private List<TaskAccess> accesses; // 任务接取候选列表
 
-  @OneToMany(mappedBy = "item")
-  @JsonIgnore
-  private List<TaskOrder> taskOrders; // 任务订单列表
+//  @OneToMany(mappedBy = "item")
+//  @JsonIgnore
+//  private List<TaskOrder> taskOrders; // 任务订单列表
 
   @Column(name = "collected")
   private long collectedNumber = 0;
 
   @Column(name = "status")
   private TaskStatus status = TaskStatus.NORMAL; //任务状态
+
 
   public static List<String> splitImages(String images) {
     // 使用空格分割字符串，并将结果转换为List<String>
